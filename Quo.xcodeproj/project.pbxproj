@@ -81,13 +81,11 @@
 		944AE90719DA020F000EB362 /* Quo */ = {
 			isa = PBXGroup;
 			children = (
-				944AE90C19DA020F000EB362 /* AppDelegate.h */,
-				944AE90D19DA020F000EB362 /* AppDelegate.m */,
-				944AE90F19DA020F000EB362 /* ViewController.h */,
-				944AE91019DA020F000EB362 /* ViewController.m */,
+				944AE92E19DA0213000EB362 /* Delegate */,
+				944AE92F19DA0219000EB362 /* Controllers */,
 				944AE91219DA020F000EB362 /* Main.storyboard */,
-				944AE91519DA020F000EB362 /* Images.xcassets */,
 				944AE91719DA020F000EB362 /* LaunchScreen.xib */,
+				944AE91519DA020F000EB362 /* Images.xcassets */,
 				944AE90819DA020F000EB362 /* Supporting Files */,
 			);
 			path = Quo;
@@ -117,6 +115,24 @@
 				944AE92319DA0210000EB362 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		944AE92E19DA0213000EB362 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				944AE90C19DA020F000EB362 /* AppDelegate.h */,
+				944AE90D19DA020F000EB362 /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		944AE92F19DA0219000EB362 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				944AE90F19DA020F000EB362 /* ViewController.h */,
+				944AE91019DA020F000EB362 /* ViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +184,7 @@
 				TargetAttributes = {
 					944AE90419DA020F000EB362 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 7V9G5R9AT4;
 					};
 					944AE91D19DA0210000EB362 = {
 						CreatedOnToolsVersion = 6.0;
@@ -343,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Quo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Quo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,6 +431,7 @@
 				944AE92A19DA0210000EB362 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		944AE92B19DA0210000EB362 /* Build configuration list for PBXNativeTarget "QuoTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +440,7 @@
 				944AE92D19DA0210000EB362 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
