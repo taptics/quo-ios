@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>ECDA51F6-6D8F-4E02-BA95-71B297B8AF91</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Quo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7BEEDD746649F07CDE27FBDD1CFF9F64B4F5DC89</key>
+		<string>https://github.com/taptics/quo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Quo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7BEEDD746649F07CDE27FBDD1CFF9F64B4F5DC89</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/taptics/quo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7BEEDD746649F07CDE27FBDD1CFF9F64B4F5DC89</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7BEEDD746649F07CDE27FBDD1CFF9F64B4F5DC89</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Quo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
