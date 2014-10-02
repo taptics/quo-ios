@@ -9,10 +9,24 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="qTe-GM-rB6">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="qTe-GM-rB6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KhP-Iq-JsL"/>
+                <constraint firstAttribute="bottom" secondItem="qTe-GM-rB6" secondAttribute="bottom" id="aOK-Uq-vdw"/>
+                <constraint firstItem="qTe-GM-rB6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fTs-Wc-xc6"/>
+                <constraint firstAttribute="trailing" secondItem="qTe-GM-rB6" secondAttribute="trailing" id="vOQ-7e-mQ5"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <point key="canvasLocation" x="404" y="313"/>
         </view>
     </objects>
+    <resources>
+        <image name="Splash" width="640" height="1136"/>
+    </resources>
 </document>
