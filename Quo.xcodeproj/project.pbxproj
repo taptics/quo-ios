@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9430DD5B19DDFAA60079C4B9 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */; };
+		9430DD5C19DDFAA60079C4B9 /* Skolar.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5A19DDFAA60079C4B9 /* Skolar.otf */; };
+		9430DD6019DE08730079C4B9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9430DD5D19DE085F0079C4B9 /* Social.framework */; };
 		944AE90B19DA020F000EB362 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE90A19DA020F000EB362 /* main.m */; };
 		944AE90E19DA020F000EB362 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE90D19DA020F000EB362 /* AppDelegate.m */; };
 		944AE91119DA020F000EB362 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE91019DA020F000EB362 /* LaunchController.m */; };
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		9430DD5A19DDFAA60079C4B9 /* Skolar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skolar.otf; sourceTree = "<group>"; };
+		9430DD5D19DE085F0079C4B9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		944AE90519DA020F000EB362 /* Quo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944AE90919DA020F000EB362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		944AE90A19DA020F000EB362 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9430DD6019DE08730079C4B9 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +67,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9430DD5719DDFAA60079C4B9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9430DD5819DDFAA60079C4B9 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		9430DD5819DDFAA60079C4B9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */,
+				9430DD5A19DDFAA60079C4B9 /* Skolar.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9430DD5F19DE08660079C4B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9430DD5D19DE085F0079C4B9 /* Social.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		944AE8FC19DA020F000EB362 = {
 			isa = PBXGroup;
 			children = (
 				944AE90719DA020F000EB362 /* Quo */,
 				944AE92119DA0210000EB362 /* QuoTests */,
 				944AE90619DA020F000EB362 /* Products */,
+				9430DD5F19DE08660079C4B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +114,7 @@
 		944AE90719DA020F000EB362 /* Quo */ = {
 			isa = PBXGroup;
 			children = (
+				9430DD5719DDFAA60079C4B9 /* Resources */,
 				944AE92E19DA0213000EB362 /* Delegate */,
 				944AE92F19DA0219000EB362 /* Controllers */,
 				944AE91219DA020F000EB362 /* Main.storyboard */,
@@ -219,6 +253,8 @@
 				944AE91419DA020F000EB362 /* Main.storyboard in Resources */,
 				944AE91919DA020F000EB362 /* LaunchScreen.xib in Resources */,
 				944AE91619DA020F000EB362 /* Images.xcassets in Resources */,
+				9430DD5B19DDFAA60079C4B9 /* Lato-Regular.ttf in Resources */,
+				9430DD5C19DDFAA60079C4B9 /* Skolar.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

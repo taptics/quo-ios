@@ -2,7 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
+        <mutableArray key="Skolar.otf">
+            <string>Skolar</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Launch Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -15,9 +24,74 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="31" translatesAutoresizingMaskIntoConstraints="NO" id="neg-AR-JDx">
+                                <rect key="frame" x="16" y="190" width="382" height="61"/>
+                                <fontDescription key="fontDescription" name="Skolar" family="Skolar" pointSize="61"/>
+                                <color key="textColor" red="1" green="0.45882352941176469" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creativity in motion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="ap6-jo-hDf">
+                                <rect key="frame" x="16" y="267" width="382" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="ck1-6a-6mR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="26"/>
+                                <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-ZL-s6j">
+                                <rect key="frame" x="70" y="464" width="275" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="yd9-r5-NDX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Sign up with Twitter">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpWithTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MWV-rh-M2q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yo-es-lfx">
+                                <rect key="frame" x="70" y="542" width="275" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Sign up later">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpLater:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DXd-OU-GWG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ig3-ZL-s6j" firstAttribute="centerX" secondItem="ap6-jo-hDf" secondAttribute="centerX" id="7Ze-VG-29c"/>
+                            <constraint firstAttribute="bottom" secondItem="Ig3-ZL-s6j" secondAttribute="bottom" constant="212" id="EB0-tf-LfC"/>
+                            <constraint firstItem="neg-AR-JDx" firstAttribute="centerX" secondItem="ap6-jo-hDf" secondAttribute="centerX" id="KWj-vS-m5E"/>
+                            <constraint firstItem="ap6-jo-hDf" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Uke-VQ-Pij"/>
+                            <constraint firstItem="ap6-jo-hDf" firstAttribute="top" secondItem="neg-AR-JDx" secondAttribute="bottom" constant="16" id="V21-7h-dMm"/>
+                            <constraint firstItem="8yo-es-lfx" firstAttribute="top" secondItem="Ig3-ZL-s6j" secondAttribute="bottom" constant="18" id="ZTK-HQ-Lv1"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8yo-es-lfx" secondAttribute="bottom" constant="134" id="aQz-IT-kMt"/>
+                            <constraint firstItem="neg-AR-JDx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="g3j-Mm-vOp"/>
+                            <constraint firstItem="Ig3-ZL-s6j" firstAttribute="centerY" secondItem="8yo-es-lfx" secondAttribute="centerY" id="kLB-Qt-384"/>
+                            <constraint firstItem="Ig3-ZL-s6j" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="54" id="oDJ-XA-3ip"/>
+                            <constraint firstItem="neg-AR-JDx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="170" id="oLa-yr-6fH"/>
+                            <constraint firstItem="8yo-es-lfx" firstAttribute="leading" secondItem="Ig3-ZL-s6j" secondAttribute="leading" id="oa3-GV-kci"/>
+                            <constraint firstItem="ap6-jo-hDf" firstAttribute="leading" secondItem="neg-AR-JDx" secondAttribute="leading" id="vX4-dY-A54"/>
+                            <constraint firstItem="8yo-es-lfx" firstAttribute="trailing" secondItem="Ig3-ZL-s6j" secondAttribute="trailing" id="vza-cc-5WO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kLB-Qt-384"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="signUpLaterButton" destination="8yo-es-lfx" id="tms-Iq-qMM"/>
+                        <outlet property="twitterSignUpButton" destination="Ig3-ZL-s6j" id="abh-Yt-yRR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
