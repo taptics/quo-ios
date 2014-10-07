@@ -38,6 +38,10 @@
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Choose Account" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
             UIAlertAction *accountAction = nil;
             
+            if (accounts.count == 0) {
+                alert.title = @"There were no Twitter accounts found on this device.";
+            }
+            
             UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
                 NSLog(@"Cancelled");
             }];
@@ -69,8 +73,10 @@
     self.twitterSignUpButton.backgroundColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
     self.twitterSignUpButton.layer.cornerRadius = 4.f;
     
-    self.signUpLaterButton.tintColor = [UIColor whiteColor];
-    self.signUpLaterButton.backgroundColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
+    self.signUpLaterButton.tintColor = [UIColor colorWithRed:193/255.f green:193/255.f blue:193/255.f alpha:1.f];
+    self.signUpLaterButton.backgroundColor = [UIColor whiteColor];
+    self.signUpLaterButton.layer.borderColor = [UIColor colorWithRed:193/255.f green:193/255.f blue:193/255.f alpha:1.f].CGColor;
+    self.signUpLaterButton.layer.borderWidth = 2.f;
     self.signUpLaterButton.layer.cornerRadius = 4.f;
 }
 
