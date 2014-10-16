@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QUOConstants.h"
 
 typedef NS_ENUM(NSInteger, QUOActionSheetType) {
     QUOActionSheetTypeFlag = 0,
@@ -16,14 +15,7 @@ typedef NS_ENUM(NSInteger, QUOActionSheetType) {
 
 @interface QUOActionSheet : UIView
 
-/*
- * Initializer
- */
 - (instancetype)initWithType:(QUOActionSheetType)type forView:(UIView *)view;
-
-/*
- * Show
- */
 - (void)show;
 
 @end

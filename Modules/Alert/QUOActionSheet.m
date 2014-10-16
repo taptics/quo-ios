@@ -7,6 +7,8 @@
 //
 
 #import "QUOActionSheet.h"
+#import "QUOBufferView.h"
+#import "QUOConstants.h"
 
 @interface QUOActionSheet ()
 
@@ -125,6 +127,9 @@
 - (void)performAction:(UIButton *)sender {
     if ([sender.titleLabel.text isEqualToString:@"Flag"]) {
         NSLog(@"Flag");
+        
+        QUOBufferView *buffer = [[QUOBufferView alloc] initWithView:_activeView];
+        [buffer beginBuffer];
     }
     else if ([sender.titleLabel.text isEqualToString:@"Sign in"]) {
         NSLog(@"Sign in");

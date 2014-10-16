@@ -10,4 +10,8 @@
 
 @interface QUOBufferView : UIView
 
+- (instancetype)initWithView:(UIView *)view;
+- (void)beginBuffer;
+- (void)endBuffer;
+
 @end
