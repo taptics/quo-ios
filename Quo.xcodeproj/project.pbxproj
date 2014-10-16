@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9413091819EF3E5000C12790 /* QUOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9413091719EF3E5000C12790 /* QUOActionSheet.m */; };
 		9413091B19EF3E5600C12790 /* QUOBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9413091A19EF3E5600C12790 /* QUOBufferView.m */; };
+		9413092019EF47FE00C12790 /* QUOConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9413091F19EF47FE00C12790 /* QUOConstants.m */; };
 		9430DD5B19DDFAA60079C4B9 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */; };
 		9430DD5C19DDFAA60079C4B9 /* Skolar.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5A19DDFAA60079C4B9 /* Skolar.otf */; };
 		9430DD6019DE08730079C4B9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9430DD5D19DE085F0079C4B9 /* Social.framework */; };
@@ -40,6 +41,8 @@
 		9413091719EF3E5000C12790 /* QUOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QUOActionSheet.m; path = Modules/Alert/QUOActionSheet.m; sourceTree = SOURCE_ROOT; };
 		9413091919EF3E5600C12790 /* QUOBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QUOBufferView.h; path = Modules/Buffer/QUOBufferView.h; sourceTree = SOURCE_ROOT; };
 		9413091A19EF3E5600C12790 /* QUOBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QUOBufferView.m; path = Modules/Buffer/QUOBufferView.m; sourceTree = SOURCE_ROOT; };
+		9413091E19EF47FE00C12790 /* QUOConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QUOConstants.h; path = Utilities/Constants/QUOConstants.h; sourceTree = "<group>"; };
+		9413091F19EF47FE00C12790 /* QUOConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QUOConstants.m; path = Utilities/Constants/QUOConstants.m; sourceTree = "<group>"; };
 		9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		9430DD5A19DDFAA60079C4B9 /* Skolar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skolar.otf; sourceTree = "<group>"; };
 		9430DD5D19DE085F0079C4B9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -83,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9413091C19EF47C100C12790 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9413091E19EF47FE00C12790 /* QUOConstants.h */,
+				9413091F19EF47FE00C12790 /* QUOConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		9413091D19EF47CA00C12790 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				949375B019E5AFBF006C6FB7 /* Home Post Cell */,
+				9413091C19EF47C100C12790 /* Constants */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		9430DD5719DDFAA60079C4B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +153,7 @@
 		944AE90719DA020F000EB362 /* Quo */ = {
 			isa = PBXGroup;
 			children = (
+				9413091D19EF47CA00C12790 /* Utilities */,
 				9430DD5719DDFAA60079C4B9 /* Resources */,
 				944AE92E19DA0213000EB362 /* Delegate */,
 				9493759F19E5A99E006C6FB7 /* Modules */,
@@ -200,7 +222,6 @@
 		9493759F19E5A99E006C6FB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				949375B019E5AFBF006C6FB7 /* Home Post Cell */,
 				949375A519E5ACB7006C6FB7 /* Buffer */,
 				949375A419E5AAB8006C6FB7 /* Alert */,
 			);
@@ -351,6 +372,7 @@
 				944AE90E19DA020F000EB362 /* AppDelegate.m in Sources */,
 				9413091819EF3E5000C12790 /* QUOActionSheet.m in Sources */,
 				944AE90B19DA020F000EB362 /* main.m in Sources */,
+				9413092019EF47FE00C12790 /* QUOConstants.m in Sources */,
 				949375AF19E5AE52006C6FB7 /* HomeController.m in Sources */,
 				949375B319E5AFF6006C6FB7 /* HomePostCell.m in Sources */,
 				949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */,

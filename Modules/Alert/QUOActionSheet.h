@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QUOConstants.h"
 
 typedef NS_ENUM(NSInteger, QUOActionSheetType) {
     QUOActionSheetTypeFlag = 0,
