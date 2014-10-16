@@ -13,19 +13,29 @@
 @interface HomeController ()
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *posts;
+
+- (void)storePosts:(NSArray *)posts;
 
 @end
 
 @implementation HomeController
 
+#pragma mark - Methods
+
+- (void)storePosts:(NSArray *)posts {
+    self.posts = [NSArray arrayWithArray:posts];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.posts.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -54,9 +64,10 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    cell.postTitleLabel.text = @"Lorem Ipsum";
-    cell.postAuthorLabel.text = @"Ryan Cohen";
-    cell.postPreviewLabel.text = @"Cras justo odio, dapibus ac facilisis in, egestas eget quam...";
+    QUOPost *post = (QUOPost *)[self.posts objectAtIndex:indexPath.row];
+    cell.postTitleLabel.text = post.title;
+    cell.postAuthorLabel.text = @"Unknown";
+    cell.postPreviewLabel.text = post.text;
     
     return cell;
 }
@@ -73,7 +84,7 @@
     [super viewDidLoad];
     
     [[Quo sharedClient] getAllPostsWithBlock:^(NSArray *posts) {
-        NSLog(@"Posts: %@", posts);
+        [self storePosts:posts];
     }];
     
     self.tableView.backgroundView = nil;
