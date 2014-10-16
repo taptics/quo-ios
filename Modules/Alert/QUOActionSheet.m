@@ -8,7 +8,7 @@
 
 #import "QUOActionSheet.h"
 #import "QUOBufferView.h"
-#import "QUOConstants.h"
+#import "Quo.h"
 
 @interface QUOActionSheet ()
 

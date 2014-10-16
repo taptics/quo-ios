@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Quo.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,10 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    
+    NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Keys.plist"];
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithContentsOfFile:filePath];
+    [Quo sharedClient].apiKey = [dictionary objectForKey:@"API Key"];
     
     return YES;
 }

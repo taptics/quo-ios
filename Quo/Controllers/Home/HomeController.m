@@ -8,7 +8,7 @@
 
 #import "HomeController.h"
 #import "HomePostCell.h"
-#import "QUOConstants.h"
+#import "Quo.h"
 
 @interface HomeController ()
 
@@ -20,12 +20,16 @@
 
 #pragma mark - Table
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"October 8, 2014";
+    return @"October 16, 2014";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -67,6 +71,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[Quo sharedClient] getAllPostsWithBlock:^(NSArray *posts) {
+        NSLog(@"Posts: %@", posts);
+    }];
     
     self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = [UIColor colorWithRed:244/255.f green:241/255.f blue:237/255.f alpha:1.f];
