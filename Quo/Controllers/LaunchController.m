@@ -7,6 +7,7 @@
 //
 
 #import "LaunchController.h"
+#import "QUOActionSheet.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 
@@ -26,6 +27,12 @@
 
 - (IBAction)signUpLater:(id)sender {
     // Sign up later
+    // TODO: Method body
+    
+    [self performSegueWithIdentifier:@"ToHome" sender:self];
+    
+    QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.view];
+    [sheet show];
 }
 
 - (IBAction)signUpWithTwitter:(id)sender {
@@ -78,6 +85,8 @@
     self.signUpLaterButton.layer.borderColor = [UIColor colorWithRed:193/255.f green:193/255.f blue:193/255.f alpha:1.f].CGColor;
     self.signUpLaterButton.layer.borderWidth = 2.f;
     self.signUpLaterButton.layer.cornerRadius = 4.f;
+    
+    // TODO: Hide status bar
 }
 
 - (void)didReceiveMemoryWarning {

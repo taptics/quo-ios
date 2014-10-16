@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9413091819EF3E5000C12790 /* QUOActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9413091719EF3E5000C12790 /* QUOActionSheet.m */; };
+		9413091B19EF3E5600C12790 /* QUOBufferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9413091A19EF3E5600C12790 /* QUOBufferView.m */; };
 		9430DD5B19DDFAA60079C4B9 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */; };
 		9430DD5C19DDFAA60079C4B9 /* Skolar.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5A19DDFAA60079C4B9 /* Skolar.otf */; };
 		9430DD6019DE08730079C4B9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9430DD5D19DE085F0079C4B9 /* Social.framework */; };
 		944AE90B19DA020F000EB362 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE90A19DA020F000EB362 /* main.m */; };
 		944AE90E19DA020F000EB362 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE90D19DA020F000EB362 /* AppDelegate.m */; };
-		944AE91119DA020F000EB362 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE91019DA020F000EB362 /* LaunchController.m */; };
 		944AE91419DA020F000EB362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944AE91219DA020F000EB362 /* Main.storyboard */; };
 		944AE91619DA020F000EB362 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944AE91519DA020F000EB362 /* Images.xcassets */; };
 		944AE91919DA020F000EB362 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944AE91719DA020F000EB362 /* LaunchScreen.xib */; };
 		944AE92519DA0210000EB362 /* QuoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE92419DA0210000EB362 /* QuoTests.m */; };
+		949375A219E5A9D6006C6FB7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */; };
+		949375A319E5A9D6006C6FB7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */; };
+		949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375AA19E5AD56006C6FB7 /* LaunchController.m */; };
+		949375AF19E5AE52006C6FB7 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375AE19E5AE52006C6FB7 /* HomeController.m */; };
+		949375B319E5AFF6006C6FB7 /* HomePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375B219E5AFF6006C6FB7 /* HomePostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9413091619EF3E5000C12790 /* QUOActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QUOActionSheet.h; path = Modules/Alert/QUOActionSheet.h; sourceTree = SOURCE_ROOT; };
+		9413091719EF3E5000C12790 /* QUOActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QUOActionSheet.m; path = Modules/Alert/QUOActionSheet.m; sourceTree = SOURCE_ROOT; };
+		9413091919EF3E5600C12790 /* QUOBufferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QUOBufferView.h; path = Modules/Buffer/QUOBufferView.h; sourceTree = SOURCE_ROOT; };
+		9413091A19EF3E5600C12790 /* QUOBufferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QUOBufferView.m; path = Modules/Buffer/QUOBufferView.m; sourceTree = SOURCE_ROOT; };
 		9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		9430DD5A19DDFAA60079C4B9 /* Skolar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skolar.otf; sourceTree = "<group>"; };
 		9430DD5D19DE085F0079C4B9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -38,14 +48,20 @@
 		944AE90A19DA020F000EB362 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		944AE90C19DA020F000EB362 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		944AE90D19DA020F000EB362 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		944AE90F19DA020F000EB362 /* LaunchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchController.h; sourceTree = "<group>"; };
-		944AE91019DA020F000EB362 /* LaunchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchController.m; sourceTree = "<group>"; };
 		944AE91319DA020F000EB362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		944AE91519DA020F000EB362 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		944AE91819DA020F000EB362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		944AE91E19DA0210000EB362 /* QuoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		944AE92319DA0210000EB362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		944AE92419DA0210000EB362 /* QuoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuoTests.m; sourceTree = "<group>"; };
+		949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		949375A919E5AD56006C6FB7 /* LaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchController.h; path = Controllers/LaunchController.h; sourceTree = "<group>"; };
+		949375AA19E5AD56006C6FB7 /* LaunchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LaunchController.m; path = Controllers/LaunchController.m; sourceTree = "<group>"; };
+		949375AD19E5AE52006C6FB7 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeController.h; path = Controllers/Home/HomeController.h; sourceTree = "<group>"; };
+		949375AE19E5AE52006C6FB7 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeController.m; path = Controllers/Home/HomeController.m; sourceTree = "<group>"; };
+		949375B119E5AFF6006C6FB7 /* HomePostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePostCell.h; path = "Modules/Home Post Cell/HomePostCell.h"; sourceTree = SOURCE_ROOT; };
+		949375B219E5AFF6006C6FB7 /* HomePostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePostCell.m; path = "Modules/Home Post Cell/HomePostCell.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +94,8 @@
 		9430DD5819DDFAA60079C4B9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */,
+				949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */,
 				9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */,
 				9430DD5A19DDFAA60079C4B9 /* Skolar.otf */,
 			);
@@ -116,6 +134,7 @@
 			children = (
 				9430DD5719DDFAA60079C4B9 /* Resources */,
 				944AE92E19DA0213000EB362 /* Delegate */,
+				9493759F19E5A99E006C6FB7 /* Modules */,
 				944AE92F19DA0219000EB362 /* Controllers */,
 				944AE91219DA020F000EB362 /* Main.storyboard */,
 				944AE91719DA020F000EB362 /* LaunchScreen.xib */,
@@ -163,10 +182,65 @@
 		944AE92F19DA0219000EB362 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				944AE90F19DA020F000EB362 /* LaunchController.h */,
-				944AE91019DA020F000EB362 /* LaunchController.m */,
+				949375AC19E5AE42006C6FB7 /* Home */,
+				9493759E19E5A995006C6FB7 /* Launch */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9493759E19E5A995006C6FB7 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				949375A919E5AD56006C6FB7 /* LaunchController.h */,
+				949375AA19E5AD56006C6FB7 /* LaunchController.m */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
+		9493759F19E5A99E006C6FB7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				949375B019E5AFBF006C6FB7 /* Home Post Cell */,
+				949375A519E5ACB7006C6FB7 /* Buffer */,
+				949375A419E5AAB8006C6FB7 /* Alert */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		949375A419E5AAB8006C6FB7 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				9413091619EF3E5000C12790 /* QUOActionSheet.h */,
+				9413091719EF3E5000C12790 /* QUOActionSheet.m */,
+			);
+			name = Alert;
+			sourceTree = "<group>";
+		};
+		949375A519E5ACB7006C6FB7 /* Buffer */ = {
+			isa = PBXGroup;
+			children = (
+				9413091919EF3E5600C12790 /* QUOBufferView.h */,
+				9413091A19EF3E5600C12790 /* QUOBufferView.m */,
+			);
+			name = Buffer;
+			sourceTree = "<group>";
+		};
+		949375AC19E5AE42006C6FB7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				949375AD19E5AE52006C6FB7 /* HomeController.h */,
+				949375AE19E5AE52006C6FB7 /* HomeController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		949375B019E5AFBF006C6FB7 /* Home Post Cell */ = {
+			isa = PBXGroup;
+			children = (
+				949375B119E5AFF6006C6FB7 /* HomePostCell.h */,
+				949375B219E5AFF6006C6FB7 /* HomePostCell.m */,
+			);
+			name = "Home Post Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +325,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				944AE91419DA020F000EB362 /* Main.storyboard in Resources */,
+				949375A219E5A9D6006C6FB7 /* Lato-Bold.ttf in Resources */,
 				944AE91919DA020F000EB362 /* LaunchScreen.xib in Resources */,
 				944AE91619DA020F000EB362 /* Images.xcassets in Resources */,
 				9430DD5B19DDFAA60079C4B9 /* Lato-Regular.ttf in Resources */,
 				9430DD5C19DDFAA60079C4B9 /* Skolar.otf in Resources */,
+				949375A319E5A9D6006C6FB7 /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +348,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				944AE91119DA020F000EB362 /* LaunchController.m in Sources */,
 				944AE90E19DA020F000EB362 /* AppDelegate.m in Sources */,
+				9413091819EF3E5000C12790 /* QUOActionSheet.m in Sources */,
 				944AE90B19DA020F000EB362 /* main.m in Sources */,
+				949375AF19E5AE52006C6FB7 /* HomeController.m in Sources */,
+				949375B319E5AFF6006C6FB7 /* HomePostCell.m in Sources */,
+				949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */,
+				9413091B19EF3E5600C12790 /* QUOBufferView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
