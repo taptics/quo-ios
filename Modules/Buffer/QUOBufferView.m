@@ -22,24 +22,28 @@
 }
 
 - (void)beginBuffer {
+    self.tag = 1;
     self.frame = _activeView.frame;
-    self.backgroundColor = [UIColor blackColor];
     self.alpha = 0.f;
+    self.backgroundColor = [UIColor blackColor];
+    
+    [_activeView addSubview:self];
     
     [UIView animateWithDuration:0.3 animations:^{
         self.alpha = 0.5f;
-        
-        UIWindow *activeWindow = [UIApplication sharedApplication].keyWindow;
-        [activeWindow addSubview:self];
     }];
 }
 
 - (void)endBuffer {
     for (UIView *view in _activeView.subviews) {
-        NSLog(@"Tag: %lu", (unsigned long)view.tag);
-        
         if (view.tag == 1) {
-            [view removeFromSuperview];
+            [UIView animateWithDuration:0.3 animations:^{
+                self.alpha = 0.f;
+                
+            } completion:^(BOOL completion) {
+                [view removeFromSuperview];
+            }];
+             
         }
     }
 }

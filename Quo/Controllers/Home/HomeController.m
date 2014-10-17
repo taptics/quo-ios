@@ -26,7 +26,7 @@
 #pragma mark - Methods
 
 - (IBAction)compose:(id)sender {
-    
+    NSLog(@"Compose");
 }
 
 - (IBAction)settings:(id)sender {
@@ -38,7 +38,7 @@
     self.posts = [NSArray arrayWithArray:posts];
     [self.tableView reloadData];
     
-    //[[QUOBufferView sharedInstance] endBuffer];
+    [[QUOBufferView sharedInstance] endBuffer];
 }
 
 #pragma mark - Table
@@ -52,7 +52,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"October 16, 2014";
+    return @"October 2014";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -96,8 +96,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // [QUOBufferView sharedInstance].activeView = self.view;
-    // [[QUOBufferView sharedInstance] beginBuffer];
+    [QUOBufferView sharedInstance].activeView = self.navigationController.view;
+    [[QUOBufferView sharedInstance] beginBuffer];
     
     [[Quo sharedClient] getAllPostsWithBlock:^(NSArray *posts) {
         [self storePosts:posts];
