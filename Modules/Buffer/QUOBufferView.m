@@ -8,21 +8,17 @@
 
 #import "QUOBufferView.h"
 
-@interface QUOBufferView ()
-
-@property (nonatomic, strong) UIView *activeView;
-
-@end
-
 @implementation QUOBufferView
 
-- (instancetype)initWithView:(UIView *)view {
-    self = [super init];
-    if (self) {
-        self.tag = 1;
-        _activeView = view;
-    }
-    return self;
++ (instancetype)sharedInstance {
+    static QUOBufferView *buffer = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        buffer = [self new];
+    });
+    
+    return buffer;
 }
 
 - (void)beginBuffer {
@@ -33,7 +29,8 @@
     [UIView animateWithDuration:0.3 animations:^{
         self.alpha = 0.5f;
         
-        [_activeView addSubview:self];
+        UIWindow *activeWindow = [UIApplication sharedApplication].keyWindow;
+        [activeWindow addSubview:self];
     }];
 }
 

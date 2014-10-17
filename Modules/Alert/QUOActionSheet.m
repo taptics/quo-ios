@@ -128,8 +128,9 @@
     if ([sender.titleLabel.text isEqualToString:@"Flag"]) {
         NSLog(@"Flag");
         
-        QUOBufferView *buffer = [[QUOBufferView alloc] initWithView:_activeView];
-        [buffer beginBuffer];
+        // TODO: After alert dismisses, add buffer
+        // QUOBufferView *buffer = [[QUOBufferView alloc] initWithView:_activeView];
+        // [buffer beginBuffer];
     }
     else if ([sender.titleLabel.text isEqualToString:@"Sign in"]) {
         NSLog(@"Sign in");

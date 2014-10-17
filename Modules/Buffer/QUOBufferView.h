@@ -10,7 +10,9 @@
 
 @interface QUOBufferView : UIView
 
-- (instancetype)initWithView:(UIView *)view;
+@property (nonatomic, strong) UIView *activeView;
+
++ (instancetype)sharedInstance;
 - (void)beginBuffer;
 - (void)endBuffer;
 

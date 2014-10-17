@@ -30,9 +30,6 @@
     // TODO: Method body
     
     [self performSegueWithIdentifier:@"ToHome" sender:self];
-    
-    QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeFlag forView:self.view];
-    [sheet show];
 }
 
 - (IBAction)signUpWithTwitter:(id)sender {

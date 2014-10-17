@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "QUOUser.h"
 #import "QUOPost.h"
+#import "QUOActionSheet.h"
+#import "QUOBufferView.h"
 
 #define LATO_FONT @"Lato"
 

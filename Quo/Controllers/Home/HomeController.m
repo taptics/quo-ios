@@ -15,6 +15,8 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *posts;
 
+- (IBAction)compose:(id)sender;
+- (IBAction)settings:(id)sender;
 - (void)storePosts:(NSArray *)posts;
 
 @end
@@ -23,9 +25,20 @@
 
 #pragma mark - Methods
 
+- (IBAction)compose:(id)sender {
+    
+}
+
+- (IBAction)settings:(id)sender {
+    QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
+    [sheet show];
+}
+
 - (void)storePosts:(NSArray *)posts {
     self.posts = [NSArray arrayWithArray:posts];
     [self.tableView reloadData];
+    
+    //[[QUOBufferView sharedInstance] endBuffer];
 }
 
 #pragma mark - Table
@@ -82,6 +95,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // [QUOBufferView sharedInstance].activeView = self.view;
+    // [[QUOBufferView sharedInstance] beginBuffer];
     
     [[Quo sharedClient] getAllPostsWithBlock:^(NSArray *posts) {
         [self storePosts:posts];
