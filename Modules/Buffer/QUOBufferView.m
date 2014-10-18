@@ -43,7 +43,6 @@
             } completion:^(BOOL completion) {
                 [view removeFromSuperview];
             }];
-             
         }
     }
 }

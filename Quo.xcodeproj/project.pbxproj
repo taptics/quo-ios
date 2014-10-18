@@ -23,6 +23,7 @@
 		949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375AA19E5AD56006C6FB7 /* LaunchController.m */; };
 		949375AF19E5AE52006C6FB7 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375AE19E5AE52006C6FB7 /* HomeController.m */; };
 		949375B319E5AFF6006C6FB7 /* HomePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375B219E5AFF6006C6FB7 /* HomePostCell.m */; };
+		949937C119F1EB70009A8FE2 /* QUOSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 949937C019F1EB70009A8FE2 /* QUOSlideMenu.m */; };
 		949E406419F06C73004F67A6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 949E404F19F06C73004F67A6 /* AFHTTPRequestOperation.m */; };
 		949E406519F06C73004F67A6 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 949E405119F06C73004F67A6 /* AFHTTPRequestOperationManager.m */; };
 		949E406619F06C73004F67A6 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 949E405319F06C73004F67A6 /* AFHTTPSessionManager.m */; };
@@ -76,6 +77,8 @@
 		949375AE19E5AE52006C6FB7 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeController.m; path = Controllers/Home/HomeController.m; sourceTree = "<group>"; };
 		949375B119E5AFF6006C6FB7 /* HomePostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePostCell.h; path = "Modules/Home Post Cell/HomePostCell.h"; sourceTree = SOURCE_ROOT; };
 		949375B219E5AFF6006C6FB7 /* HomePostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePostCell.m; path = "Modules/Home Post Cell/HomePostCell.m"; sourceTree = SOURCE_ROOT; };
+		949937BF19F1EB70009A8FE2 /* QUOSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QUOSlideMenu.h; path = "Modules/Slide Menu/QUOSlideMenu.h"; sourceTree = SOURCE_ROOT; };
+		949937C019F1EB70009A8FE2 /* QUOSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QUOSlideMenu.m; path = "Modules/Slide Menu/QUOSlideMenu.m"; sourceTree = SOURCE_ROOT; };
 		949E404E19F06C73004F67A6 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		949E404F19F06C73004F67A6 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		949E405019F06C73004F67A6 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -254,6 +257,7 @@
 		9493759F19E5A99E006C6FB7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				949937BE19F1EB4C009A8FE2 /* Menu */,
 				949375A519E5ACB7006C6FB7 /* Buffer */,
 				949375A419E5AAB8006C6FB7 /* Alert */,
 			);
@@ -294,6 +298,15 @@
 				949375B219E5AFF6006C6FB7 /* HomePostCell.m */,
 			);
 			name = "Home Post Cell";
+			sourceTree = "<group>";
+		};
+		949937BE19F1EB4C009A8FE2 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				949937BF19F1EB70009A8FE2 /* QUOSlideMenu.h */,
+				949937C019F1EB70009A8FE2 /* QUOSlideMenu.m */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		949E404C19F06C73004F67A6 /* Libraries */ = {
@@ -343,10 +356,10 @@
 		949E406E19F06C96004F67A6 /* Wrapper */ = {
 			isa = PBXGroup;
 			children = (
-				949E406F19F06C96004F67A6 /* Post */,
 				949E407219F06C96004F67A6 /* Quo.h */,
 				949E407319F06C96004F67A6 /* Quo.m */,
 				949E407419F06C96004F67A6 /* User */,
+				949E406F19F06C96004F67A6 /* Post */,
 			);
 			path = Wrapper;
 			sourceTree = SOURCE_ROOT;
@@ -476,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				949E406C19F06C73004F67A6 /* AFURLSessionManager.m in Sources */,
+				949937C119F1EB70009A8FE2 /* QUOSlideMenu.m in Sources */,
 				949E407819F06C96004F67A6 /* Quo.m in Sources */,
 				949E406919F06C73004F67A6 /* AFURLConnectionOperation.m in Sources */,
 				949E406419F06C73004F67A6 /* AFHTTPRequestOperation.m in Sources */,

@@ -107,6 +107,19 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         if ([responseObject[@"success"] boolValue] == NO) {
             block(NO, responseObject[@"error"]);
         } else {
+            // [QUOUser currentUser].identifier = user.identifier;
+            // TODO: Make sure this actually works
+            // Auto-login after sign up
+            
+            [QUOUser currentUser].username = username;
+            [QUOUser currentUser].password = password;
+            [QUOUser currentUser].loggedIn = YES;
+            
+            [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].identifier forKey:@"CurrentUserIdentifier"];
+            [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].username   forKey:@"CurrentUserUsername"];
+            [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].password   forKey:@"CurrentUserPassword"];
+            [[NSUserDefaults standardUserDefaults]   setBool:[QUOUser currentUser].loggedIn   forKey:@"CurrentUserLoggedIn"];
+            
             block(YES, @"");
         }
         
@@ -134,9 +147,9 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         } else {
             [[Quo sharedClient] getUserWithIdentifier:responseObject[@"userId"] block:^(QUOUser *user) {
                 [QUOUser currentUser].identifier = user.identifier;
-                [QUOUser currentUser].username   = user.username;
-                [QUOUser currentUser].password   = password;
-                [QUOUser currentUser].loggedIn   = YES;
+                [QUOUser currentUser].username = user.username;
+                [QUOUser currentUser].password = password;
+                [QUOUser currentUser].loggedIn = YES;
                 
                 [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].identifier forKey:@"CurrentUserIdentifier"];
                 [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].username   forKey:@"CurrentUserUsername"];

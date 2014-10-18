@@ -11,6 +11,7 @@
 #import "QUOPost.h"
 #import "QUOActionSheet.h"
 #import "QUOBufferView.h"
+#import "QUOSlideMenu.h"
 
 #define LATO_FONT @"Lato"
 

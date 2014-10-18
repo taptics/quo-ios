@@ -7,10 +7,11 @@
 //
 
 #import "QUOUser.h"
+#import "Quo.h"
 
 @implementation QUOUser
 
-#pragma mark - Init
+#pragma Initializer
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
                           username:(NSString *)username
@@ -18,7 +19,6 @@
                           location:(NSString *)location
                          createdAt:(NSString *)createdAt
                             avatar:(NSString *)avatar {
-    
     self = [super init];
     if (self) {
         self.identifier = identifier;

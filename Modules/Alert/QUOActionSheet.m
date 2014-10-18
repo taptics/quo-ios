@@ -125,15 +125,13 @@
 }
 
 - (void)performAction:(UIButton *)sender {
+    NSString *action = [NSString string];
+    
     if ([sender.titleLabel.text isEqualToString:@"Flag"]) {
-        NSLog(@"Flag");
-        
-        // TODO: After alert dismisses, add buffer
-        // QUOBufferView *buffer = [[QUOBufferView alloc] initWithView:_activeView];
-        // [buffer beginBuffer];
+        action = @"Flag";
     }
     else if ([sender.titleLabel.text isEqualToString:@"Sign in"]) {
-        NSLog(@"Sign in");
+        action = @"Sign in";
     }
     
     for (UIView *view in _activeView.subviews) {
@@ -154,6 +152,15 @@
                 [view removeFromSuperview];
             }];
         }
+    }
+    
+    if ([action isEqualToString:@"Flag"]) {
+        // TODO: Flag post
+        [[QUOBufferView sharedInstance] beginBuffer];
+        
+    } else {
+        // TODO: Pop up sign in
+        NSLog(@"Sign in");
     }
 }
 

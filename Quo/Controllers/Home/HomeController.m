@@ -26,18 +26,24 @@
 #pragma mark - Methods
 
 - (IBAction)compose:(id)sender {
-    NSLog(@"Compose");
+    if (![QUOUser currentUser].loggedIn) {
+        QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeFlag forView:self.navigationController.view];
+        [sheet show];
+        
+    } else {
+        NSLog(@"Compose");
+    }
 }
 
 - (IBAction)settings:(id)sender {
-    QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
-    [sheet show];
+    QUOSlideMenu *menu = [[QUOSlideMenu alloc] initWithView:self.view];
+    [menu show];
 }
 
 - (void)storePosts:(NSArray *)posts {
     self.posts = [NSArray arrayWithArray:posts];
-    [self.tableView reloadData];
     
+    [self.tableView reloadData];
     [[QUOBufferView sharedInstance] endBuffer];
 }
 
@@ -87,7 +93,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Push to post detail
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
