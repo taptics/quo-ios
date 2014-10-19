@@ -101,7 +101,7 @@
 
 - (void)show {
     if (_actionSheetType == QUOActionSheetTypeFlag) {
-        _titleLabel.text = @"Would you like to flag this post as inappropriate?";
+        _titleLabel.text = @"Would you like to flag this post for review?";
         [_confirmButton setTitle:@"Flag" forState:UIControlStateNormal];
         
     } else {
