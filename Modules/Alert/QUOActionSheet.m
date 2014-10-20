@@ -15,6 +15,7 @@
 @property (nonatomic, assign) QUOActionSheetType actionSheetType;
 @property (nonatomic, strong) UIView *activeView;
 
+@property (nonatomic, assign) CGFloat labelFontSize;
 @property (nonatomic, assign) CGRect labelFrame;
 @property (nonatomic, assign) CGRect horizontalLineFrame;
 @property (nonatomic, assign) CGRect verticalLineFrame;
@@ -44,35 +45,38 @@
         self.backgroundColor = [UIColor whiteColor];
         
         if (IS_IPHONE_4 || IS_IPHONE_5) {
-            self.labelFrame = CGRectMake(10, 49, 300, 51);
-            self.cancelButtonFrame = CGRectMake(0, 152, 160, 71);
-            self.confirmButtonFrame = CGRectMake(160, 152, 160, 71);
-            self.horizontalLineFrame = CGRectMake(0, 157, 320, 1.5);
-            self.verticalLineFrame = CGRectMake(160, 157, 1.5, 71);
+            _labelFontSize = 16.2f;
+            _labelFrame = CGRectMake(10, 49, 300, 51);
+            _cancelButtonFrame = CGRectMake(0, 152, 160, 71);
+            _confirmButtonFrame = CGRectMake(160, 152, 160, 71);
+            _horizontalLineFrame = CGRectMake(0, 157, 320, 1.5);
+            _verticalLineFrame = CGRectMake(160, 157, 1.5, 71);
         }
         else if (IS_IPHONE_6) {
-            self.labelFrame = CGRectMake(10, 42, 359, 71);
-            self.cancelButtonFrame = CGRectMake(0, 152, 188, 71);
-            self.confirmButtonFrame = CGRectMake(186, 152, 188, 71);
-            self.horizontalLineFrame = CGRectMake(0, 152, 375, 1.5);
-            self.verticalLineFrame = CGRectMake(186, 152, 1.5, 71);
+            _labelFontSize = 18.f;
+            _labelFrame = CGRectMake(10, 42, 359, 71);
+            _cancelButtonFrame = CGRectMake(0, 152, 188, 71);
+            _confirmButtonFrame = CGRectMake(186, 152, 188, 71);
+            _horizontalLineFrame = CGRectMake(0, 152, 375, 1.5);
+            _verticalLineFrame = CGRectMake(186, 152, 1.5, 71);
         }
         else if (IS_IPHONE_6_PLUS) {
-            self.labelFrame = CGRectMake(8, 54, 398, 51);
-            self.cancelButtonFrame = CGRectMake(0, 157, 208, 71);
-            self.confirmButtonFrame = CGRectMake(207, 157, 207, 71);
-            self.horizontalLineFrame = CGRectMake(0, 157, 414, 1.5);
-            self.verticalLineFrame = CGRectMake(207, 157, 1.5, 71);
+            _labelFontSize = 19.f;
+            _labelFrame = CGRectMake(8, 54, 398, 51);
+            _cancelButtonFrame = CGRectMake(0, 157, 208, 71);
+            _confirmButtonFrame = CGRectMake(207, 157, 207, 71);
+            _horizontalLineFrame = CGRectMake(0, 157, 414, 1.5);
+            _verticalLineFrame = CGRectMake(207, 157, 1.5, 71);
         }
         
-        _titleLabel = [[UILabel alloc] initWithFrame:self.labelFrame];
+        _titleLabel = [[UILabel alloc] initWithFrame:_labelFrame];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont fontWithName:LATO_FONT size:16.f];
+        _titleLabel.font = [UIFont fontWithName:SKOLAR_FONT size:_labelFontSize];
         _titleLabel.textColor = DARK_TEXT_COLOR;
         [self addSubview:_titleLabel];
         
         _cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _cancelButton.frame = self.cancelButtonFrame;
+        _cancelButton.frame = _cancelButtonFrame;
         _cancelButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:16.5f];
         [_cancelButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
         [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
@@ -80,17 +84,17 @@
         [self addSubview:_cancelButton];
         
         _confirmButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _confirmButton.frame = self.confirmButtonFrame;
+        _confirmButton.frame = _confirmButtonFrame;
         _confirmButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:16.5f];
         [_confirmButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
         [_confirmButton addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_confirmButton];
         
-        UIView *horizontalLine = [[UIView alloc] initWithFrame:self.horizontalLineFrame];
+        UIView *horizontalLine = [[UIView alloc] initWithFrame:_horizontalLineFrame];
         horizontalLine.backgroundColor = LIGHT_GREY_COLOR;
         [self addSubview:horizontalLine];
         
-        UIView *verticalLine = [[UIView alloc] initWithFrame:self.verticalLineFrame];
+        UIView *verticalLine = [[UIView alloc] initWithFrame:_verticalLineFrame];
         verticalLine.backgroundColor = LIGHT_GREY_COLOR;
         [self addSubview:verticalLine];
     }
