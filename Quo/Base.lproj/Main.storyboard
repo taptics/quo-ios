@@ -66,8 +66,8 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-ZL-s6j">
                                 <rect key="frame" x="169" y="325" width="262" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="284" id="98V-Uv-oQH"/>
-                                    <constraint firstAttribute="height" constant="60" id="E3b-8y-dYY"/>
+                                    <constraint firstAttribute="width" constant="289" id="aLV-t9-fjJ"/>
+                                    <constraint firstAttribute="height" constant="60" id="zn1-o3-ykW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="19"/>
                                 <state key="normal" title="Sign up">
@@ -75,8 +75,8 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="98V-Uv-oQH"/>
-                                        <exclude reference="E3b-8y-dYY"/>
+                                        <exclude reference="aLV-t9-fjJ"/>
+                                        <exclude reference="zn1-o3-ykW"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -87,33 +87,19 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="98V-Uv-oQH"/>
-                                        <include reference="E3b-8y-dYY"/>
+                                        <include reference="aLV-t9-fjJ"/>
+                                        <include reference="zn1-o3-ykW"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="signUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MJK-rb-UpJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-Fx-cAi">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                <state key="normal" title="Sign up later">
-                                    <color key="titleColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="155.5" y="588.5" width="91" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="signUpLater:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4MO-wY-Q9q"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yo-es-lfx">
                                 <rect key="frame" x="169" y="405" width="262" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4am-2e-HUP"/>
-                                    <constraint firstAttribute="width" constant="284" id="hjT-f3-oEJ"/>
+                                    <constraint firstAttribute="width" constant="289" id="KPE-JF-99U"/>
+                                    <constraint firstAttribute="height" constant="60" id="XsZ-H3-TCs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="19"/>
                                 <state key="normal" title="Login">
@@ -121,8 +107,8 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4am-2e-HUP"/>
-                                        <exclude reference="hjT-f3-oEJ"/>
+                                        <exclude reference="KPE-JF-99U"/>
+                                        <exclude reference="XsZ-H3-TCs"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -133,25 +119,39 @@
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="4am-2e-HUP"/>
-                                        <include reference="hjT-f3-oEJ"/>
+                                        <include reference="KPE-JF-99U"/>
+                                        <include reference="XsZ-H3-TCs"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="logIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kGh-5Q-ZO7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-Fx-cAi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                <state key="normal" title="Continue as a guest">
+                                    <color key="titleColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="129.5" y="579" width="143" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="signUpLater:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4MO-wY-Q9q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ig3-ZL-s6j" secondAttribute="centerX" constant="-0.5" id="0zW-Mt-Aq7"/>
                             <constraint firstAttribute="centerY" secondItem="neg-AR-JDx" secondAttribute="centerY" constant="118" id="6Gs-9G-dbU"/>
-                            <constraint firstAttribute="centerY" secondItem="Ig3-ZL-s6j" secondAttribute="centerY" constant="-63" id="P6b-iz-kob"/>
-                            <constraint firstAttribute="centerX" secondItem="8yo-es-lfx" secondAttribute="centerX" id="VIl-3u-z8B"/>
-                            <constraint firstAttribute="centerY" secondItem="8yo-es-lfx" secondAttribute="centerY" constant="-141" id="XWT-ks-SWm"/>
-                            <constraint firstAttribute="centerX" secondItem="Ig3-ZL-s6j" secondAttribute="centerX" id="YBe-jP-DgJ"/>
-                            <constraint firstAttribute="centerY" secondItem="Vh8-Fx-cAi" secondAttribute="centerY" constant="-204" id="fZV-O7-U0z"/>
+                            <constraint firstAttribute="centerY" secondItem="8yo-es-lfx" secondAttribute="centerY" constant="-141" id="I9d-4N-dcd"/>
+                            <constraint firstAttribute="centerY" secondItem="Ig3-ZL-s6j" secondAttribute="centerY" constant="-70" id="LjP-Sd-f3l"/>
+                            <constraint firstAttribute="centerY" secondItem="Vh8-Fx-cAi" secondAttribute="centerY" constant="-194.5" id="aJ4-Ud-alV"/>
+                            <constraint firstAttribute="centerX" secondItem="8yo-es-lfx" secondAttribute="centerX" constant="-0.5" id="hR8-36-dRe"/>
                             <constraint firstAttribute="centerX" secondItem="neg-AR-JDx" secondAttribute="centerX" id="ifa-El-D6m"/>
-                            <constraint firstAttribute="centerX" secondItem="Vh8-Fx-cAi" secondAttribute="centerX" constant="-1" id="lG3-zf-Pka"/>
+                            <constraint firstAttribute="centerX" secondItem="Vh8-Fx-cAi" secondAttribute="centerX" constant="-1" id="iu6-o4-QTg"/>
                             <constraint firstAttribute="centerY" secondItem="ap6-jo-hDf" secondAttribute="centerY" constant="66.75" id="u9W-UK-TOQ"/>
                             <constraint firstAttribute="centerX" secondItem="ap6-jo-hDf" secondAttribute="centerX" constant="-1" id="vqr-Gh-JMO"/>
                         </constraints>
@@ -160,16 +160,16 @@
                                 <exclude reference="Vh8-Fx-cAi"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fZV-O7-U0z"/>
-                                <exclude reference="lG3-zf-Pka"/>
+                                <exclude reference="aJ4-Ud-alV"/>
+                                <exclude reference="iu6-o4-QTg"/>
                                 <exclude reference="u9W-UK-TOQ"/>
                                 <exclude reference="vqr-Gh-JMO"/>
                                 <exclude reference="6Gs-9G-dbU"/>
                                 <exclude reference="ifa-El-D6m"/>
-                                <exclude reference="P6b-iz-kob"/>
-                                <exclude reference="YBe-jP-DgJ"/>
-                                <exclude reference="VIl-3u-z8B"/>
-                                <exclude reference="XWT-ks-SWm"/>
+                                <exclude reference="0zW-Mt-Aq7"/>
+                                <exclude reference="LjP-Sd-f3l"/>
+                                <exclude reference="I9d-4N-dcd"/>
+                                <exclude reference="hR8-36-dRe"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -177,16 +177,16 @@
                                 <include reference="Vh8-Fx-cAi"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fZV-O7-U0z"/>
-                                <include reference="lG3-zf-Pka"/>
+                                <include reference="aJ4-Ud-alV"/>
+                                <include reference="iu6-o4-QTg"/>
                                 <include reference="u9W-UK-TOQ"/>
                                 <include reference="vqr-Gh-JMO"/>
                                 <include reference="6Gs-9G-dbU"/>
                                 <include reference="ifa-El-D6m"/>
-                                <include reference="P6b-iz-kob"/>
-                                <include reference="YBe-jP-DgJ"/>
-                                <include reference="VIl-3u-z8B"/>
-                                <include reference="XWT-ks-SWm"/>
+                                <include reference="0zW-Mt-Aq7"/>
+                                <include reference="LjP-Sd-f3l"/>
+                                <include reference="I9d-4N-dcd"/>
+                                <include reference="hR8-36-dRe"/>
                             </mask>
                         </variation>
                     </view>
@@ -258,7 +258,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="18" y="43" width="280" height="21"/>
+                                                        <rect key="frame" x="18" y="44" width="280" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="2Xw-cv-pJa"/>
                                                         </mask>
@@ -373,6 +373,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTY-rv-g28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1383" y="357"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rlo-9c-rSh">
+            <objects>
+                <viewController id="T66-BW-jKN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fK8-au-HQY"/>
+                        <viewControllerLayoutGuide type="bottom" id="FJS-ns-gVZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P6d-Ug-lZz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9J-Hl-wdq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtf-rx-GAT">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="25" y="163" width="350" height="1"/>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTV-tW-eKd">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="26" y="103" width="350" height="1"/>
+                                        </variation>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7N-S8-4Rq">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="26" y="70" width="349" height="21"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="dtf-rx-GAT"/>
+                                        <exclude reference="LTV-tW-eKd"/>
+                                        <exclude reference="x7N-S8-4Rq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-13" y="0.0" width="400" height="223"/>
+                                    <mask key="subviews">
+                                        <include reference="dtf-rx-GAT"/>
+                                        <include reference="LTV-tW-eKd"/>
+                                        <include reference="x7N-S8-4Rq"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="p9J-Hl-wdq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="p9J-Hl-wdq"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Agy-DU-GNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2061.75" y="357.375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sp9-zM-i2d">

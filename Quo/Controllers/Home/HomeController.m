@@ -44,7 +44,7 @@
     self.posts = [NSArray arrayWithArray:posts];
     
     [self.tableView reloadData];
-    [[QUOBufferView sharedInstance] endBuffer];
+    // [[QUOBufferView sharedInstance] endBuffer];
 }
 
 #pragma mark - Table
@@ -101,8 +101,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [QUOBufferView sharedInstance].activeView = self.navigationController.view;
-    [[QUOBufferView sharedInstance] beginBuffer];
+    // [QUOBufferView sharedInstance].activeView = self.navigationController.view;
+    // [[QUOBufferView sharedInstance] beginBuffer];
     
     [[Quo sharedClient] getAllPostsWithBlock:^(NSArray *posts) {
         [self storePosts:posts];
