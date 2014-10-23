@@ -106,6 +106,26 @@
 
 - (void)performAction:(UIButton *)sender {
     NSLog(@"Sender: %@", sender.titleLabel.text);
+    
+    for (UIView *view in _activeView.subviews) {
+        if (view.tag == 1) {
+            [UIView animateWithDuration:0.3 animations:^{
+                self.frame = CGRectMake(0, view.bounds.size.height - 430, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+                
+            } completion:^(BOOL completion) {
+                [view removeFromSuperview];
+            }];
+        }
+        
+        else if (view.tag == 2) {
+            [UIView animateWithDuration:0.3 animations:^{
+                view.alpha = 0.f;
+                
+            } completion:^(BOOL completion) {
+                [view removeFromSuperview];
+            }];
+        }
+    }
 }
 
 @end
