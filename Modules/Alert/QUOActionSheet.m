@@ -52,6 +52,7 @@
             _horizontalLineFrame = CGRectMake(0, 157, 320, 1.5);
             _verticalLineFrame = CGRectMake(160, 157, 1.5, 71);
         }
+        
         else if (IS_IPHONE_6) {
             _labelFontSize = 18.f;
             _labelFrame = CGRectMake(10, 42, 359, 71);
@@ -60,6 +61,7 @@
             _horizontalLineFrame = CGRectMake(0, 152, 375, 1.5);
             _verticalLineFrame = CGRectMake(186, 152, 1.5, 71);
         }
+        
         else if (IS_IPHONE_6_PLUS) {
             _labelFontSize = 19.f;
             _labelFrame = CGRectMake(8, 54, 398, 51);
@@ -134,6 +136,7 @@
     if ([sender.titleLabel.text isEqualToString:@"Flag"]) {
         action = @"Flag";
     }
+    
     else if ([sender.titleLabel.text isEqualToString:@"Sign in"]) {
         action = @"Sign in";
     }

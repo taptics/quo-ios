@@ -15,7 +15,7 @@
 
 @property (nonatomic, assign) CGRect aboutButtonFrame;
 @property (nonatomic, assign) CGRect helpButtonFrame;
-@property (nonatomic, assign) CGRect logInButtonFrame;
+@property (nonatomic, assign) CGRect signOutButtonFrame;
 @property (nonatomic, assign) CGRect seperatorFrame;
 @property (nonatomic, assign) CGRect secondSeperatorFrame;
 
@@ -37,20 +37,36 @@
         self.tag = 1;
         self.backgroundColor = [UIColor whiteColor];
         
-        if (IS_IPHONE_4 || IS_IPHONE_5) {
-            
-        }
-        else if (IS_IPHONE_6) {
-            self.frame = CGRectMake(0, _activeView.bounds.size.height - 800, CGRectGetWidth([UIScreen mainScreen].bounds), 230);
+        if (IS_IPHONE_4) {
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 650, CGRectGetWidth([UIScreen mainScreen].bounds), 230);
             _seperatorFrame = CGRectMake(17, 100, 340, 1);
             _secondSeperatorFrame = CGRectMake(17, 160, 340, 1);
         }
+        
+        else if (IS_IPHONE_5) {
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 700, CGRectGetWidth([UIScreen mainScreen].bounds), 230);
+            _aboutButtonFrame =  CGRectMake(10, 62, 300, 21);
+            _helpButtonFrame = CGRectMake(10, 122, 300, 21);
+            _signOutButtonFrame = CGRectMake(10, 182, 300, 21);
+            _seperatorFrame = CGRectMake(17, 100, 285, 1);
+            _secondSeperatorFrame = CGRectMake(17, 160, 285, 1);
+        }
+        
+        else if (IS_IPHONE_6) {
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 800, CGRectGetWidth([UIScreen mainScreen].bounds), 230);
+            _aboutButtonFrame = CGRectMake(17, 62, 340, 21);
+            _helpButtonFrame = CGRectMake(17, 122, 340, 21);
+            _signOutButtonFrame = CGRectMake(17, 182, 340, 21);
+            _seperatorFrame = CGRectMake(17, 100, 340, 1);
+            _secondSeperatorFrame = CGRectMake(17, 160, 340, 1);
+        }
+        
         else if (IS_IPHONE_6_PLUS) {
             self.frame = CGRectMake(0, _activeView.bounds.size.height - 800, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
         }
         
         _aboutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _aboutButton.frame = CGRectMake(17, 62, 340, 21);
+        _aboutButton.frame = _aboutButtonFrame;
         _aboutButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:16.5f];
         [_aboutButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
         [_aboutButton setTitle:@"About" forState:UIControlStateNormal];
@@ -58,7 +74,7 @@
         [self addSubview:_aboutButton];
         
         _helpButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-         _helpButton.frame = CGRectMake(17, 122, 340, 21);
+        _helpButton.frame = _helpButtonFrame;
         _helpButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:16.5f];
         [_helpButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
         [_helpButton setTitle:@"Help" forState:UIControlStateNormal];
@@ -66,7 +82,7 @@
         [self addSubview:_helpButton];
         
         _signOutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        _signOutButton.frame = CGRectMake(17, 182, 340, 21);
+        _signOutButton.frame = _signOutButtonFrame;
         _signOutButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:16.5f];
         [_signOutButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
         [_signOutButton setTitle:@"Sign out" forState:UIControlStateNormal];
@@ -99,7 +115,22 @@
     [UIView animateWithDuration:0.3 animations:^{
         dimView.alpha = 0.5f;
         
-        self.frame = CGRectMake(0, _activeView.bounds.size.height - 640, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+        if (IS_IPHONE_4) {
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 550, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+        }
+        
+        else if (IS_IPHONE_5) {
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 540, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+        }
+        
+        else if (IS_IPHONE_6) {
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 640, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+        }
+        
+        else if (IS_IPHONE_6_PLUS) {
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 640, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+        }
+    
         [_activeView addSubview:self];
     }];
 }
