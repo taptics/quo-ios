@@ -70,8 +70,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="58" y="312" width="284" height="60"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="55" y="440" width="289" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="aLV-t9-fjJ"/>
                                         <include reference="zn1-o3-ykW"/>
@@ -103,8 +102,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="34" y="469" width="306" height="60"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="55" y="511" width="289" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="KPE-JF-99U"/>
                                         <include reference="XsZ-H3-TCs"/>
@@ -122,7 +120,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="129" y="579" width="143" height="31"/>
+                                    <rect key="frame" x="129.5" y="579" width="143" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="signUpLater:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4MO-wY-Q9q"/>
@@ -140,7 +138,7 @@
                                     <rect key="frame" x="148" y="83" width="102" height="54"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="174" y="256" width="102" height="54"/>
+                                    <rect key="frame" x="177" y="253.5" width="96.5" height="59.5"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yah-vZ-7U4">
@@ -287,7 +285,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="18" y="44" width="280" height="21"/>
+                                                        <rect key="frame" x="18" y="43" width="280" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="2Xw-cv-pJa"/>
                                                         </mask>
