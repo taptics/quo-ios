@@ -39,8 +39,11 @@
         
         if (IS_IPHONE_4) {
             self.frame = CGRectMake(0, _activeView.bounds.size.height - 650, CGRectGetWidth([UIScreen mainScreen].bounds), 230);
-            _seperatorFrame = CGRectMake(17, 100, 340, 1);
-            _secondSeperatorFrame = CGRectMake(17, 160, 340, 1);
+            _aboutButtonFrame =  CGRectMake(10, 62, 300, 21);
+            _helpButtonFrame = CGRectMake(10, 122, 300, 21);
+            _signOutButtonFrame = CGRectMake(10, 182, 300, 21);
+            _seperatorFrame = CGRectMake(17, 100, 285, 1);
+            _secondSeperatorFrame = CGRectMake(17, 160, 285, 1);
         }
         
         else if (IS_IPHONE_5) {
@@ -62,7 +65,7 @@
         }
         
         else if (IS_IPHONE_6_PLUS) {
-            self.frame = CGRectMake(0, _activeView.bounds.size.height - 800, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 800, CGRectGetWidth([UIScreen mainScreen].bounds), 230);
         }
         
         _aboutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -116,15 +119,15 @@
         dimView.alpha = 0.5f;
         
         if (IS_IPHONE_4) {
-            self.frame = CGRectMake(0, _activeView.bounds.size.height - 550, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 457, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
         }
         
         else if (IS_IPHONE_5) {
-            self.frame = CGRectMake(0, _activeView.bounds.size.height - 540, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 547, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
         }
         
         else if (IS_IPHONE_6) {
-            self.frame = CGRectMake(0, _activeView.bounds.size.height - 640, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 647, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
         }
         
         else if (IS_IPHONE_6_PLUS) {
