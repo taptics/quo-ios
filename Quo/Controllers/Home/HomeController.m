@@ -36,8 +36,13 @@
 }
 
 - (IBAction)settings:(id)sender {
-    QUOSlideMenu *menu = [[QUOSlideMenu alloc] initWithView:self.view];
-    [menu show];
+    if (![QUOSlideMenu sharedInstance].isDisplayed) {
+        [QUOSlideMenu sharedInstance].activeView = self.view;
+        [[QUOSlideMenu sharedInstance] show];
+        
+    } else {
+        [[QUOSlideMenu sharedInstance] dismiss];
+    }
 }
 
 - (void)storePosts:(NSArray *)posts {

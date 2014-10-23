@@ -176,12 +176,12 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         
         for (id object in responseObject[@"posts"]) {
             QUOPost *post = [[QUOPost alloc] initWithIdentifier:object[@"id"]
-                                                       location:object[@"location"]
-                                                           text:object[@"text"]
-                                                          title:object[@"title"]
-                                                         userId:object[@"userId"]
-                                                          likes:object[@"likes"]
-                                                      createdAt:object[@"createdAt"]];
+                                              location:object[@"location"]
+                                                  text:object[@"text"]
+                                                 title:object[@"title"]
+                                                userId:object[@"userId"]
+                                                 likes:object[@"likes"]
+                                             createdAt:object[@"createdAt"]];
             [posts addObject:post];
         }
         
@@ -202,14 +202,16 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         NSMutableArray *posts = [NSMutableArray array];
         
         for (id object in responseObject[@"posts"]) {
-            QUOPost *post = [[QUOPost alloc] initWithIdentifier:object[@"id"]
-                                                       location:object[@"location"]
-                                                           text:object[@"text"]
-                                                          title:object[@"title"]
-                                                         userId:object[@"userId"]
-                                                          likes:object[@"likes"]
-                                                      createdAt:object[@"createdAt"]];
-            [posts addObject:post];
+            [self getUserWithIdentifier:object[@"userId"] block:^(QUOUser *user) {
+                QUOPost *post = [[QUOPost alloc] initWithIdentifier:object[@"id"]
+                                                           location:object[@"location"]
+                                                               text:object[@"text"]
+                                                              title:object[@"title"]
+                                                             userId:object[@"userId"]
+                                                              likes:object[@"likes"]
+                                                          createdAt:object[@"createdAt"]];
+                [posts addObject:post];
+            }];
         }
         
         block(posts);

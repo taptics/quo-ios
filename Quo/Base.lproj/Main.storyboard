@@ -406,14 +406,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="10" y="160" width="300" height="1"/>
+                                            <rect key="frame" x="10" y="160" width="383" height="1"/>
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTV-tW-eKd">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="11" y="100" width="300" height="1"/>
+                                            <rect key="frame" x="11" y="95" width="382" height="1"/>
                                         </variation>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7N-S8-4Rq">
@@ -422,7 +422,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="10" y="66" width="300" height="21"/>
+                                            <rect key="frame" x="57" y="66" width="300" height="21"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -435,7 +435,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="223"/>
                                     <mask key="subviews">
                                         <include reference="dtf-rx-GAT"/>
                                         <include reference="LTV-tW-eKd"/>
@@ -456,7 +456,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agy-DU-GNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

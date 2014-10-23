@@ -10,7 +10,11 @@
 
 @interface QUOSlideMenu : UIView
 
-- (instancetype)initWithView:(UIView *)view;
+@property (nonatomic, assign) BOOL isDisplayed;
+@property (nonatomic, strong) UIView *activeView;
+
++ (instancetype)sharedInstance;
 - (void)show;
+- (void)dismiss;
 
 @end

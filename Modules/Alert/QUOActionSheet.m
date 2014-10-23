@@ -131,15 +131,7 @@
 }
 
 - (void)performAction:(UIButton *)sender {
-    NSString *action = [NSString string];
-    
-    if ([sender.titleLabel.text isEqualToString:@"Flag"]) {
-        action = @"Flag";
-    }
-    
-    else if ([sender.titleLabel.text isEqualToString:@"Sign in"]) {
-        action = @"Sign in";
-    }
+    NSString *action = sender.titleLabel.text;
     
     for (UIView *view in _activeView.subviews) {
         if (view.tag == 1) {
@@ -163,11 +155,16 @@
     
     if ([action isEqualToString:@"Flag"]) {
         // TODO: Flag post
+        NSLog(@"Flag");
         [[QUOBufferView sharedInstance] beginBuffer];
         
-    } else {
+    }
+    else if ([action isEqualToString:@"Sign in"]) {
         // TODO: Pop up sign in
         NSLog(@"Sign in");
+        
+    } else {
+        NSLog(@"Cancel");
     }
 }
 
