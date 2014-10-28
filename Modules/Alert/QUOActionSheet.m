@@ -64,11 +64,11 @@
         
         else if (IS_IPHONE_6_PLUS) {
             _labelFontSize = 19.f;
-            _labelFrame = CGRectMake(8, 54, 398, 51);
-            _cancelButtonFrame = CGRectMake(0, 157, 208, 71);
-            _confirmButtonFrame = CGRectMake(207, 157, 207, 71);
-            _horizontalLineFrame = CGRectMake(0, 157, 414, 1.5);
-            _verticalLineFrame = CGRectMake(207, 157, 1.5, 71);
+            _labelFrame = CGRectMake(8, 20, 398, 51);
+            _cancelButtonFrame = CGRectMake(0, 90, 208, 71);
+            _confirmButtonFrame = CGRectMake(207, 90, 207, 71);
+            _horizontalLineFrame = CGRectMake(0, 92, 414, 1.5);
+            _verticalLineFrame = CGRectMake(207, 92, 1.5, 71);
         }
         
         _titleLabel = [[UILabel alloc] initWithFrame:_labelFrame];
@@ -124,9 +124,8 @@
     
     [UIView animateWithDuration:0.3 animations:^{
         dimView.alpha = 0.5f;
-        
-        // self.frame = CGRectMake(0, _activeView.bounds.size.height - 220, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
         self.frame = CGRectMake(0, _activeView.bounds.size.height - 150, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+        
         [_activeView addSubview:self];
     }];
 }
