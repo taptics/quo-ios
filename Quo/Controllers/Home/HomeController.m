@@ -17,6 +17,7 @@
 
 - (IBAction)compose:(id)sender;
 - (IBAction)settings:(id)sender;
+
 - (void)storePosts:(NSArray *)posts;
 
 @end
@@ -27,7 +28,11 @@
 
 - (IBAction)compose:(id)sender {
     if (![QUOUser currentUser].loggedIn) {
-        QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeFlag forView:self.navigationController.view];
+        if ([QUOSlideMenu sharedInstance].isDisplayed) {
+            [[QUOSlideMenu sharedInstance] dismiss];
+        }
+        
+        QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
         [sheet show];
         
     } else {

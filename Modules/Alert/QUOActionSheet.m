@@ -46,20 +46,20 @@
         
         if (IS_IPHONE_4 || IS_IPHONE_5) {
             _labelFontSize = 16.2f;
-            _labelFrame = CGRectMake(10, 49, 300, 51);
-            _cancelButtonFrame = CGRectMake(0, 152, 160, 71);
-            _confirmButtonFrame = CGRectMake(160, 152, 160, 71);
-            _horizontalLineFrame = CGRectMake(0, 157, 320, 1.5);
-            _verticalLineFrame = CGRectMake(160, 157, 1.5, 71);
+            _labelFrame = CGRectMake(10, 20, 300, 51);
+            _cancelButtonFrame = CGRectMake(0, 82, 160, 71);
+            _confirmButtonFrame = CGRectMake(160, 82, 160, 71);
+            _horizontalLineFrame = CGRectMake(0, 87, 320, 1.5);
+            _verticalLineFrame = CGRectMake(160, 87, 1.5, 71);
         }
         
         else if (IS_IPHONE_6) {
             _labelFontSize = 18.f;
-            _labelFrame = CGRectMake(10, 42, 359, 71);
-            _cancelButtonFrame = CGRectMake(0, 152, 188, 71);
-            _confirmButtonFrame = CGRectMake(186, 152, 188, 71);
-            _horizontalLineFrame = CGRectMake(0, 152, 375, 1.5);
-            _verticalLineFrame = CGRectMake(186, 152, 1.5, 71);
+            _labelFrame = CGRectMake(10, 15, 359, 71);
+            _cancelButtonFrame = CGRectMake(0, 90, 188, 60);
+            _confirmButtonFrame = CGRectMake(186, 90, 188, 60);
+            _horizontalLineFrame = CGRectMake(0, 92, 375, 1.5);
+            _verticalLineFrame = CGRectMake(186, 92, 1.5, 61);
         }
         
         else if (IS_IPHONE_6_PLUS) {
@@ -79,7 +79,7 @@
         
         _cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _cancelButton.frame = _cancelButtonFrame;
-        _cancelButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:16.5f];
+        _cancelButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:_labelFontSize];
         [_cancelButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
         [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
         [_cancelButton addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -87,7 +87,7 @@
         
         _confirmButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _confirmButton.frame = _confirmButtonFrame;
-        _confirmButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:16.5f];
+        _confirmButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:_labelFontSize];
         [_confirmButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
         [_confirmButton addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_confirmButton];
@@ -125,7 +125,8 @@
     [UIView animateWithDuration:0.3 animations:^{
         dimView.alpha = 0.5f;
         
-        self.frame = CGRectMake(0, _activeView.bounds.size.height - 220, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+        // self.frame = CGRectMake(0, _activeView.bounds.size.height - 220, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+        self.frame = CGRectMake(0, _activeView.bounds.size.height - 150, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
         [_activeView addSubview:self];
     }];
 }
