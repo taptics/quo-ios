@@ -19,6 +19,8 @@
 #define DARK_TEXT_COLOR  [UIColor colorWithRed:79/255.f green:79/255.f   blue:79/255.f  alpha:1.f]
 #define LIGHT_GREY_COLOR [UIColor colorWithRed:225/255.f green:225/255.f blue:225/255.f alpha:1.f]
 
+#define CELL_TEXTFIELD_FRAME CGRectMake(20, 3, 280, 40)
+
 #define IS_IPHONE_4 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)480) < DBL_EPSILON)
 #define IS_IPHONE_5 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)568) < DBL_EPSILON)
 #define IS_IPHONE_6 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)667) < DBL_EPSILON)

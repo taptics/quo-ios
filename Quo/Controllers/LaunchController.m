@@ -16,34 +16,23 @@
 @property (nonatomic, strong) IBOutlet UIButton *signUpButton;
 @property (nonatomic, strong) IBOutlet UIButton *loginButton;
 
-- (IBAction)signUp:(id)sender;
-- (IBAction)logIn:(id)sender;
-- (IBAction)signUpLater:(id)sender;
-
 @end
 
 @implementation LaunchController
 
-#pragma mark - Methods
-
-- (IBAction)signUp:(id)sender {
-    // TODO: Sign up
-    NSLog(@"Sign up");
-}
-
-- (IBAction)logIn:(id)sender {
-    // TODO: Login
-    NSLog(@"Login");
-}
-
-- (IBAction)signUpLater:(id)sender {
-    [self performSegueWithIdentifier:@"ToHome" sender:self];
-}
-
 #pragma mark - View
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = YES;
     
     self.signUpButton.tintColor = [UIColor whiteColor];
     self.signUpButton.backgroundColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
