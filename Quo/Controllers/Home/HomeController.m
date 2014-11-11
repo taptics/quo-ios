@@ -35,6 +35,12 @@
         QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
         [sheet show];
         
+        if ([sheet.action isEqualToString:@"Sign in"]) {
+            NSLog(@"Sign in");
+        } else {
+            NSLog(@"Flag");
+        }
+        
     } else {
         NSLog(@"Compose");
     }
@@ -68,7 +74,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"October 2014";
+    return @"November 2014";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

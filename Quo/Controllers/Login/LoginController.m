@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSArray *textFields;
 
 - (IBAction)back:(id)sender;
+- (IBAction)send:(id)sender;
 
 @end
 
@@ -27,6 +28,15 @@
 
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)send:(id)sender {
+    if ([self isEmpty:_emailField.text] || [self isEmpty:_passwordField.text]) {
+        NSLog(@"Missing fields");
+        
+    } else {
+        NSLog(@"Login");
+    }
 }
 
 #pragma mark - Table
@@ -78,10 +88,21 @@
         [nextTextField becomeFirstResponder];
         
     } else {
-        [textField resignFirstResponder];
+        [self send:nil];
     }
     
     return YES;
+}
+
+- (BOOL)isEmpty:(NSString *)string {
+    if ([string length] == 0) {
+        return true;
+    }
+    
+    if (![[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
+        return true;
+    }
+    return false;
 }
 
 #pragma mark - View
@@ -109,10 +130,6 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
-    
-    // TODO: Custom back button item
-    // UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:[UIImage imageNamed:@"Back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-    // _navigationItem.backBarButtonItem = backButton;
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                 [UIFont fontWithName:@"Lato-Bold" size:20], NSFontAttributeName,

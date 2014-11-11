@@ -15,6 +15,8 @@ typedef NS_ENUM(NSInteger, QUOActionSheetType) {
 
 @interface QUOActionSheet : UIView
 
+@property (nonatomic, strong) NSString *action;
+
 - (instancetype)initWithType:(QUOActionSheetType)type forView:(UIView *)view;
 - (void)show;
 

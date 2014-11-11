@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A386a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LuJ-Ve-6o3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LuJ-Ve-6o3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -484,6 +484,12 @@
                                 <action selector="back:" destination="e6Z-g4-S9V" id="qyQ-GQ-dov"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Send" id="V02-zj-3zu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="send:" destination="e6Z-g4-S9V" id="ALH-Sf-Evi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="RVK-uo-7tH" id="lKP-Ej-NyU"/>
@@ -496,7 +502,7 @@
         <!--Login-->
         <scene sceneID="4ct-zf-4nQ">
             <objects>
-                <viewController id="m7q-uA-Iyb" customClass="LoginController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="m7q-uA-Iyb" customClass="LoginController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ifJ-kO-HJn"/>
                         <viewControllerLayoutGuide type="bottom" id="KAg-d1-9tF"/>
@@ -518,7 +524,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="m7q-uA-Iyb" id="pGG-vt-1ec"/>
@@ -545,19 +551,23 @@
                                 <action selector="back:" destination="m7q-uA-Iyb" id="Ycs-yb-5Cu"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Send" id="YwS-7F-g9l">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="send:" destination="m7q-uA-Iyb" id="Rl8-qS-GF2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="8kv-Iu-XEG" id="W8x-pZ-IkS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-of-i84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1383" y="-294"/>
+            <point key="canvasLocation" x="1407" y="-294"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back" width="22" height="19"/>
         <image name="Compose" width="22" height="30"/>
+        <image name="Send" width="22" height="24"/>
         <image name="Settings" width="33" height="10"/>
     </resources>
 </document>

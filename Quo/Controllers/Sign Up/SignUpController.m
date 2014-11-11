@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSArray *textFields;
 
 - (IBAction)back:(id)sender;
+- (IBAction)send:(id)sender;
 
 @end
 
@@ -28,6 +29,15 @@
 
 - (IBAction)back:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)send:(id)sender {
+    if ([self isEmpty:_nameField.text] || [self isEmpty:_emailField.text] || [self isEmpty:_passwordField.text]) {
+        NSLog(@"Missing fields");
+        
+    } else {
+        NSLog(@"Good to go");
+    }
 }
 
 #pragma mark - Table
@@ -70,7 +80,6 @@
     UITextField *textField = [[UITextField alloc] initWithFrame:CELL_TEXTFIELD_FRAME];
     textField.returnKeyType = UIReturnKeyNext;
     textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    textField.autocorrectionType = UITextAutocorrectionTypeDefault;
     textField.font = [UIFont fontWithName:LATO_FONT size:19.f];
     textField.textColor = DARK_TEXT_COLOR;
     
@@ -83,10 +92,21 @@
         [nextTextField becomeFirstResponder];
         
     } else {
-        [textField resignFirstResponder];
+        [self send:nil];
     }
     
     return YES;
+}
+
+- (BOOL)isEmpty:(NSString *)string {
+    if ([string length] == 0) {
+        return true;
+    }
+    
+    if (![[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
+        return true;
+    }
+    return false;
 }
 
 #pragma mark - View
@@ -94,6 +114,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 10.f)];
+
     
     _nameField = [self cellTextField];
     _nameField.tag = 0;
