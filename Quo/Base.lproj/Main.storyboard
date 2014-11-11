@@ -25,6 +25,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5L5-eb-Rh5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7j-6U-KAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="LuJ-Ve-6o3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kYf-eb-3PW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -34,9 +35,8 @@
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="J5q-hy-R7J"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A7j-6U-KAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="357"/>
+            <point key="canvasLocation" x="220" y="573"/>
         </scene>
         <!--Launch Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -149,9 +149,6 @@
                                     <color key="titleColor" red="0.75686274509803919" green="0.75686274509803919" blue="0.75686274509803919" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="129" y="579" width="143" height="31"/>
-                                </variation>
                                 <connections>
                                     <segue destination="utY-hi-0PR" kind="show" identifier="" id="99u-If-dwP"/>
                                 </connections>
@@ -241,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="357"/>
+            <point key="canvasLocation" x="687" y="573"/>
         </scene>
         <!--Quo-->
         <scene sceneID="KfP-9D-Dxp">
@@ -280,12 +277,18 @@
                                                             <exclude reference="KNC-St-q4n"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="18" y="15" width="280" height="21"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="KNC-St-q4n"/>
                                                         </mask>
                                                     </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1R-3c-VTh">
+                                                    <rect key="frame" x="18" y="72" width="305" height="46"/>
+                                                    <fontDescription key="fontDescription" name="Skolar" family="Skolar" pointSize="18"/>
+                                                    <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0c-Si-nUB">
                                                     <rect key="frame" x="18" y="43" width="305" height="21"/>
@@ -300,20 +303,10 @@
                                                             <exclude reference="2Xw-cv-pJa"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="18" y="43" width="280" height="21"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="2Xw-cv-pJa"/>
                                                         </mask>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1R-3c-VTh">
-                                                    <rect key="frame" x="18" y="72" width="305" height="46"/>
-                                                    <fontDescription key="fontDescription" name="Skolar" family="Skolar" pointSize="18"/>
-                                                    <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="18" y="72" width="280" height="46"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -415,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTY-rv-g28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1383" y="357"/>
+            <point key="canvasLocation" x="1155" y="573"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="PSA-zK-2la">
@@ -493,6 +486,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="RVK-uo-7tH" id="lKP-Ej-NyU"/>
+                        <segue destination="utY-hi-0PR" kind="show" identifier="ToHome" id="uhP-Up-OxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eim-MX-0ov" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -523,9 +517,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="m7q-uA-Iyb" id="XN7-OP-SkE"/>
                                     <outlet property="delegate" destination="m7q-uA-Iyb" id="Sk5-Mr-QKS"/>
@@ -533,14 +524,32 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BKi-Hd-9lH" firstAttribute="leading" secondItem="D1S-uw-uVK" secondAttribute="leading" id="C8i-Kh-hCi"/>
+                            <constraint firstItem="BKi-Hd-9lH" firstAttribute="bottom" secondItem="KAg-d1-9tF" secondAttribute="top" id="Puw-Fj-8zz"/>
+                            <constraint firstItem="BKi-Hd-9lH" firstAttribute="top" secondItem="D1S-uw-uVK" secondAttribute="top" id="XD0-zc-yyJ"/>
+                            <constraint firstAttribute="trailing" secondItem="BKi-Hd-9lH" secondAttribute="trailing" id="bZI-4P-CwB"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="BKi-Hd-9lH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="C8i-Kh-hCi"/>
+                                <exclude reference="Puw-Fj-8zz"/>
+                                <exclude reference="XD0-zc-yyJ"/>
+                                <exclude reference="bZI-4P-CwB"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="BKi-Hd-9lH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="C8i-Kh-hCi"/>
+                                <include reference="Puw-Fj-8zz"/>
+                                <include reference="XD0-zc-yyJ"/>
+                                <include reference="bZI-4P-CwB"/>
                             </mask>
                         </variation>
                     </view>
@@ -560,11 +569,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="BKi-Hd-9lH" id="3pE-p6-iEx"/>
+                        <segue destination="utY-hi-0PR" kind="show" identifier="ToHome" id="ub7-V5-fCY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-of-i84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1407" y="-294"/>
+            <point key="canvasLocation" x="1155" y="-294"/>
         </scene>
     </scenes>
     <resources>
@@ -573,4 +583,7 @@
         <image name="Send" width="22" height="24"/>
         <image name="Settings" width="33" height="10"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ub7-V5-fCY"/>
+    </inferredMetricsTieBreakers>
 </document>

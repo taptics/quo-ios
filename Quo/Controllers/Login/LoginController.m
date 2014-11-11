@@ -32,15 +32,41 @@
 
 - (IBAction)send:(id)sender {
     if ([self isEmpty:_emailField.text] || [self isEmpty:_passwordField.text]) {
-        NSLog(@"Missing fields");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
+                                                                       message:@"Hey, you're missing some information!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                          style:UIAlertActionStyleCancel
+                                                        handler:^(UIAlertAction *action) {
+                                                            
+                                                            [alert dismissViewControllerAnimated:YES completion:nil];
+                                                        }];
+        
+        
+        [alert addAction:dismiss];
+        [self presentViewController:alert animated:YES completion:nil];
         
     } else {
         [[Quo sharedClient] authenticateUserWithUsername:_emailField.text password:_passwordField.text block:^(BOOL success) {
             if (success) {
-                NSLog(@"Logged in. Welcome back!");
+                [self performSegueWithIdentifier:@"ToHome" sender:self];
                 
             } else {
-                NSLog(@"Incorrect login. Sorry!");
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
+                                                                               message:@"Sorry, that information is incorrect."
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                                  style:UIAlertActionStyleCancel
+                                                                handler:^(UIAlertAction *action) {
+                                                                    
+                                                                    [alert dismissViewControllerAnimated:YES completion:nil];
+                                                                }];
+                
+                
+                [alert addAction:dismiss];
+                [self presentViewController:alert animated:YES completion:nil];
             }
         }];
     }
@@ -85,6 +111,7 @@
     textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     textField.font = [UIFont fontWithName:LATO_FONT size:19.f];
     textField.textColor = DARK_TEXT_COLOR;
+    textField.tintColor = DARK_TEXT_COLOR;
     
     return textField;
 }
