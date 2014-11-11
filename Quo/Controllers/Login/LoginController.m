@@ -48,7 +48,7 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
-        [[Quo sharedClient] authenticateUserWithUsername:_emailField.text password:_passwordField.text block:^(BOOL success) {
+        [[Quo sharedClient] authenticateUserWithEmail:_emailField.text password:_passwordField.text block:^(BOOL success) {
             if (success) {
                 [self performSegueWithIdentifier:@"ToHome" sender:self];
                 

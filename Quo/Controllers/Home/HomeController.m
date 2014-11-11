@@ -36,7 +36,7 @@
         [sheet show];
         
     } else {
-        NSLog(@"Compose");
+        [self performSegueWithIdentifier:@"ToCompose" sender:self];
     }
 }
 

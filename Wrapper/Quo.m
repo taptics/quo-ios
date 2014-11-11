@@ -111,16 +111,19 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
             // TODO: Make sure this actually works
             // Auto-login after sign up
             
-            [QUOUser currentUser].username = email;
-            [QUOUser currentUser].password = password;
-            [QUOUser currentUser].loggedIn = YES;
-            
-            [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].identifier forKey:@"CurrentUserIdentifier"];
-            [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].username   forKey:@"CurrentUserUsername"];
-            [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].password   forKey:@"CurrentUserPassword"];
-            [[NSUserDefaults standardUserDefaults]   setBool:[QUOUser currentUser].loggedIn   forKey:@"CurrentUserLoggedIn"];
-            
-            block(YES, @"");
+            [self authenticateUserWithEmail:email password:password block:^(BOOL success) {
+                if (success) {
+                    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].identifier forKey:@"CurrentUserIdentifier"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].email   forKey:@"CurrentUserEmail"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].name       forKey:@"CurrentUserName"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].password   forKey:@"CurrentUserPassword"];
+                    [[NSUserDefaults standardUserDefaults]   setBool:[QUOUser currentUser].loggedIn   forKey:@"CurrentUserLoggedIn"];
+                    
+                    block(YES, @"");
+                } else {
+                    NSLog(@"Uh oh, error logging in after sign up.");
+                }
+            }];
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -128,7 +131,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
     }];
 }
 
-- (void)authenticateUserWithUsername:(NSString *)username
+- (void)authenticateUserWithEmail:(NSString *)email
                             password:(NSString *)password
                                block:(QUOSuccess)block {
     
@@ -137,7 +140,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
     [manager.requestSerializer setValue:[Quo sharedClient].apiKey forHTTPHeaderField:@"Authorization-Token"];
     
     NSDictionary *params = @{
-                             @"username" : username,
+                             @"username" : email,
                              @"password" : [password MD5String],
                             };
     
@@ -147,12 +150,14 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         } else {
             [[Quo sharedClient] getUserWithIdentifier:responseObject[@"userId"] block:^(QUOUser *user) {
                 [QUOUser currentUser].identifier = user.identifier;
-                [QUOUser currentUser].username = user.username;
-                [QUOUser currentUser].password = password;
-                [QUOUser currentUser].loggedIn = YES;
+                [QUOUser currentUser].email      = user.email;
+                [QUOUser currentUser].name       = user.name;
+                [QUOUser currentUser].password   = password;
+                [QUOUser currentUser].loggedIn   = YES;
                 
                 [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].identifier forKey:@"CurrentUserIdentifier"];
-                [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].username   forKey:@"CurrentUserUsername"];
+                [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].email      forKey:@"CurrentUserEmail"];
+                [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].name       forKey:@"CurrentUserName"];
                 [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].password   forKey:@"CurrentUserPassword"];
                 [[NSUserDefaults standardUserDefaults]   setBool:[QUOUser currentUser].loggedIn   forKey:@"CurrentUserLoggedIn"];
             }];

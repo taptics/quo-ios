@@ -23,6 +23,7 @@
 		944AE91919DA020F000EB362 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944AE91719DA020F000EB362 /* LaunchScreen.xib */; };
 		944AE92519DA0210000EB362 /* QuoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE92419DA0210000EB362 /* QuoTests.m */; };
 		9463F5591A129BE600F34246 /* QUOPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5581A129BE600F34246 /* QUOPushSegue.m */; };
+		9463F55D1A12A60F00F34246 /* ComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F55C1A12A60F00F34246 /* ComposeController.m */; };
 		949375A219E5A9D6006C6FB7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */; };
 		949375A319E5A9D6006C6FB7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */; };
 		949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375AA19E5AD56006C6FB7 /* LaunchController.m */; };
@@ -83,6 +84,8 @@
 		944AE92419DA0210000EB362 /* QuoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuoTests.m; sourceTree = "<group>"; };
 		9463F5571A129BE600F34246 /* QUOPushSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QUOPushSegue.h; path = Helpers/Segue/QUOPushSegue.h; sourceTree = "<group>"; };
 		9463F5581A129BE600F34246 /* QUOPushSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QUOPushSegue.m; path = Helpers/Segue/QUOPushSegue.m; sourceTree = "<group>"; };
+		9463F55B1A12A60F00F34246 /* ComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposeController.h; path = Controllers/Compose/ComposeController.h; sourceTree = "<group>"; };
+		9463F55C1A12A60F00F34246 /* ComposeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeController.m; path = Controllers/Compose/ComposeController.m; sourceTree = "<group>"; };
 		949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		949375A919E5AD56006C6FB7 /* LaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchController.h; path = Controllers/LaunchController.h; sourceTree = "<group>"; };
@@ -280,6 +283,7 @@
 		944AE92F19DA0219000EB362 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9463F55A1A12A5FF00F34246 /* Compose */,
 				942076C91A0156FB00D77BEA /* Sign Up */,
 				942076CA1A01570600D77BEA /* Login */,
 				949375AC19E5AE42006C6FB7 /* Home */,
@@ -295,6 +299,15 @@
 				9463F5581A129BE600F34246 /* QUOPushSegue.m */,
 			);
 			name = Segue;
+			sourceTree = "<group>";
+		};
+		9463F55A1A12A5FF00F34246 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				9463F55B1A12A60F00F34246 /* ComposeController.h */,
+				9463F55C1A12A60F00F34246 /* ComposeController.m */,
+			);
+			name = Compose;
 			sourceTree = "<group>";
 		};
 		9493759E19E5A995006C6FB7 /* Launch */ = {
@@ -540,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9463F55D1A12A60F00F34246 /* ComposeController.m in Sources */,
 				949E406C19F06C73004F67A6 /* AFURLSessionManager.m in Sources */,
 				944ACD801A040A3B00E89C9C /* FormCell.m in Sources */,
 				949937C119F1EB70009A8FE2 /* QUOSlideMenu.m in Sources */,

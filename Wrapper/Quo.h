@@ -62,7 +62,7 @@ typedef void (^QUOSuccessMessage)(BOOL success, NSString *error);
 /*!
  Returns true if the creation was successful.
  
- @param username The user's username
+ @param email    The user's email
  @param password The user's password
  @param name     The user's full name
  @result Boolean determining if the creation was successful.
@@ -76,11 +76,11 @@ typedef void (^QUOSuccessMessage)(BOOL success, NSString *error);
 /*!
  Returns true if the authentication was successful.
  
- @param username The user's username
+ @param email    The user's email
  @param password The user's password
  @result Boolean determining if the authentication was successful.
  */
-- (void)authenticateUserWithUsername:(NSString *)username
+- (void)authenticateUserWithEmail:(NSString *)email
                             password:(NSString *)password
                                block:(QUOSuccess)block;
 

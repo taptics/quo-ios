@@ -36,7 +36,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="220" y="573"/>
+            <point key="canvasLocation" x="-165" y="567"/>
         </scene>
         <!--Launch Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="573"/>
+            <point key="canvasLocation" x="561" y="567"/>
         </scene>
         <!--Quo-->
         <scene sceneID="KfP-9D-Dxp">
@@ -404,11 +404,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="uly-lb-qRk" id="FSy-vW-Rj1"/>
+                        <segue destination="mBw-wJ-CWO" kind="presentation" identifier="ToCompose" id="BK4-hV-i10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTY-rv-g28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="573"/>
+            <point key="canvasLocation" x="1329" y="567"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="PSA-zK-2la">
@@ -491,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eim-MX-0ov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="-294"/>
+            <point key="canvasLocation" x="561" y="-97.5"/>
         </scene>
         <!--Login-->
         <scene sceneID="4ct-zf-4nQ">
@@ -574,11 +575,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-of-i84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="-294"/>
+            <point key="canvasLocation" x="1329" y="-97.5"/>
+        </scene>
+        <!--Compose Controller-->
+        <scene sceneID="Ada-s5-ZXh">
+            <objects>
+                <viewController id="mBw-wJ-CWO" customClass="ComposeController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NNH-Ao-BDT"/>
+                        <viewControllerLayoutGuide type="bottom" id="bq2-Nu-Xsx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TNt-kP-oPR">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrR-q7-Yuy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Compose" prompt=" " id="4Su-Rb-fAt">
+                                        <barButtonItem key="leftBarButtonItem" image="Close" id="Kcd-c9-jDj">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="Send" id="oTe-SJ-9L9">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="-10" width="400" height="74"/>
+                                </variation>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="zrR-q7-Yuy"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="zrR-q7-Yuy"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4py-ST-jwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2083.5" y="567"/>
         </scene>
     </scenes>
     <resources>
         <image name="Back" width="22" height="19"/>
+        <image name="Close" width="22" height="22"/>
         <image name="Compose" width="22" height="30"/>
         <image name="Send" width="22" height="24"/>
         <image name="Settings" width="33" height="10"/>
