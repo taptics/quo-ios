@@ -21,6 +21,9 @@
 - (IBAction)back:(id)sender;
 - (IBAction)send:(id)sender;
 
+- (void)disableEditing:(BOOL)disable;
+- (BOOL)validateEmail:(NSString *)email;
+
 @end
 
 @implementation SignUpController
@@ -32,6 +35,8 @@
 }
 
 - (IBAction)send:(id)sender {
+    [self disableEditing:YES];
+    
     if ([self isEmpty:_nameField.text] || [self isEmpty:_emailField.text] || [self isEmpty:_passwordField.text]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
                                                                        message:@"Hey, you're missing some information!"
@@ -68,9 +73,40 @@
                 
                 [alert addAction:dismiss];
                 [self presentViewController:alert animated:YES completion:nil];
+                [self disableEditing:NO];
             }
         }];
     }
+}
+
+- (void)disableEditing:(BOOL)disable {
+    if (disable) {
+        _nameField.enabled = NO;
+        _emailField.enabled = NO;
+        _passwordField.enabled = NO;
+        
+        _nameField.textColor = [UIColor lightGrayColor];
+        _emailField.textColor = [UIColor lightGrayColor];
+        _passwordField.textColor = [UIColor lightGrayColor];
+        
+    } else {
+        _nameField.enabled = NO;
+        _emailField.enabled = YES;
+        _passwordField.enabled = YES;
+        
+        _nameField.textColor = DARK_TEXT_COLOR;
+        _emailField.textColor = DARK_TEXT_COLOR;
+        _passwordField.textColor = DARK_TEXT_COLOR;
+        
+        [_emailField becomeFirstResponder];
+    }
+}
+
+- (BOOL)validateEmail:(NSString *)email {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:email];
 }
 
 #pragma mark - Table
@@ -155,12 +191,14 @@
     _nameField.delegate = self;
     _nameField.placeholder = @"Name";
     _nameField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    _nameField.autocorrectionType = UITextAutocorrectionTypeNo;
     
     _emailField = [self cellTextField];
     _emailField.tag = 1;
     _emailField.delegate = self;
     _emailField.placeholder = @"Email";
     _emailField.keyboardType = UIKeyboardTypeEmailAddress;
+    _emailField.autocorrectionType = UITextAutocorrectionTypeNo;
     
     _passwordField = [self cellTextField];
     _passwordField.tag = 2;

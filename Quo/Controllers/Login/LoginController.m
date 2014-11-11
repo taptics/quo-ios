@@ -20,6 +20,8 @@
 - (IBAction)back:(id)sender;
 - (IBAction)send:(id)sender;
 
+- (void)disableEditing:(BOOL)disable;
+
 @end
 
 @implementation LoginController
@@ -31,6 +33,8 @@
 }
 
 - (IBAction)send:(id)sender {
+    [self disableEditing:YES];
+    
     if ([self isEmpty:_emailField.text] || [self isEmpty:_passwordField.text]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
                                                                        message:@"Hey, you're missing some information!"
@@ -67,8 +71,28 @@
                 
                 [alert addAction:dismiss];
                 [self presentViewController:alert animated:YES completion:nil];
+                [self disableEditing:NO];
             }
         }];
+    }
+}
+
+- (void)disableEditing:(BOOL)disable {
+    if (disable) {
+        _emailField.enabled = NO;
+        _passwordField.enabled = NO;
+        
+        _emailField.textColor = [UIColor lightGrayColor];
+        _passwordField.textColor = [UIColor lightGrayColor];
+        
+    } else {
+        _emailField.enabled = YES;
+        _passwordField.enabled = YES;
+        
+        _emailField.textColor = DARK_TEXT_COLOR;
+        _passwordField.textColor = DARK_TEXT_COLOR;
+        
+        [_passwordField becomeFirstResponder];
     }
 }
 
@@ -151,6 +175,7 @@
     _emailField.delegate = self;
     _emailField.placeholder = @"Email";
     _emailField.keyboardType = UIKeyboardTypeEmailAddress;
+    _emailField.autocorrectionType = UITextAutocorrectionTypeNo;
     
     _passwordField = [self cellTextField];
     _passwordField.tag = 1;
