@@ -64,11 +64,11 @@
         
         else if (IS_IPHONE_6_PLUS) {
             _labelFontSize = 19.f;
-            _labelFrame = CGRectMake(8, 20, 398, 51);
-            _cancelButtonFrame = CGRectMake(0, 90, 208, 71);
-            _confirmButtonFrame = CGRectMake(207, 90, 207, 71);
-            _horizontalLineFrame = CGRectMake(0, 92, 414, 1.5);
-            _verticalLineFrame = CGRectMake(207, 92, 1.5, 71);
+            _labelFrame = CGRectMake(8, 22, 398, 51);
+            _cancelButtonFrame = CGRectMake(0, 82, 208, 71);
+            _confirmButtonFrame = CGRectMake(207, 82, 207, 71);
+            _horizontalLineFrame = CGRectMake(0, 85, 414, 1.5);
+            _verticalLineFrame = CGRectMake(207, 85, 1.5, 71);
         }
         
         _titleLabel = [[UILabel alloc] initWithFrame:_labelFrame];

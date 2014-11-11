@@ -35,12 +35,6 @@
         QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
         [sheet show];
         
-        if ([sheet.action isEqualToString:@"Sign in"]) {
-            NSLog(@"Sign in");
-        } else {
-            NSLog(@"Flag");
-        }
-        
     } else {
         NSLog(@"Compose");
     }

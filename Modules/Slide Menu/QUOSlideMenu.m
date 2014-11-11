@@ -72,7 +72,12 @@
     }
     
     else if (IS_IPHONE_6_PLUS) {
-        self.frame = CGRectMake(0, _activeView.bounds.size.height - 800, CGRectGetWidth([UIScreen mainScreen].bounds), 230);
+        self.frame = CGRectMake(0, _activeView.bounds.size.height - 900, CGRectGetWidth([UIScreen mainScreen].bounds), 230);
+        _aboutButtonFrame = CGRectMake(36, 62, 340, 21);
+        _helpButtonFrame = CGRectMake(36, 122, 340, 21);
+        _signOutButtonFrame = CGRectMake(36, 182, 340, 21);
+        _seperatorFrame = CGRectMake(36, 100, 340, 1);
+        _secondSeperatorFrame = CGRectMake(36, 160, 340, 1);
     }
     
     _aboutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -132,7 +137,7 @@
         }
         
         else if (IS_IPHONE_6_PLUS) {
-            self.frame = CGRectMake(0, _activeView.bounds.size.height - 640, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
+            self.frame = CGRectMake(0, _activeView.bounds.size.height - 710, CGRectGetWidth([UIScreen mainScreen].bounds), 223);
         }
     
         [_activeView addSubview:self];
