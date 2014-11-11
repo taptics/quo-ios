@@ -67,11 +67,11 @@ typedef void (^QUOSuccessMessage)(BOOL success, NSString *error);
  @param name     The user's full name
  @result Boolean determining if the creation was successful.
  */
-- (void)createUserWithUsername:(NSString *)username
-                      password:(NSString *)password
-                          name:(NSString *)name
-                      location:(NSString *)location
-                         block:(QUOSuccessMessage)block;
+- (void)createUserWithEmail:(NSString *)email
+                   password:(NSString *)password
+                       name:(NSString *)name
+                   location:(NSString *)location
+                      block:(QUOSuccessMessage)block;
 
 /*!
  Returns true if the authentication was successful.

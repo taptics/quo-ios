@@ -25,7 +25,7 @@
  @result A brand new user object.
  */
 - (instancetype)initWithIdentifier:(NSString *)identifier
-                          username:(NSString *)username
+                             email:(NSString *)email
                               name:(NSString *)name
                           location:(NSString *)location
                          createdAt:(NSString *)createdAt

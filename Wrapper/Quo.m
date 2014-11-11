@@ -48,7 +48,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         
         for (id object in responseObject[@"users"]) {
             QUOUser *user = [[QUOUser alloc] initWithIdentifier:object[@"id"]
-                                                       username:object[@"username"]
+                                                       email:object[@"username"]
                                                            name:object[@"name"]
                                                        location:object[@"location"]
                                                       createdAt:object[@"createdAt"]
@@ -71,7 +71,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         QUOUser *user = [[QUOUser alloc] initWithIdentifier:responseObject[@"user"][@"id"]
-                                                   username:responseObject[@"user"][@"username"]
+                                                   email:responseObject[@"user"][@"username"]
                                                        name:responseObject[@"user"][@"name"]
                                                    location:responseObject[@"user"][@"location"]
                                                   createdAt:responseObject[@"user"][@"createdAt"]
@@ -84,7 +84,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
     }];
 }
 
-- (void)createUserWithUsername:(NSString *)username
+- (void)createUserWithEmail:(NSString *)email
                       password:(NSString *)password
                           name:(NSString *)name
                       location:(NSString *)location
@@ -95,7 +95,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
     [manager.requestSerializer setValue:[Quo sharedClient].apiKey forHTTPHeaderField:@"Authorization-Token"];
     
     NSDictionary *params = @{
-                             @"username" : username,
+                             @"username" : email,
                              @"password" : [password MD5String],
                              @"name"     : name,
                              @"location" : location
@@ -111,7 +111,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
             // TODO: Make sure this actually works
             // Auto-login after sign up
             
-            [QUOUser currentUser].username = username;
+            [QUOUser currentUser].username = email;
             [QUOUser currentUser].password = password;
             [QUOUser currentUser].loggedIn = YES;
             

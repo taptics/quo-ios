@@ -511,36 +511,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="71" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="8kv-Iu-XEG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="71" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="BKi-Hd-9lH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" rowHeight="64" id="fjH-X5-mjE" customClass="FormCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" rowHeight="64" id="EHM-rt-ypc" customClass="FormCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fjH-X5-mjE" id="WVL-bE-YtX">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EHM-rt-ypc" id="JGQ-1V-kZ2">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                                 </variation>
                                 <connections>
-                                    <outlet property="dataSource" destination="m7q-uA-Iyb" id="pGG-vt-1ec"/>
-                                    <outlet property="delegate" destination="m7q-uA-Iyb" id="D1W-Vu-KUe"/>
+                                    <outlet property="dataSource" destination="m7q-uA-Iyb" id="XN7-OP-SkE"/>
+                                    <outlet property="delegate" destination="m7q-uA-Iyb" id="Sk5-Mr-QKS"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="8kv-Iu-XEG"/>
+                                <exclude reference="BKi-Hd-9lH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="8kv-Iu-XEG"/>
+                                <include reference="BKi-Hd-9lH"/>
                             </mask>
                         </variation>
                     </view>
@@ -558,6 +558,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="BKi-Hd-9lH" id="3pE-p6-iEx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cm-of-i84" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

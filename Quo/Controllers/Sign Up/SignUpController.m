@@ -36,7 +36,14 @@
         NSLog(@"Missing fields");
         
     } else {
-        NSLog(@"Good to go");
+        [[Quo sharedClient] createUserWithEmail:_emailField.text password:_passwordField.text name:_nameField.text location:@"Remove this" block:^(BOOL success, NSString *error) {
+            if (success) {
+                NSLog(@"Successfully signed up. Welcome!");
+                
+            } else {
+                NSLog(@"Error: %@", error);
+            }
+        }];
     }
 }
 
@@ -116,7 +123,6 @@
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 10.f)];
 
-    
     _nameField = [self cellTextField];
     _nameField.tag = 0;
     _nameField.delegate = self;

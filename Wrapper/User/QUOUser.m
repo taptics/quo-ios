@@ -14,7 +14,7 @@
 #pragma Initializer
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
-                          username:(NSString *)username
+                             email:(NSString *)email
                               name:(NSString *)name
                           location:(NSString *)location
                          createdAt:(NSString *)createdAt
@@ -22,7 +22,7 @@
     self = [super init];
     if (self) {
         self.identifier = identifier;
-        self.username = username;
+        self.username = email;
         self.name = name;
         self.location = location;
         self.createdAt = createdAt;

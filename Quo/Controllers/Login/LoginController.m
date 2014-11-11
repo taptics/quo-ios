@@ -35,7 +35,14 @@
         NSLog(@"Missing fields");
         
     } else {
-        NSLog(@"Login");
+        [[Quo sharedClient] authenticateUserWithUsername:_emailField.text password:_passwordField.text block:^(BOOL success) {
+            if (success) {
+                NSLog(@"Logged in. Welcome back!");
+                
+            } else {
+                NSLog(@"Incorrect login. Sorry!");
+            }
+        }];
     }
 }
 
@@ -110,6 +117,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 10.f)];
     
     _emailField = [self cellTextField];
     _emailField.tag = 0;
