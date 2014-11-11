@@ -52,6 +52,7 @@
         
         [alert addAction:dismiss];
         [self presentViewController:alert animated:YES completion:nil];
+        [self disableEditing:NO];
         
     } else {
         [[Quo sharedClient] createUserWithEmail:_emailField.text password:_passwordField.text name:_nameField.text location:@"Remove this" block:^(BOOL success, NSString *error) {

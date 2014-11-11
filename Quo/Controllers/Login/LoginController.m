@@ -50,6 +50,7 @@
         
         [alert addAction:dismiss];
         [self presentViewController:alert animated:YES completion:nil];
+        [self disableEditing:NO];
         
     } else {
         [[Quo sharedClient] authenticateUserWithEmail:_emailField.text password:_passwordField.text block:^(BOOL success) {
