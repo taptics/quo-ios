@@ -110,11 +110,12 @@
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    NSLog(@"textViewDidChange:");
-    
     [_tableView beginUpdates];
-    //[_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     [_tableView endUpdates];
+}
+
+- (void)textViewDidChangeSelection:(UITextView *)textView {
+    [textView scrollRangeToVisible:textView.selectedRange];
 }
 
 #pragma mark - View

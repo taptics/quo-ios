@@ -55,28 +55,47 @@
         [self disableEditing:NO];
         
     } else {
-        [[Quo sharedClient] createUserWithEmail:_emailField.text password:_passwordField.text name:_nameField.text location:@"Remove this" block:^(BOOL success, NSString *error) {
-            if (success) {
-                [self performSegueWithIdentifier:@"ToHome" sender:self];
-                
-            } else {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
-                                                                               message:@"Sorry, that email is already in use."
-                                                                        preferredStyle:UIAlertControllerStyleAlert];
-                
-                UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
-                                                                  style:UIAlertActionStyleCancel
-                                                                handler:^(UIAlertAction *action) {
-                                                                    
-                                                                    [alert dismissViewControllerAnimated:YES completion:nil];
-                                                                }];
-                
-                
-                [alert addAction:dismiss];
-                [self presentViewController:alert animated:YES completion:nil];
-                [self disableEditing:NO];
-            }
-        }];
+        if ([self validateEmail:_emailField.text]) {
+            [[Quo sharedClient] createUserWithEmail:_emailField.text password:_passwordField.text name:_nameField.text location:@"Remove this" block:^(BOOL success, NSString *error) {
+                if (success) {
+                    [self performSegueWithIdentifier:@"ToHome" sender:self];
+                    
+                } else {
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
+                                                                                   message:@"Sorry, that email is already in use."
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                                      style:UIAlertActionStyleCancel
+                                                                    handler:^(UIAlertAction *action) {
+                                                                        
+                                                                        [alert dismissViewControllerAnimated:YES completion:nil];
+                                                                    }];
+                    
+                    
+                    [alert addAction:dismiss];
+                    [self presentViewController:alert animated:YES completion:nil];
+                    [self disableEditing:NO];
+                }
+            }];
+            
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
+                                                                           message:@"Please enter a valid email address!"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                              style:UIAlertActionStyleCancel
+                                                            handler:^(UIAlertAction *action) {
+                                                                
+                                                                [alert dismissViewControllerAnimated:YES completion:nil];
+                                                            }];
+            
+            
+            [alert addAction:dismiss];
+            [self presentViewController:alert animated:YES completion:nil];
+            [self disableEditing:NO];
+        }
     }
 }
 
@@ -91,7 +110,7 @@
         _passwordField.textColor = [UIColor lightGrayColor];
         
     } else {
-        _nameField.enabled = NO;
+        _nameField.enabled = YES;
         _emailField.enabled = YES;
         _passwordField.enabled = YES;
         
@@ -193,6 +212,7 @@
     _nameField.placeholder = @"Name";
     _nameField.autocapitalizationType = UITextAutocapitalizationTypeWords;
     _nameField.autocorrectionType = UITextAutocorrectionTypeNo;
+    _nameField.keyboardType = UIKeyboardTypeASCIICapable;
     
     _emailField = [self cellTextField];
     _emailField.tag = 1;

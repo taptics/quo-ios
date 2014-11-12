@@ -11,7 +11,13 @@
 #define HAS_TEXT_CONTAINER [self respondsToSelector:@selector(textContainer)]
 #define HAS_TEXT_CONTAINER_INSETS(x) [(x) respondsToSelector:@selector(textContainerInset)]
 
-@interface SZTextView ()
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define is_iOS7 SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
+#define is_iOS8 SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")
+
+@interface SZTextView () {
+    BOOL settingText;
+}
 @property (strong, nonatomic) UITextView *_placeholderTextView;
 @end
 
@@ -27,8 +33,7 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
 
 @implementation SZTextView
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
         [self preparePlaceholder];
@@ -37,27 +42,28 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
 }
 
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
-- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer
-{
+
+- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
     self = [super initWithFrame:frame textContainer:textContainer];
     if (self) {
         [self preparePlaceholder];
     }
     return self;
 }
+
 #else
-- (id)initWithFrame:(CGRect)frame
-{
+
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self preparePlaceholder];
     }
     return self;
 }
+
 #endif
 
-- (void)preparePlaceholder
-{
+- (void)preparePlaceholder {
     NSAssert(!self._placeholderTextView, @"placeholder has been prepared already: %@", self._placeholderTextView);
     // the label which displays the placeholder
     // needs to inherit some properties from its parent text view
@@ -101,7 +107,6 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
 
     self.clipsToBounds = YES;
 
-    // some observations
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(textDidChange:)
                           name:UITextViewTextDidChangeNotification object:self];
@@ -132,38 +137,34 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
     }
 }
 
-- (void)setPlaceholder:(NSString *)placeholderText
-{
+- (void)setPlaceholder:(NSString *)placeholderText {
     _placeholder = [placeholderText copy];
     _attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholderText];
 
     [self resizePlaceholderFrame];
 }
 
-- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholderText
-{
+- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholderText {
     _placeholder = attributedPlaceholderText.string;
     _attributedPlaceholder = [attributedPlaceholderText copy];
 
     [self resizePlaceholderFrame];
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
     [self resizePlaceholderFrame];
 }
 
-- (void)resizePlaceholderFrame
-{
+- (void)resizePlaceholderFrame {
     CGRect frame = self._placeholderTextView.frame;
     frame.size = self.bounds.size;
     self._placeholderTextView.frame = frame;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-                        change:(NSDictionary *)change context:(void *)context
-{
+                        change:(NSDictionary *)change context:(void *)context {
+    
     if ([keyPath isEqualToString:kAttributedPlaceholderKey]) {
         self._placeholderTextView.attributedText = [change valueForKey:NSKeyValueChangeNewKey];
     }
@@ -202,30 +203,24 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
     }
 }
 
-- (void)setPlaceholderTextColor:(UIColor *)placeholderTextColor
-{
+- (void)setPlaceholderTextColor:(UIColor *)placeholderTextColor {
     self._placeholderTextView.textColor = placeholderTextColor;
 }
 
-- (UIColor *)placeholderTextColor
-{
+- (UIColor *)placeholderTextColor {
     return self._placeholderTextView.textColor;
 }
 
-- (void)textDidChange:(NSNotification *)aNotification
-{
+- (void)textDidChange:(NSNotification *)aNotification {
     [self setPlaceholderVisibleForText:self.text];
 }
 
-- (BOOL)becomeFirstResponder
-{
+- (BOOL)becomeFirstResponder {
     [self setPlaceholderVisibleForText:self.text];
-
     return [super becomeFirstResponder];
 }
 
-- (void)setPlaceholderVisibleForText:(NSString *)text
-{
+- (void)setPlaceholderVisibleForText:(NSString *)text {
     if (text.length < 1) {
         [self addSubview:self._placeholderTextView];
         [self sendSubviewToBack:self._placeholderTextView];
@@ -234,8 +229,7 @@ static NSString * const kTextAlignmentKey = @"textAlignment";
     }
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeObserver:self forKeyPath:kAttributedPlaceholderKey];
     [self removeObserver:self forKeyPath:kPlaceholderKey];

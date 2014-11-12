@@ -12,7 +12,10 @@
 @implementation ComposeCell
 
 - (void)awakeFromNib {
-    [super awakeFromNib];
+    _postTitleTextField.tintColor = DARK_TEXT_COLOR;
+    _postTitleTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    _postTitleTextField.keyboardType = UIKeyboardTypeASCIICapable;
+    _postBodyTextView.keyboardType = UIKeyboardTypeASCIICapable;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
