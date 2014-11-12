@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Quo.h"
 
-@interface ComposeController : UIViewController
+@interface ComposeController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
