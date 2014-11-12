@@ -12,7 +12,7 @@
 @implementation ComposeCell
 
 - (void)awakeFromNib {
-    // Wake his ass up
+    [super awakeFromNib];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

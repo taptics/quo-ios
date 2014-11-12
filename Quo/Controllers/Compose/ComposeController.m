@@ -7,7 +7,6 @@
 //
 
 #import "ComposeController.h"
-#import "ComposeCell.h"
 
 @interface ComposeController ()
 
@@ -23,7 +22,39 @@
 #pragma mark - Actions
 
 - (IBAction)cancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.view endEditing:YES];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete"
+                                                     style:UIAlertActionStyleDestructive
+                                                   handler:^(UIAlertAction *action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                       [self dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+    
+    UIAlertAction *draft = [UIAlertAction actionWithTitle:@"Save draft"
+                                                    style:UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction *action) {
+                                                      
+                                                      // TODO: Save draft
+                                                      [alert dismissViewControllerAnimated:YES completion:nil];
+                                                  }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction *action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+    
+    
+    [alert addAction:delete];
+    [alert addAction:draft];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)post:(id)sender {
@@ -35,15 +66,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 2;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return 64.f;
-    }
-    
-    return 512.f;
-}
-
+ 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         static NSString *titleCellId = @"TitleCellId";
@@ -73,6 +96,27 @@
     }
 }
 
+#pragma mark - Text
+
+- (BOOL)isEmpty:(NSString *)string {
+    if ([string length] == 0) {
+        return true;
+    }
+    
+    if (![[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]) {
+        return true;
+    }
+    return false;
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+    NSLog(@"textViewDidChange:");
+    
+    [_tableView beginUpdates];
+    //[_tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:1 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    [_tableView endUpdates];
+}
+
 #pragma mark - View
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -87,6 +131,8 @@
     [super viewDidLoad];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 0.1f)];
+    _tableView.estimatedRowHeight = 44.f;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                 [UIFont fontWithName:@"Lato-Bold" size:20], NSFontAttributeName,

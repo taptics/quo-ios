@@ -28,7 +28,7 @@
     [QUOUser currentUser].identifier = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserIdentifier"];
     [QUOUser currentUser].email = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserEmail"];
     [QUOUser currentUser].name = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserName"];
-    [QUOUser currentUser].loggedIn = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserLoggedIn"];
+    [QUOUser currentUser].loggedIn = [[NSUserDefaults standardUserDefaults] boolForKey:@"CurrentUserLoggedIn"];
     
     if ([QUOUser currentUser].loggedIn) {
         [QUOBufferView sharedInstance].activeView = self.view;
