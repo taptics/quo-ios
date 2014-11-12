@@ -10,9 +10,24 @@
 
 @interface ComposeController ()
 
+- (IBAction)cancel:(id)sender;
+- (IBAction)post:(id)sender;
+
 @end
 
 @implementation ComposeController
+
+#pragma mark - Actions
+
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)post:(id)sender {
+    NSLog(@"Post");
+}
+
+#pragma mark - View
 
 - (void)viewDidLoad {
     [super viewDidLoad];

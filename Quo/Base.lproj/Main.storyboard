@@ -41,7 +41,7 @@
         <!--Launch Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="LaunchController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Launch" id="vXZ-lx-hvc" customClass="LaunchController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -150,7 +150,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="utY-hi-0PR" kind="show" identifier="" id="99u-If-dwP"/>
+                                    <segue destination="utY-hi-0PR" kind="show" identifier="ToHome" id="99u-If-dwP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Quo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="31" translatesAutoresizingMaskIntoConstraints="NO" id="neg-AR-JDx">
@@ -588,42 +588,63 @@
                     <view key="view" contentMode="scaleToFill" id="TNt-kP-oPR">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrR-q7-Yuy">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrR-q7-Yuy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="barTintColor" red="1" green="0.45882352939999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Compose" prompt=" " id="4Su-Rb-fAt">
                                         <barButtonItem key="leftBarButtonItem" image="Close" id="Kcd-c9-jDj">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="Send" id="oTe-SJ-9L9">
+                                        <barButtonItem key="rightBarButtonItem" image="Add" id="oTe-SJ-9L9">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="-10" width="400" height="74"/>
-                                </variation>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="zrR-q7-Yuy" secondAttribute="width" id="Cek-je-DVF"/>
+                            <constraint firstItem="zrR-q7-Yuy" firstAttribute="top" secondItem="TNt-kP-oPR" secondAttribute="top" id="O6p-ZZ-LJr">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-10"/>
+                            </constraint>
+                            <constraint firstItem="zrR-q7-Yuy" firstAttribute="leading" secondItem="TNt-kP-oPR" secondAttribute="leading" id="iKU-6A-1ic"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="zrR-q7-Yuy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Cek-je-DVF"/>
+                                <exclude reference="O6p-ZZ-LJr"/>
+                                <exclude reference="iKU-6A-1ic"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="zrR-q7-Yuy"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="Cek-je-DVF"/>
+                                <include reference="O6p-ZZ-LJr"/>
+                                <include reference="iKU-6A-1ic"/>
+                            </mask>
                         </variation>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4py-ST-jwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2083.5" y="567"/>
+            <point key="canvasLocation" x="2071.5" y="567"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="22" height="22"/>
         <image name="Back" width="22" height="19"/>
         <image name="Close" width="22" height="22"/>
         <image name="Compose" width="22" height="30"/>
@@ -631,6 +652,6 @@
         <image name="Settings" width="33" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ub7-V5-fCY"/>
+        <segue reference="99u-If-dwP"/>
     </inferredMetricsTieBreakers>
 </document>

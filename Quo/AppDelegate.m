@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LaunchController.h"
 #import "Quo.h"
 
 @interface AppDelegate ()
@@ -24,15 +25,6 @@
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Keys.plist"];
     NSDictionary *dictionary = [[NSDictionary alloc] initWithContentsOfFile:filePath];
     [Quo sharedClient].apiKey = [dictionary objectForKey:@"API Key"];
-    
-    [QUOUser currentUser].identifier = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserIdentifier"];
-    [QUOUser currentUser].email = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserEmail"];
-    [QUOUser currentUser].name = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserName"];
-    [QUOUser currentUser].loggedIn = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserLoggedIn"];
-    
-    if ([QUOUser currentUser].loggedIn) {
-        NSLog(@"Current user: %@", [QUOUser currentUser].email);
-    }
     
     return YES;
 }

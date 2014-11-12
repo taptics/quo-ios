@@ -7,7 +7,7 @@
 //
 
 #import "LaunchController.h"
-#import "QUOActionSheet.h"
+#import "Quo.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 
@@ -24,6 +24,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
+    
+    [QUOUser currentUser].identifier = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserIdentifier"];
+    [QUOUser currentUser].email = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserEmail"];
+    [QUOUser currentUser].name = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserName"];
+    [QUOUser currentUser].loggedIn = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentUserLoggedIn"];
+    
+    if ([QUOUser currentUser].loggedIn) {
+        [QUOBufferView sharedInstance].activeView = self.view;
+        [[QUOBufferView sharedInstance] beginBuffer];
+        
+        [self performSegueWithIdentifier:@"ToHome" sender:self];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
