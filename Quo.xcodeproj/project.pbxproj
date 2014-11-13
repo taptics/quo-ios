@@ -30,6 +30,7 @@
 		9463F5851A14300200F34246 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F57F1A14300200F34246 /* TPKeyboardAvoidingScrollView.m */; };
 		9463F5861A14300200F34246 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5811A14300200F34246 /* TPKeyboardAvoidingTableView.m */; };
 		9463F5871A14300200F34246 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5831A14300200F34246 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		9463F58B1A143FF500F34246 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F58A1A143FF500F34246 /* TTTAttributedLabel.m */; };
 		949375A219E5A9D6006C6FB7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */; };
 		949375A319E5A9D6006C6FB7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */; };
 		949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375AA19E5AD56006C6FB7 /* LaunchController.m */; };
@@ -104,6 +105,8 @@
 		9463F5811A14300200F34246 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		9463F5821A14300200F34246 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		9463F5831A14300200F34246 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		9463F5891A143FF500F34246 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTAttributedLabel.h; sourceTree = "<group>"; };
+		9463F58A1A143FF500F34246 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		949375A919E5AD56006C6FB7 /* LaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchController.h; path = Controllers/LaunchController.h; sourceTree = "<group>"; };
@@ -362,6 +365,15 @@
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		9463F5881A143FF500F34246 /* TTTAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				9463F5891A143FF500F34246 /* TTTAttributedLabel.h */,
+				9463F58A1A143FF500F34246 /* TTTAttributedLabel.m */,
+			);
+			path = TTTAttributedLabel;
+			sourceTree = "<group>";
+		};
 		9493759E19E5A995006C6FB7 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +441,7 @@
 		949E404C19F06C73004F67A6 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				9463F5881A143FF500F34246 /* TTTAttributedLabel */,
 				9463F57B1A14300200F34246 /* TPKeyboardAvoiding */,
 				9463F56A1A13CDDB00F34246 /* SZTextView */,
 				949E404D19F06C73004F67A6 /* AFNetworking */,
@@ -639,6 +652,7 @@
 				9463F5871A14300200F34246 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				9413091B19EF3E5600C12790 /* QUOBufferView.m in Sources */,
 				949E407719F06C96004F67A6 /* QUOPost.m in Sources */,
+				9463F58B1A143FF500F34246 /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

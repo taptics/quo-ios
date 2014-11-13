@@ -285,7 +285,7 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1R-3c-VTh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1R-3c-VTh" customClass="TTTAttributedLabel">
                                                     <rect key="frame" x="18" y="72" width="305" height="46"/>
                                                     <fontDescription key="fontDescription" name="Skolar" family="Skolar" pointSize="18"/>
                                                     <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -314,7 +314,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="V0c-Si-nUB" firstAttribute="trailing" secondItem="xay-bu-ivc" secondAttribute="trailing" id="6Dh-Yj-OiJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="xay-bu-ivc" secondAttribute="trailing" constant="69" id="78a-qC-bmg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xay-bu-ivc" secondAttribute="trailing" constant="69" id="78a-qC-bmg">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                                                </constraint>
                                                 <constraint firstItem="V0c-Si-nUB" firstAttribute="trailing" secondItem="t1R-3c-VTh" secondAttribute="trailing" id="7xh-WO-F0d"/>
                                                 <constraint firstItem="V0c-Si-nUB" firstAttribute="leading" secondItem="xay-bu-ivc" secondAttribute="leading" id="FG8-fS-hNH"/>
                                                 <constraint firstItem="t1R-3c-VTh" firstAttribute="top" secondItem="V0c-Si-nUB" secondAttribute="bottom" constant="8" symbolic="YES" id="UeZ-Yb-q0b"/>

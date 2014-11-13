@@ -26,7 +26,7 @@
 - (IBAction)cancel:(id)sender {
     [self.view endEditing:YES];
     
-    if ([self isEmpty:_postTitle] || [self isEmpty:_postBody]) {
+    if ([self isEmpty:_postBody]) {
         [self dismissViewControllerAnimated:YES completion:nil];
         
     } else {
