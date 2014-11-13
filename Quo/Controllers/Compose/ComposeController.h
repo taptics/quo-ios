@@ -10,6 +10,6 @@
 #import "ComposeCell.h"
 #import "Quo.h"
 
-@interface ComposeController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
+@interface ComposeController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITextViewDelegate>
 
 @end

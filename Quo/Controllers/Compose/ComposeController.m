@@ -11,6 +11,8 @@
 @interface ComposeController ()
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, copy) NSString *postTitle;
+@property (nonatomic, copy) NSString *postBody;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)post:(id)sender;
@@ -24,41 +26,76 @@
 - (IBAction)cancel:(id)sender {
     [self.view endEditing:YES];
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete"
-                                                     style:UIAlertActionStyleDestructive
-                                                   handler:^(UIAlertAction *action) {
-                                                       [alert dismissViewControllerAnimated:YES completion:nil];
-                                                       [self dismissViewControllerAnimated:YES completion:nil];
-                                                   }];
-    
-    UIAlertAction *draft = [UIAlertAction actionWithTitle:@"Save draft"
-                                                    style:UIAlertActionStyleDefault
-                                                  handler:^(UIAlertAction *action) {
-                                                      
-                                                      // TODO: Save draft
-                                                      [alert dismissViewControllerAnimated:YES completion:nil];
-                                                  }];
-    
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
-                                                     style:UIAlertActionStyleCancel
-                                                   handler:^(UIAlertAction *action) {
-                                                       [alert dismissViewControllerAnimated:YES completion:nil];
-                                                   }];
-    
-    
-    [alert addAction:delete];
-    [alert addAction:draft];
-    [alert addAction:cancel];
-    
-    [self presentViewController:alert animated:YES completion:nil];
+    if ([self isEmpty:_postTitle] || [self isEmpty:_postBody]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                       message:nil
+                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete"
+                                                         style:UIAlertActionStyleDestructive
+                                                       handler:^(UIAlertAction *action) {
+                                                           [alert dismissViewControllerAnimated:YES completion:nil];
+                                                           [self dismissViewControllerAnimated:YES completion:nil];
+                                                       }];
+        
+        UIAlertAction *draft = [UIAlertAction actionWithTitle:@"Save draft"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          
+                                                          // TODO: Save draft
+                                                          [alert dismissViewControllerAnimated:YES completion:nil];
+                                                      }];
+        
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                         style:UIAlertActionStyleCancel
+                                                       handler:^(UIAlertAction *action) {
+                                                           [alert dismissViewControllerAnimated:YES completion:nil];
+                                                       }];
+        
+        
+        [alert addAction:delete];
+        [alert addAction:draft];
+        [alert addAction:cancel];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (IBAction)post:(id)sender {
-    NSLog(@"Post");
+    if ([self isEmpty:_postTitle] || [self isEmpty:_postBody]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
+                                                                       message:@"Hey, you're missing some words!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                          style:UIAlertActionStyleCancel
+                                                        handler:^(UIAlertAction *action) {
+                                                            
+                                                            [alert dismissViewControllerAnimated:YES completion:nil];
+                                                        }];
+        
+        
+        [alert addAction:dismiss];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    } else {
+        [self.view endEditing:YES];
+        
+        [QUOBufferView sharedInstance].activeView = self.view;
+        [[QUOBufferView sharedInstance] beginBuffer];
+        
+        [[Quo sharedClient] createPostWithTitle:_postTitle text:_postBody userId:[QUOUser currentUser].identifier location:@"" block:^(BOOL success) {
+            if (success) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+                
+            } else {
+                NSLog(@"Error posting :(");
+            }
+        }];
+    }
 }
 
 #pragma mark - Table
@@ -109,9 +146,15 @@
     return false;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    _postTitle = textField.text;
+}
+
 - (void)textViewDidChange:(UITextView *)textView {
     [_tableView beginUpdates];
     [_tableView endUpdates];
+    
+    _postBody = textView.text;
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView {

@@ -12,6 +12,9 @@
 @implementation ComposeCell
 
 - (void)awakeFromNib {
+    _postTitleTextField.tag = 1;
+    _postBodyTextView.tag = 2;
+    
     _postTitleTextField.tintColor = DARK_TEXT_COLOR;
     _postTitleTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
     _postTitleTextField.keyboardType = UIKeyboardTypeASCIICapable;
