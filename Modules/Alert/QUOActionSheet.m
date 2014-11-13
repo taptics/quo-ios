@@ -26,8 +26,6 @@
 @property (nonatomic, strong) IBOutlet UIButton *confirmButton;
 @property (nonatomic, strong) IBOutlet UIButton *cancelButton;
 
-- (void)performAction:(UIButton *)sender;
-
 @end
 
 @implementation QUOActionSheet
@@ -82,14 +80,14 @@
         _cancelButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:_labelFontSize];
         [_cancelButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
         [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-        [_cancelButton addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_cancelButton addTarget:self action:@selector(dismissWithSender:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_cancelButton];
         
         _confirmButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _confirmButton.frame = _confirmButtonFrame;
         _confirmButton.titleLabel.font = [UIFont fontWithName:LATO_FONT size:_labelFontSize];
         [_confirmButton setTitleColor:DARK_TEXT_COLOR forState:UIControlStateNormal];
-        [_confirmButton addTarget:self action:@selector(performAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_confirmButton addTarget:self action:@selector(dismissWithSender:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_confirmButton];
         
         UIView *horizontalLine = [[UIView alloc] initWithFrame:_horizontalLineFrame];
@@ -130,9 +128,7 @@
     }];
 }
 
-- (void)performAction:(UIButton *)sender {
-    _action = sender.titleLabel.text;
-    
+- (void)dismissWithSender:(UIButton *)sender {
     for (UIView *view in _activeView.subviews) {
         if (view.tag == 1) {
             [UIView animateWithDuration:0.3 animations:^{
@@ -153,9 +149,7 @@
         }
     }
     
-    if ([_action isEqualToString:@"Flag"]) {
-        [[QUOBufferView sharedInstance] beginBuffer];
-    }
+    NSLog(@"Dismissed: %@", sender.titleLabel.text);
 }
 
 @end

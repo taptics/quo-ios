@@ -27,17 +27,21 @@
 #pragma mark - Methods
 
 - (IBAction)compose:(id)sender {
+    /*
     if (![QUOUser currentUser].loggedIn) {
         if ([QUOSlideMenu sharedInstance].isDisplayed) {
             [[QUOSlideMenu sharedInstance] dismiss];
         }
+     */
         
-        QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
-        [sheet show];
-        
+    QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
+    [sheet show];
+    
+    /*
     } else {
         [self performSegueWithIdentifier:@"ToCompose" sender:self];
     }
+     */
 }
 
 - (IBAction)settings:(id)sender {

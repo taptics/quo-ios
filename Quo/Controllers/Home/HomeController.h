@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Quo.h"
 
 @interface HomeController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
