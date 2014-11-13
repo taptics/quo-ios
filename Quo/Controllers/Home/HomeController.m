@@ -7,6 +7,7 @@
 //
 
 #import "HomeController.h"
+#import "PostController.h"
 #import "HomePostCell.h"
 #import "Quo.h"
 
@@ -105,11 +106,6 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // TODO: Push to post detail
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 #pragma mark - View
 
 - (void)viewDidLoad {
@@ -140,14 +136,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    PostController *postController = (PostController *)[segue destinationViewController];
+    QUOPost *post = [_posts objectAtIndex:[_tableView indexPathForSelectedRow].row];
+    postController.post = post;
 }
-*/
 
 @end

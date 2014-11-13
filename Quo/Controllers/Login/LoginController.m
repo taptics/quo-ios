@@ -55,6 +55,7 @@
     } else {
         [[Quo sharedClient] authenticateUserWithEmail:_emailField.text password:_passwordField.text block:^(BOOL success) {
             if (success) {
+                [[QUOBufferView sharedInstance] endBuffer];
                 [self performSegueWithIdentifier:@"ToHome" sender:self];
                 
             } else {
