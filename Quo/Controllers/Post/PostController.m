@@ -41,6 +41,13 @@
         
     } else {
         [_heartButton setImage:[UIImage imageNamed:@"Liked"] forState:UIControlStateNormal];
+        [[Quo sharedClient] likePostWithIdentifier:_post.identifier userId:[QUOUser currentUser].identifier block:^(BOOL success) {
+            if (success) {
+                NSLog(@"Spread the love!");
+            } else {
+                NSLog(@"Couldn't spread love :(");
+            }
+        }];
     }
 }
 
@@ -108,9 +115,12 @@
     _tableView.rowHeight = UITableViewAutomaticDimension;
     
     NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    
+    NSDate *date = [formatter dateFromString:_post.createdAt];
     formatter.dateStyle = NSDateFormatterMediumStyle;
     
-    _dateLabel.text = [formatter stringFromDate:[NSDate date]];
+    _dateLabel.text = [formatter stringFromDate:date];
     _bottomBarView.layer.borderColor = [UIColor colorWithRed:225/255.f green:225/255.f blue:225/255.f alpha:1.f].CGColor;
     _bottomBarView.layer.borderWidth = 1.f;
     
