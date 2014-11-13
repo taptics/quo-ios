@@ -32,7 +32,23 @@
 }
 
 - (IBAction)share:(id)sender {
-    NSLog(@"Share");
+    NSString *postTitle = [NSString stringWithFormat:@"Check out '%@' on Quo:", _post.title];
+    NSString *postLink = [NSString stringWithFormat:@"http://quo.taptics.co/post/%@", _post.identifier];
+    
+    NSArray *activityItems = @[ postTitle, postLink ];
+    NSArray *excludeActivities= @[ UIActivityTypePostToWeibo,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   UIActivityTypePostToFlickr,
+                                   UIActivityTypePostToVimeo,
+                                   UIActivityTypePostToTencentWeibo,
+                                   UIActivityTypeAirDrop ];
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityController.excludedActivityTypes = excludeActivities;
+    
+    [self presentViewController:activityController animated:YES completion:nil];
 }
 
 - (IBAction)heart:(id)sender {
@@ -113,6 +129,11 @@
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 15.f)];
     _tableView.estimatedRowHeight = 44.f;
     _tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    _likesLabel.text = @"0 likes";
+    [[Quo sharedClient] getPostWithIdentifier:_post.identifier block:^(QUOPost *post) {
+        _likesLabel.text = [NSString stringWithFormat:@"%@ likes", post.likes];
+    }];
     
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
