@@ -100,7 +100,7 @@
     
     QUOPost *post = (QUOPost *)[self.posts objectAtIndex:indexPath.row];
     cell.postTitleLabel.text = post.title;
-    cell.postAuthorLabel.text = @"Unknown";
+    cell.postAuthorLabel.text = @"Anonymous";
     cell.postPreviewLabel.text = post.text;
     
     return cell;

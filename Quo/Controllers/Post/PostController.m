@@ -150,6 +150,13 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
 }
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake) {
+        QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeFlag forView:self.navigationController.view];
+        [sheet show];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
