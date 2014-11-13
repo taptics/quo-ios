@@ -15,9 +15,11 @@
 @property (nonatomic, strong) IBOutlet UIView *bottomBarView;
 @property (nonatomic, strong) IBOutlet UILabel *dateLabel;
 @property (nonatomic, strong) IBOutlet UILabel *likesLabel;
+@property (nonatomic, strong) IBOutlet UIButton *heartButton;
 
 - (IBAction)back:(id)sender;
 - (IBAction)share:(id)sender;
+- (IBAction)heart:(id)sender;
 
 @end
 
@@ -31,6 +33,15 @@
 
 - (IBAction)share:(id)sender {
     NSLog(@"Share");
+}
+
+- (IBAction)heart:(id)sender {
+    if ([_heartButton.imageView.image isEqual:[UIImage imageNamed:@"Liked"]]) {
+        [_heartButton setImage:[UIImage imageNamed:@"Unliked"] forState:UIControlStateNormal];
+        
+    } else {
+        [_heartButton setImage:[UIImage imageNamed:@"Liked"] forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark - Table
