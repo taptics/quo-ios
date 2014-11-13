@@ -154,7 +154,7 @@
     }
     
     else if ([sender.titleLabel.text isEqualToString:@"Sign in"]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOFlagSignInNotification" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOSignInNotification" object:nil];
     }
 }
 

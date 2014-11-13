@@ -20,6 +20,7 @@
 - (IBAction)settings:(id)sender;
 
 - (void)storePosts:(NSArray *)posts;
+- (void)signIn;
 
 @end
 
@@ -60,6 +61,10 @@
     
     [self.tableView reloadData];
     // [[QUOBufferView sharedInstance] endBuffer];
+}
+
+- (void)signIn {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - Table
@@ -123,6 +128,8 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signIn) name:@"QUOSignInNotification" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
