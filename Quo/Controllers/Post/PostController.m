@@ -21,6 +21,8 @@
 - (IBAction)share:(id)sender;
 - (IBAction)heart:(id)sender;
 
+- (void)flag;
+
 @end
 
 @implementation PostController
@@ -66,6 +68,16 @@
             }
         }];
     }
+}
+
+- (void)flag {
+    [[Quo sharedClient] flagPostWithIdentifier:_post.identifier block:^(BOOL success) {
+        if (success) {
+            NSLog(@"Flagged post!");
+        } else {
+            NSLog(@"Couldn't flag post!");
+        }
+    }];
 }
 
 #pragma mark - Table
@@ -148,6 +160,8 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(flag) name:@"QUOFlagPostNotification" object:nil];
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {

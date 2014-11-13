@@ -107,14 +107,10 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         if ([responseObject[@"success"] boolValue] == NO) {
             block(NO, responseObject[@"error"]);
         } else {
-            // [QUOUser currentUser].identifier = user.identifier;
-            // TODO: Make sure this actually works
-            // Auto-login after sign up
-            
             [self authenticateUserWithEmail:email password:password block:^(BOOL success) {
                 if (success) {
                     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].identifier forKey:@"CurrentUserIdentifier"];
-                    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].email   forKey:@"CurrentUserEmail"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].email      forKey:@"CurrentUserEmail"];
                     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].name       forKey:@"CurrentUserName"];
                     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].password   forKey:@"CurrentUserPassword"];
                     [[NSUserDefaults standardUserDefaults]   setBool:[QUOUser currentUser].loggedIn   forKey:@"CurrentUserLoggedIn"];
@@ -311,8 +307,6 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
     NSString *url = [NSString stringWithFormat:QUO_FLAG_POST, identifier];
     
     [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Object: %@", responseObject);
-        
         if ([responseObject[@"success"] boolValue] == NO) {
             block(NO);
         } else {

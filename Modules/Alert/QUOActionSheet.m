@@ -149,7 +149,13 @@
         }
     }
     
-    NSLog(@"Dismissed: %@", sender.titleLabel.text);
+    if ([sender.titleLabel.text isEqualToString:@"Flag"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOFlagPostNotification" object:nil];
+    }
+    
+    else if ([sender.titleLabel.text isEqualToString:@"Sign in"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOFlagSignInNotification" object:nil];
+    }
 }
 
 @end
