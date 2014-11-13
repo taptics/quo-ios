@@ -12,6 +12,9 @@
 @interface PostController ()
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UIView *bottomBarView;
+@property (nonatomic, strong) IBOutlet UILabel *dateLabel;
+@property (nonatomic, strong) IBOutlet UILabel *likesLabel;
 
 - (IBAction)back:(id)sender;
 - (IBAction)share:(id)sender;
@@ -92,6 +95,13 @@
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 15.f)];
     _tableView.estimatedRowHeight = 44.f;
     _tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateStyle = NSDateFormatterMediumStyle;
+    
+    _dateLabel.text = [formatter stringFromDate:[NSDate date]];
+    _bottomBarView.layer.borderColor = [UIColor colorWithRed:225/255.f green:225/255.f blue:225/255.f alpha:1.f].CGColor;
+    _bottomBarView.layer.borderWidth = 1.f;
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
