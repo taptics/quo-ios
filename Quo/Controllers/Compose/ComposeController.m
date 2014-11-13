@@ -92,7 +92,7 @@
                 [self dismissViewControllerAnimated:YES completion:nil];
                 
             } else {
-                NSLog(@"Error posting :(");
+                NSLog(@"Error posting: ask Phil");
             }
         }];
     }
@@ -114,7 +114,6 @@
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.postTitleTextField.tintColor = DARK_TEXT_COLOR;
         [cell.postTitleTextField becomeFirstResponder];
         
         return cell;
@@ -146,6 +145,19 @@
     return false;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    PostCell *cell = (PostCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    [cell.postBodyTextView performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0];
+        
+    return YES;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    NSLog(@"textViewDidBeginEditing");
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     _postTitle = textField.text;
 }
@@ -166,7 +178,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 0.1f)];
+    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 15.f)];
     _tableView.estimatedRowHeight = 44.f;
     _tableView.rowHeight = UITableViewAutomaticDimension;
 }

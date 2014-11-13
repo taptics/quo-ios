@@ -33,11 +33,14 @@
             [[QUOSlideMenu sharedInstance] dismiss];
         }
         
-        
-//    QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
-//    [sheet show];
+        QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
+        [sheet show];
     
     } else {
+        if ([QUOSlideMenu sharedInstance].isDisplayed) {
+            [[QUOSlideMenu sharedInstance] dismiss];
+        }
+        
         [self performSegueWithIdentifier:@"ToCompose" sender:self];
     }
 }

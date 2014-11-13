@@ -14,6 +14,7 @@
 - (void)awakeFromNib {
     _postTitleTextField.tintColor = DARK_TEXT_COLOR;
     _postTitleTextField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    _postTitleTextField.returnKeyType = UIReturnKeyNext;
     _postTitleTextField.keyboardType = UIKeyboardTypeASCIICapable;
     _postBodyTextView.keyboardType = UIKeyboardTypeASCIICapable;
 }
