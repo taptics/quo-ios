@@ -10,10 +10,6 @@
 #import "LaunchController.h"
 #import "Quo.h"
 
-@interface AppDelegate ()
-
-@end
-
 @implementation AppDelegate
 
 

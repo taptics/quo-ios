@@ -47,6 +47,7 @@
     
     UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityController.excludedActivityTypes = excludeActivities;
+    activityController.view.tintColor = QUO_ORANGE_COLOR;
     
     [self presentViewController:activityController animated:YES completion:nil];
 }

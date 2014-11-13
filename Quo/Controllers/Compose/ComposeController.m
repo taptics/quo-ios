@@ -27,7 +27,7 @@
 #pragma mark - Actions
 
 - (IBAction)cancel:(id)sender {
-    [self.view endEditing:YES];
+    [_tableView endEditing:YES];
     
     if ([self isEmpty:_postBody]) {
         [self dismissViewControllerAnimated:YES completion:nil];

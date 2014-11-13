@@ -16,6 +16,7 @@
 #define LATO_FONT   @"Lato"
 #define SKOLAR_FONT @"Skolar"
 
+#define QUO_ORANGE_COLOR [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f]
 #define DARK_TEXT_COLOR  [UIColor colorWithRed:79/255.f green:79/255.f   blue:79/255.f  alpha:1.f]
 #define LIGHT_GREY_COLOR [UIColor colorWithRed:225/255.f green:225/255.f blue:225/255.f alpha:1.f]
 
