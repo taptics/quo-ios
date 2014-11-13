@@ -22,6 +22,12 @@
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont fontWithName:@"Lato-Bold" size:20], NSFontAttributeName,
+                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
+    
     NSString *filePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Keys.plist"];
     NSDictionary *dictionary = [[NSDictionary alloc] initWithContentsOfFile:filePath];
     [Quo sharedClient].apiKey = [dictionary objectForKey:@"API Key"];

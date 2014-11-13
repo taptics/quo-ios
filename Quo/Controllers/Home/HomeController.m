@@ -28,21 +28,18 @@
 #pragma mark - Methods
 
 - (IBAction)compose:(id)sender {
-    /*
     if (![QUOUser currentUser].loggedIn) {
         if ([QUOSlideMenu sharedInstance].isDisplayed) {
             [[QUOSlideMenu sharedInstance] dismiss];
         }
-     */
         
-    QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
-    [sheet show];
+        
+//    QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
+//    [sheet show];
     
-    /*
     } else {
         [self performSegueWithIdentifier:@"ToCompose" sender:self];
     }
-     */
 }
 
 - (IBAction)settings:(id)sender {
@@ -123,12 +120,6 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
-    
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"Skolar" size:24], NSFontAttributeName,
-                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,6 +130,10 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ToCompose"]) {
+        return;
+    }
+    
     PostController *postController = (PostController *)[segue destinationViewController];
     QUOPost *post = [_posts objectAtIndex:[_tableView indexPathForSelectedRow].row];
     postController.post = post;

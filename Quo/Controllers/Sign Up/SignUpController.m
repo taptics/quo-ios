@@ -225,12 +225,6 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
-    
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"Lato-Bold" size:20], NSFontAttributeName,
-                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    
-    self.navigationController.navigationBar.titleTextAttributes = attributes;
 }
 
 - (void)didReceiveMemoryWarning {

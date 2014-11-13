@@ -1,5 +1,5 @@
 //
-//  ComposeCell.h
+//  PostCell.h
 //  Quo
 //
 //  Created by Ryan Cohen on 11/12/14.
@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SZTextView.h"
 
-@interface ComposeCell : UITableViewCell
+@interface PostCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UITextField *postTitleTextField;
+@property (nonatomic, strong) IBOutlet UITextField *postUserTextField;
 @property (nonatomic, strong) IBOutlet SZTextView *postBodyTextView;
 
 @end

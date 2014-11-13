@@ -107,10 +107,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         static NSString *titleCellId = @"TitleCellId";
-        ComposeCell *cell = (ComposeCell *)[tableView dequeueReusableCellWithIdentifier:titleCellId];
+        PostCell *cell = (PostCell *)[tableView dequeueReusableCellWithIdentifier:titleCellId];
         
         if (!cell) {
-            cell = [[ComposeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:titleCellId];
+            cell = [[PostCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:titleCellId];
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -121,10 +121,10 @@
         
     } else {
         static NSString *bodyCellId = @"BodyCellId";
-        ComposeCell *cell = (ComposeCell *)[tableView dequeueReusableCellWithIdentifier:bodyCellId];
+        PostCell *cell = (PostCell *)[tableView dequeueReusableCellWithIdentifier:bodyCellId];
         
         if (!cell) {
-            cell = [[ComposeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bodyCellId];
+            cell = [[PostCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bodyCellId];
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -163,26 +163,12 @@
 
 #pragma mark - View
 
-- (void)viewWillDisappear:(BOOL)animated {
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"Skolar" size:24], NSFontAttributeName,
-                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.backgroundColor = [UIColor clearColor];
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 0.1f)];
     _tableView.estimatedRowHeight = 44.f;
     _tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"Lato-Bold" size:20], NSFontAttributeName,
-                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,15 +1,15 @@
 //
-//  ComposeCell.m
+//  PostCell.m
 //  Quo
 //
 //  Created by Ryan Cohen on 11/12/14.
 //  Copyright (c) 2014 Taptics. All rights reserved.
 //
 
-#import "ComposeCell.h"
+#import "PostCell.h"
 #import "Quo.h"
 
-@implementation ComposeCell
+@implementation PostCell
 
 - (void)awakeFromNib {
     _postTitleTextField.tintColor = DARK_TEXT_COLOR;

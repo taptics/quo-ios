@@ -24,7 +24,7 @@
 		944AE92519DA0210000EB362 /* QuoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE92419DA0210000EB362 /* QuoTests.m */; };
 		9463F5591A129BE600F34246 /* QUOPushSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5581A129BE600F34246 /* QUOPushSegue.m */; };
 		9463F55D1A12A60F00F34246 /* ComposeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F55C1A12A60F00F34246 /* ComposeController.m */; };
-		9463F5611A13A22D00F34246 /* ComposeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5601A13A22D00F34246 /* ComposeCell.m */; };
+		9463F5611A13A22D00F34246 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5601A13A22D00F34246 /* PostCell.m */; };
 		9463F56D1A13CDDB00F34246 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F56C1A13CDDB00F34246 /* SZTextView.m */; };
 		9463F5841A14300200F34246 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F57D1A14300200F34246 /* TPKeyboardAvoidingCollectionView.m */; };
 		9463F5851A14300200F34246 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F57F1A14300200F34246 /* TPKeyboardAvoidingScrollView.m */; };
@@ -94,8 +94,8 @@
 		9463F5581A129BE600F34246 /* QUOPushSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QUOPushSegue.m; path = Helpers/Segue/QUOPushSegue.m; sourceTree = "<group>"; };
 		9463F55B1A12A60F00F34246 /* ComposeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposeController.h; path = Controllers/Compose/ComposeController.h; sourceTree = "<group>"; };
 		9463F55C1A12A60F00F34246 /* ComposeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeController.m; path = Controllers/Compose/ComposeController.m; sourceTree = "<group>"; };
-		9463F55F1A13A22D00F34246 /* ComposeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComposeCell.h; path = "Helpers/Compose Cell/ComposeCell.h"; sourceTree = "<group>"; };
-		9463F5601A13A22D00F34246 /* ComposeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComposeCell.m; path = "Helpers/Compose Cell/ComposeCell.m"; sourceTree = "<group>"; };
+		9463F55F1A13A22D00F34246 /* PostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostCell.h; path = "Helpers/Compose Cell/PostCell.h"; sourceTree = "<group>"; };
+		9463F5601A13A22D00F34246 /* PostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostCell.m; path = "Helpers/Compose Cell/PostCell.m"; sourceTree = "<group>"; };
 		9463F56B1A13CDDB00F34246 /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
 		9463F56C1A13CDDB00F34246 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
 		9463F57C1A14300200F34246 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -339,8 +339,8 @@
 		9463F55E1A13A21500F34246 /* Compose Cell */ = {
 			isa = PBXGroup;
 			children = (
-				9463F55F1A13A22D00F34246 /* ComposeCell.h */,
-				9463F5601A13A22D00F34246 /* ComposeCell.m */,
+				9463F55F1A13A22D00F34246 /* PostCell.h */,
+				9463F5601A13A22D00F34246 /* PostCell.m */,
 			);
 			name = "Compose Cell";
 			sourceTree = "<group>";
@@ -645,7 +645,7 @@
 				949E406419F06C73004F67A6 /* AFHTTPRequestOperation.m in Sources */,
 				944AE90E19DA020F000EB362 /* AppDelegate.m in Sources */,
 				949E406519F06C73004F67A6 /* AFHTTPRequestOperationManager.m in Sources */,
-				9463F5611A13A22D00F34246 /* ComposeCell.m in Sources */,
+				9463F5611A13A22D00F34246 /* PostCell.m in Sources */,
 				9463F5591A129BE600F34246 /* QUOPushSegue.m in Sources */,
 				9413091819EF3E5000C12790 /* QUOActionSheet.m in Sources */,
 				9463F58F1A14FF1400F34246 /* PostController.m in Sources */,

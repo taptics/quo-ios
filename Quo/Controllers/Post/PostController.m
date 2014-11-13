@@ -7,7 +7,7 @@
 //
 
 #import "PostController.h"
-#import "ComposeCell.h"
+#import "PostCell.h"
 
 @interface PostController ()
 
@@ -33,16 +33,16 @@
 #pragma mark - Table
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         static NSString *titleCellId = @"TitleCellId";
-        ComposeCell *cell = (ComposeCell *)[tableView dequeueReusableCellWithIdentifier:titleCellId];
+        PostCell *cell = (PostCell *)[tableView dequeueReusableCellWithIdentifier:titleCellId];
         
         if (!cell) {
-            cell = [[ComposeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:titleCellId];
+            cell = [[PostCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:titleCellId];
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -51,12 +51,28 @@
         
         return cell;
         
-    } else {
-        static NSString *bodyCellId = @"BodyCellId";
-        ComposeCell *cell = (ComposeCell *)[tableView dequeueReusableCellWithIdentifier:bodyCellId];
+    }
+    
+    else if (indexPath.row == 1) {
+        static NSString *userCellId = @"UserCellId";
+        PostCell *cell = (PostCell *)[tableView dequeueReusableCellWithIdentifier:userCellId];
         
         if (!cell) {
-            cell = [[ComposeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bodyCellId];
+            cell = [[PostCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:userCellId];
+        }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.postUserTextField.userInteractionEnabled = NO;
+        cell.postUserTextField.text = @"Unknown";
+        
+        return cell;
+        
+    } else {
+        static NSString *bodyCellId = @"BodyCellId";
+        PostCell *cell = (PostCell *)[tableView dequeueReusableCellWithIdentifier:bodyCellId];
+        
+        if (!cell) {
+            cell = [[PostCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bodyCellId];
         }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -69,14 +85,6 @@
 
 #pragma mark - View
 
-- (void)viewWillDisappear:(BOOL)animated {
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"Skolar" size:24], NSFontAttributeName,
-                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.backgroundColor = [UIColor clearColor];
@@ -86,12 +94,6 @@
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
-    
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIFont fontWithName:@"Lato-Bold" size:20], NSFontAttributeName,
-                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:attributes];
 }
 
 - (void)didReceiveMemoryWarning {

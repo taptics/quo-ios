@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ComposeCell.h"
+#import "PostCell.h"
 #import "Quo.h"
 
 @interface ComposeController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITextViewDelegate>
