@@ -40,6 +40,6 @@
 /*!
  Clears the current user's info from memory.
  */
-+ (void)logOut;
+- (void)logOut;
 
 @end

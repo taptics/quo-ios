@@ -55,6 +55,8 @@
 }
 
 - (IBAction)heart:(id)sender {
+    // TODO: Check current user
+    
     if ([_heartButton.imageView.image isEqual:[UIImage imageNamed:@"Liked"]]) {
         [_heartButton setImage:[UIImage imageNamed:@"Unliked"] forState:UIControlStateNormal];
         
@@ -71,6 +73,8 @@
 }
 
 - (void)flag {
+    // TODO: Check current user
+    
     [[Quo sharedClient] flagPostWithIdentifier:_post.identifier block:^(BOOL success) {
         if (success) {
             NSLog(@"Flagged post!");

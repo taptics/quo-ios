@@ -172,8 +172,19 @@
 }
 
 - (void)performAction:(UIButton *)sender {
-    NSLog(@"Sender: %@", sender.titleLabel.text);
     [self dismiss];
+    
+    if ([sender.titleLabel.text isEqualToString:@"About"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOAboutNotification" object:nil];
+    }
+    
+    else if ([sender.titleLabel.text isEqualToString:@"Help"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOHelpNotification" object:nil];
+    }
+    
+    else if ([sender.titleLabel.text isEqualToString:@"Sign out"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOSignOutNotification" object:nil];
+    }
 }
 
 @end

@@ -112,6 +112,8 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
                     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].identifier forKey:@"CurrentUserIdentifier"];
                     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].email      forKey:@"CurrentUserEmail"];
                     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].name       forKey:@"CurrentUserName"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].location   forKey:@"CurrentUserLocation"];
+                    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].createdAt  forKey:@"CurrentUserCreatedAt"];
                     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].password   forKey:@"CurrentUserPassword"];
                     [[NSUserDefaults standardUserDefaults]   setBool:[QUOUser currentUser].loggedIn   forKey:@"CurrentUserLoggedIn"];
                     

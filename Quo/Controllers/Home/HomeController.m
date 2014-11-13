@@ -21,6 +21,9 @@
 
 - (void)storePosts:(NSArray *)posts;
 - (void)signIn;
+- (void)about;
+- (void)help;
+- (void)signOut;
 
 @end
 
@@ -64,6 +67,19 @@
 }
 
 - (void)signIn {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)about {
+    [self performSegueWithIdentifier:@"ToAbout" sender:self];
+}
+
+- (void)help {
+    [self performSegueWithIdentifier:@"ToHelp" sender:self];
+}
+
+- (void)signOut {
+    [[QUOUser currentUser] logOut];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -123,13 +139,16 @@
         [self storePosts:posts];
     }];
     
-    self.tableView.backgroundView = nil;
-    self.tableView.backgroundColor = [UIColor colorWithRed:244/255.f green:241/255.f blue:237/255.f alpha:1.f];
+    _tableView.backgroundView = nil;
+    _tableView.backgroundColor = [UIColor colorWithRed:244/255.f green:241/255.f blue:237/255.f alpha:1.f];
     
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.f green:117/255.f blue:80/255.f alpha:1.f];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signIn) name:@"QUOSignInNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(about) name:@"QUOAboutNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(help) name:@"QUOHelpNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signOut) name:@"QUOSignOutNotification" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,7 +159,10 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"ToCompose"]) {
+    if ([segue.identifier isEqualToString:@"ToCompose"] ||
+        [segue.identifier isEqualToString:@"ToAbout"]   ||
+        [segue.identifier isEqualToString:@"ToHelp"]) {
+        
         return;
     }
     

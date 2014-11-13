@@ -32,6 +32,8 @@
 		9463F5871A14300200F34246 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5831A14300200F34246 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		9463F58B1A143FF500F34246 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F58A1A143FF500F34246 /* TTTAttributedLabel.m */; };
 		9463F58F1A14FF1400F34246 /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F58E1A14FF1400F34246 /* PostController.m */; };
+		9463F5931A15622D00F34246 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5921A15622D00F34246 /* AboutController.m */; };
+		9463F5971A15623D00F34246 /* HelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5961A15623D00F34246 /* HelpController.m */; };
 		949375A219E5A9D6006C6FB7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */; };
 		949375A319E5A9D6006C6FB7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */; };
 		949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375AA19E5AD56006C6FB7 /* LaunchController.m */; };
@@ -110,6 +112,10 @@
 		9463F58A1A143FF500F34246 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTAttributedLabel.m; sourceTree = "<group>"; };
 		9463F58D1A14FF1400F34246 /* PostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostController.h; path = Controllers/Post/PostController.h; sourceTree = "<group>"; };
 		9463F58E1A14FF1400F34246 /* PostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostController.m; path = Controllers/Post/PostController.m; sourceTree = "<group>"; };
+		9463F5911A15622D00F34246 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutController.h; path = Controllers/About/AboutController.h; sourceTree = "<group>"; };
+		9463F5921A15622D00F34246 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutController.m; path = Controllers/About/AboutController.m; sourceTree = "<group>"; };
+		9463F5951A15623D00F34246 /* HelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpController.h; path = Controllers/Help/HelpController.h; sourceTree = "<group>"; };
+		9463F5961A15623D00F34246 /* HelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpController.m; path = Controllers/Help/HelpController.m; sourceTree = "<group>"; };
 		949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		949375A919E5AD56006C6FB7 /* LaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchController.h; path = Controllers/LaunchController.h; sourceTree = "<group>"; };
@@ -308,6 +314,8 @@
 		944AE92F19DA0219000EB362 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9463F5941A15623000F34246 /* Help */,
+				9463F5901A1561E300F34246 /* About */,
 				9463F58C1A14FF0400F34246 /* Post */,
 				9463F55A1A12A5FF00F34246 /* Compose */,
 				942076C91A0156FB00D77BEA /* Sign Up */,
@@ -385,6 +393,24 @@
 				9463F58E1A14FF1400F34246 /* PostController.m */,
 			);
 			name = Post;
+			sourceTree = "<group>";
+		};
+		9463F5901A1561E300F34246 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				9463F5911A15622D00F34246 /* AboutController.h */,
+				9463F5921A15622D00F34246 /* AboutController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		9463F5941A15623000F34246 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				9463F5951A15623D00F34246 /* HelpController.h */,
+				9463F5961A15623D00F34246 /* HelpController.m */,
+			);
+			name = Help;
 			sourceTree = "<group>";
 		};
 		9493759E19E5A995006C6FB7 /* Launch */ = {
@@ -646,6 +672,7 @@
 				944AE90E19DA020F000EB362 /* AppDelegate.m in Sources */,
 				949E406519F06C73004F67A6 /* AFHTTPRequestOperationManager.m in Sources */,
 				9463F5611A13A22D00F34246 /* PostCell.m in Sources */,
+				9463F5931A15622D00F34246 /* AboutController.m in Sources */,
 				9463F5591A129BE600F34246 /* QUOPushSegue.m in Sources */,
 				9413091819EF3E5000C12790 /* QUOActionSheet.m in Sources */,
 				9463F58F1A14FF1400F34246 /* PostController.m in Sources */,
@@ -660,6 +687,7 @@
 				944ACD7D1A040A2600E89C9C /* HomePostCell.m in Sources */,
 				949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */,
 				949E406A19F06C73004F67A6 /* AFURLRequestSerialization.m in Sources */,
+				9463F5971A15623D00F34246 /* HelpController.m in Sources */,
 				949E406719F06C73004F67A6 /* AFNetworkReachabilityManager.m in Sources */,
 				949E406B19F06C73004F67A6 /* AFURLResponseSerialization.m in Sources */,
 				942076CD1A01571900D77BEA /* SignUpController.m in Sources */,

@@ -417,6 +417,8 @@
                     <connections>
                         <outlet property="tableView" destination="uly-lb-qRk" id="FSy-vW-Rj1"/>
                         <segue destination="mBw-wJ-CWO" kind="presentation" identifier="ToCompose" id="BK4-hV-i10"/>
+                        <segue destination="q0f-Z5-bSH" kind="show" identifier="ToAbout" id="Zio-X3-yNb"/>
+                        <segue destination="War-7m-u8y" kind="show" identifier="ToHelp" id="YI7-i9-0Fd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTY-rv-g28" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -833,6 +835,116 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5d-rr-Zgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2037" y="567"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="biu-Yz-R9M">
+            <objects>
+                <viewController id="q0f-Z5-bSH" customClass="AboutController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wsS-39-yg0"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Ee-n5-lpB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eS3-i8-Qls">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="UnT-JU-w6F">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="TFl-Hd-gEr"/>
+                                    <constraint firstAttribute="height" constant="800" id="rMc-kK-b0C"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="77" id="8G1-ma-W5W">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8G1-ma-W5W" id="Yqk-hP-XvQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TFl-Hd-gEr"/>
+                                        <exclude reference="rMc-kK-b0C"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="TFl-Hd-gEr"/>
+                                        <include reference="rMc-kK-b0C"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="q0f-Z5-bSH" id="xbZ-aR-iSS"/>
+                                    <outlet property="delegate" destination="q0f-Z5-bSH" id="Qrh-G9-Z0w"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UnT-JU-w6F" firstAttribute="bottom" secondItem="3Ee-n5-lpB" secondAttribute="top" id="lae-hy-SQV"/>
+                            <constraint firstItem="UnT-JU-w6F" firstAttribute="leading" secondItem="eS3-i8-Qls" secondAttribute="leading" id="tTf-ym-swG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="UnT-JU-w6F"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="lae-hy-SQV"/>
+                                <exclude reference="tTf-ym-swG"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="UnT-JU-w6F"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="lae-hy-SQV"/>
+                                <include reference="tTf-ym-swG"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="G8e-e4-2ed">
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="iAq-EJ-3HA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="q0f-Z5-bSH" id="33c-4m-K45"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="UnT-JU-w6F" id="QQE-eP-jN3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOs-NB-BWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2755.5" y="567"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="kRL-NC-M9s">
+            <objects>
+                <viewController id="War-7m-u8y" customClass="HelpController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Qj-U5-Thu"/>
+                        <viewControllerLayoutGuide type="bottom" id="qW9-TF-i37"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2hW-3s-lHN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help" id="ymd-JK-eZI">
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="Tob-Zr-h28">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="War-7m-u8y" id="f9a-Wn-Vv2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2n-0t-YWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3463.5" y="567"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="PSA-zK-2la">

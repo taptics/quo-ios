@@ -46,14 +46,21 @@
 
 #pragma Functions
 
-+ (void)logOut {
+- (void)logOut {
     [QUOUser currentUser].identifier = @"";
-    [QUOUser currentUser].email   = @"";
+    [QUOUser currentUser].email      = @"";
+    [QUOUser currentUser].name       = @"";
     [QUOUser currentUser].password   = @"";
+    [QUOUser currentUser].location   = @"";
+    [QUOUser currentUser].createdAt  = @"";
+    [QUOUser currentUser].avatar     = @"";
     [QUOUser currentUser].loggedIn   = NO;
     
     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].identifier forKey:@"CurrentUserIdentifier"];
     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].email      forKey:@"CurrentUserEmail"];
+    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].name       forKey:@"CurrentUserName"];
+    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].location   forKey:@"CurrentUserLocation"];
+    [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].createdAt  forKey:@"CurrentUserCreatedAt"];
     [[NSUserDefaults standardUserDefaults] setObject:[QUOUser currentUser].password   forKey:@"CurrentUserPassword"];
     [[NSUserDefaults standardUserDefaults]   setBool:[QUOUser currentUser].loggedIn   forKey:@"CurrentUserLoggedIn"];
 }
