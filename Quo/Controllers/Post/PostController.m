@@ -48,6 +48,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.postTitleTextField.userInteractionEnabled = NO;
         cell.postTitleTextField.text = _post.title;
+        cell.postLineCountLabel.text = @"5";
         
         return cell;
         
@@ -88,7 +89,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 0.1f)];
+    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 15.f)];
     _tableView.estimatedRowHeight = 44.f;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     

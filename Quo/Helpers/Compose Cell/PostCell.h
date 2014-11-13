@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) IBOutlet UITextField *postTitleTextField;
 @property (nonatomic, strong) IBOutlet UITextField *postUserTextField;
+@property (nonatomic, strong) IBOutlet UILabel *postLineCountLabel;
 @property (nonatomic, strong) IBOutlet SZTextView *postBodyTextView;
 
 @end
