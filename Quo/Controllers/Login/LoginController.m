@@ -81,18 +81,12 @@
 
 - (void)disableEditing:(BOOL)disable {
     if (disable) {
-        _emailField.enabled = NO;
-        _passwordField.enabled = NO;
-        
-        _emailField.textColor = [UIColor lightGrayColor];
-        _passwordField.textColor = [UIColor lightGrayColor];
+        [QUOBufferView sharedInstance].activeView = self.navigationController.view;
+        [[QUOBufferView sharedInstance] beginBuffer];
         
     } else {
-        _emailField.enabled = YES;
-        _passwordField.enabled = YES;
-        
-        _emailField.textColor = DARK_TEXT_COLOR;
-        _passwordField.textColor = DARK_TEXT_COLOR;
+        [QUOBufferView sharedInstance].activeView = self.navigationController.view;
+        [[QUOBufferView sharedInstance] endBuffer];
         
         [_passwordField becomeFirstResponder];
     }

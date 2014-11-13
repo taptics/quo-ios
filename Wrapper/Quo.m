@@ -266,8 +266,6 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
                             };
     
     [manager POST:QUO_CREATE_POST parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Object: %@", responseObject);
-        
         if ([responseObject[@"success"] boolValue] == NO) {
             block(NO);
         } else {

@@ -58,6 +58,7 @@
         if ([self validateEmail:_emailField.text]) {
             [[Quo sharedClient] createUserWithEmail:_emailField.text password:_passwordField.text name:_nameField.text location:@"Remove this" block:^(BOOL success, NSString *error) {
                 if (success) {
+                    [[QUOBufferView sharedInstance] endBuffer];
                     [self performSegueWithIdentifier:@"ToHome" sender:self];
                     
                 } else {
@@ -101,22 +102,12 @@
 
 - (void)disableEditing:(BOOL)disable {
     if (disable) {
-        _nameField.enabled = NO;
-        _emailField.enabled = NO;
-        _passwordField.enabled = NO;
-        
-        _nameField.textColor = [UIColor lightGrayColor];
-        _emailField.textColor = [UIColor lightGrayColor];
-        _passwordField.textColor = [UIColor lightGrayColor];
+        [QUOBufferView sharedInstance].activeView = self.navigationController.view;
+        [[QUOBufferView sharedInstance] beginBuffer];
         
     } else {
-        _nameField.enabled = YES;
-        _emailField.enabled = YES;
-        _passwordField.enabled = YES;
-        
-        _nameField.textColor = DARK_TEXT_COLOR;
-        _emailField.textColor = DARK_TEXT_COLOR;
-        _passwordField.textColor = DARK_TEXT_COLOR;
+        [QUOBufferView sharedInstance].activeView = self.navigationController.view;
+        [[QUOBufferView sharedInstance] endBuffer];
         
         [_emailField becomeFirstResponder];
     }
