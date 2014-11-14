@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InfoCell.h"
 #import "Quo.h"
 
 @interface AboutController : UIViewController <UITableViewDelegate, UITableViewDataSource>

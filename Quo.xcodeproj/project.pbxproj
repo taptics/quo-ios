@@ -34,6 +34,9 @@
 		9463F58F1A14FF1400F34246 /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F58E1A14FF1400F34246 /* PostController.m */; };
 		9463F5931A15622D00F34246 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5921A15622D00F34246 /* AboutController.m */; };
 		9463F5971A15623D00F34246 /* HelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5961A15623D00F34246 /* HelpController.m */; };
+		9463F59B1A163F1700F34246 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F59A1A163F1700F34246 /* InfoCell.m */; };
+		9463F5A01A164DC400F34246 /* TermsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F59F1A164DC400F34246 /* TermsController.m */; };
+		9463F5A31A164DE700F34246 /* PrivacyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9463F5A21A164DE700F34246 /* PrivacyController.m */; };
 		949375A219E5A9D6006C6FB7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */; };
 		949375A319E5A9D6006C6FB7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */; };
 		949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 949375AA19E5AD56006C6FB7 /* LaunchController.m */; };
@@ -116,6 +119,12 @@
 		9463F5921A15622D00F34246 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutController.m; path = Controllers/About/AboutController.m; sourceTree = "<group>"; };
 		9463F5951A15623D00F34246 /* HelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelpController.h; path = Controllers/Help/HelpController.h; sourceTree = "<group>"; };
 		9463F5961A15623D00F34246 /* HelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelpController.m; path = Controllers/Help/HelpController.m; sourceTree = "<group>"; };
+		9463F5991A163F1700F34246 /* InfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoCell.h; path = "Helpers/Info Cell/InfoCell.h"; sourceTree = "<group>"; };
+		9463F59A1A163F1700F34246 /* InfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoCell.m; path = "Helpers/Info Cell/InfoCell.m"; sourceTree = "<group>"; };
+		9463F59E1A164DC400F34246 /* TermsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermsController.h; path = Controllers/Terms/TermsController.h; sourceTree = "<group>"; };
+		9463F59F1A164DC400F34246 /* TermsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TermsController.m; path = Controllers/Terms/TermsController.m; sourceTree = "<group>"; };
+		9463F5A11A164DE700F34246 /* PrivacyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrivacyController.h; path = Controllers/Privacy/PrivacyController.h; sourceTree = "<group>"; };
+		9463F5A21A164DE700F34246 /* PrivacyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrivacyController.m; path = Controllers/Privacy/PrivacyController.m; sourceTree = "<group>"; };
 		949375A019E5A9CF006C6FB7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		949375A119E5A9CF006C6FB7 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		949375A919E5AD56006C6FB7 /* LaunchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaunchController.h; path = Controllers/LaunchController.h; sourceTree = "<group>"; };
@@ -176,6 +185,7 @@
 		9413091D19EF47CA00C12790 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9463F5981A163EE300F34246 /* InfoCell */,
 				9463F5561A129BC700F34246 /* Segue */,
 				9463F55E1A13A21500F34246 /* Compose Cell */,
 				944ACD771A04066800E89C9C /* Form Cells */,
@@ -314,6 +324,8 @@
 		944AE92F19DA0219000EB362 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9463F59D1A164D9F00F34246 /* Privacy */,
+				9463F59C1A164D9A00F34246 /* Terms */,
 				9463F5941A15623000F34246 /* Help */,
 				9463F5901A1561E300F34246 /* About */,
 				9463F58C1A14FF0400F34246 /* Post */,
@@ -411,6 +423,33 @@
 				9463F5961A15623D00F34246 /* HelpController.m */,
 			);
 			name = Help;
+			sourceTree = "<group>";
+		};
+		9463F5981A163EE300F34246 /* InfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				9463F5991A163F1700F34246 /* InfoCell.h */,
+				9463F59A1A163F1700F34246 /* InfoCell.m */,
+			);
+			name = InfoCell;
+			sourceTree = "<group>";
+		};
+		9463F59C1A164D9A00F34246 /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				9463F59E1A164DC400F34246 /* TermsController.h */,
+				9463F59F1A164DC400F34246 /* TermsController.m */,
+			);
+			name = Terms;
+			sourceTree = "<group>";
+		};
+		9463F59D1A164D9F00F34246 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				9463F5A11A164DE700F34246 /* PrivacyController.h */,
+				9463F5A21A164DE700F34246 /* PrivacyController.m */,
+			);
+			name = Privacy;
 			sourceTree = "<group>";
 		};
 		9493759E19E5A995006C6FB7 /* Launch */ = {
@@ -664,6 +703,7 @@
 				949E406C19F06C73004F67A6 /* AFURLSessionManager.m in Sources */,
 				944ACD801A040A3B00E89C9C /* FormCell.m in Sources */,
 				949937C119F1EB70009A8FE2 /* QUOSlideMenu.m in Sources */,
+				9463F59B1A163F1700F34246 /* InfoCell.m in Sources */,
 				942076D01A01572900D77BEA /* LoginController.m in Sources */,
 				949E407819F06C96004F67A6 /* Quo.m in Sources */,
 				9463F5841A14300200F34246 /* TPKeyboardAvoidingCollectionView.m in Sources */,
@@ -685,6 +725,7 @@
 				949E406D19F06C73004F67A6 /* MD5.m in Sources */,
 				9463F5851A14300200F34246 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				944ACD7D1A040A2600E89C9C /* HomePostCell.m in Sources */,
+				9463F5A31A164DE700F34246 /* PrivacyController.m in Sources */,
 				949375AB19E5AD56006C6FB7 /* LaunchController.m in Sources */,
 				949E406A19F06C73004F67A6 /* AFURLRequestSerialization.m in Sources */,
 				9463F5971A15623D00F34246 /* HelpController.m in Sources */,
@@ -693,6 +734,7 @@
 				942076CD1A01571900D77BEA /* SignUpController.m in Sources */,
 				9463F5871A14300200F34246 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				9413091B19EF3E5600C12790 /* QUOBufferView.m in Sources */,
+				9463F5A01A164DC400F34246 /* TermsController.m in Sources */,
 				949E407719F06C96004F67A6 /* QUOPost.m in Sources */,
 				9463F58B1A143FF500F34246 /* TTTAttributedLabel.m in Sources */,
 			);
