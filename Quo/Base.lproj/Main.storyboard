@@ -643,7 +643,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8t-0C-BPB" id="pFi-la-zyl">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="This is a nice post" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-Jc-pS6">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Hello, world!" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-Jc-pS6">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -653,17 +653,11 @@
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="leading" secondItem="pFi-la-zyl" secondAttribute="leadingMargin" id="4c8-hU-W6P"/>
-                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="leading" secondItem="pFi-la-zyl" secondAttribute="leadingMargin" id="NTT-9I-Bzt">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                                                </constraint>
-                                                <constraint firstAttribute="centerY" secondItem="xeh-Jc-pS6" secondAttribute="centerY" id="OX0-sq-SGV"/>
-                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="trailing" secondItem="pFi-la-zyl" secondAttribute="trailingMargin" id="Vfs-XR-1tI"/>
-                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="top" secondItem="pFi-la-zyl" secondAttribute="topMargin" id="Y5N-Uj-G0j"/>
-                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="top" secondItem="pFi-la-zyl" secondAttribute="topMargin" id="YUq-5X-gsH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="xeh-Jc-pS6" secondAttribute="bottom" constant="-0.5" id="cTr-ez-jb8"/>
-                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="trailing" secondItem="pFi-la-zyl" secondAttribute="trailingMargin" id="hgg-l0-GVA">
-                                                    <variation key="heightClass=regular-widthClass=compact" constant="-7"/>
+                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="leading" secondItem="pFi-la-zyl" secondAttribute="leadingMargin" constant="7" id="Dki-dB-rMC"/>
+                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="centerY" secondItem="pFi-la-zyl" secondAttribute="centerY" id="IVa-4I-QCc"/>
+                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="top" secondItem="pFi-la-zyl" secondAttribute="topMargin" id="tEe-Lz-9Yl"/>
+                                                <constraint firstItem="xeh-Jc-pS6" firstAttribute="centerX" secondItem="pFi-la-zyl" secondAttribute="centerX" id="vQE-sS-I1s">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="-16.5"/>
                                                 </constraint>
                                             </constraints>
                                             <variation key="default">
@@ -671,14 +665,10 @@
                                                     <exclude reference="xeh-Jc-pS6"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="4c8-hU-W6P"/>
-                                                    <exclude reference="NTT-9I-Bzt"/>
-                                                    <exclude reference="OX0-sq-SGV"/>
-                                                    <exclude reference="Vfs-XR-1tI"/>
-                                                    <exclude reference="Y5N-Uj-G0j"/>
-                                                    <exclude reference="YUq-5X-gsH"/>
-                                                    <exclude reference="cTr-ez-jb8"/>
-                                                    <exclude reference="hgg-l0-GVA"/>
+                                                    <exclude reference="Dki-dB-rMC"/>
+                                                    <exclude reference="IVa-4I-QCc"/>
+                                                    <exclude reference="tEe-Lz-9Yl"/>
+                                                    <exclude reference="vQE-sS-I1s"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -686,14 +676,10 @@
                                                     <include reference="xeh-Jc-pS6"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="4c8-hU-W6P"/>
-                                                    <include reference="NTT-9I-Bzt"/>
-                                                    <exclude reference="OX0-sq-SGV"/>
-                                                    <exclude reference="Vfs-XR-1tI"/>
-                                                    <include reference="Y5N-Uj-G0j"/>
-                                                    <exclude reference="YUq-5X-gsH"/>
-                                                    <include reference="cTr-ez-jb8"/>
-                                                    <include reference="hgg-l0-GVA"/>
+                                                    <include reference="Dki-dB-rMC"/>
+                                                    <include reference="IVa-4I-QCc"/>
+                                                    <include reference="tEe-Lz-9Yl"/>
+                                                    <include reference="vQE-sS-I1s"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
