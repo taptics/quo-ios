@@ -98,6 +98,7 @@
         verticalLine.backgroundColor = LIGHT_GREY_COLOR;
         [self addSubview:verticalLine];
     }
+    
     return self;
 }
 

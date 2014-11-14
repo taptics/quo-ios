@@ -641,16 +641,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8t-0C-BPB" id="pFi-la-zyl">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="This is a nice post" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-Jc-pS6" customClass="SZTextView">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="This is a nice post" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-Jc-pS6">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Skolar" family="Skolar" pointSize="19"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Your words"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -1137,7 +1134,41 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hlz-Dq-9z8">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38F-kz-JbD">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="38F-kz-JbD" firstAttribute="top" secondItem="6Jv-29-SoY" secondAttribute="bottom" id="E7S-f5-uyR"/>
+                            <constraint firstAttribute="trailing" secondItem="38F-kz-JbD" secondAttribute="trailing" id="IVw-hI-Sdt"/>
+                            <constraint firstItem="38F-kz-JbD" firstAttribute="bottom" secondItem="vKn-2G-aKo" secondAttribute="top" id="ywH-8Y-Zde"/>
+                            <constraint firstItem="38F-kz-JbD" firstAttribute="leading" secondItem="hlz-Dq-9z8" secondAttribute="leading" id="zfj-bg-BgX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="38F-kz-JbD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="E7S-f5-uyR"/>
+                                <exclude reference="IVw-hI-Sdt"/>
+                                <exclude reference="ywH-8Y-Zde"/>
+                                <exclude reference="zfj-bg-BgX"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="38F-kz-JbD"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="E7S-f5-uyR"/>
+                                <include reference="IVw-hI-Sdt"/>
+                                <include reference="ywH-8Y-Zde"/>
+                                <include reference="zfj-bg-BgX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Privacy Policy" id="bgn-9W-58P">
                         <barButtonItem key="backBarButtonItem" title=" " id="b2V-5b-23i"/>
@@ -1148,6 +1179,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="38F-kz-JbD" id="Bhh-Tb-QeD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h63-3b-pCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1661,7 +1695,41 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wHK-bj-hS7">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vae-X4-4x4">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vae-X4-4x4" firstAttribute="leading" secondItem="wHK-bj-hS7" secondAttribute="leading" id="9f4-GB-pD7"/>
+                            <constraint firstItem="Vae-X4-4x4" firstAttribute="bottom" secondItem="fBh-Lc-Mka" secondAttribute="top" id="QOh-5N-v1M"/>
+                            <constraint firstItem="Vae-X4-4x4" firstAttribute="top" secondItem="1HP-8v-fOB" secondAttribute="bottom" id="gqH-qK-jQl"/>
+                            <constraint firstAttribute="trailing" secondItem="Vae-X4-4x4" secondAttribute="trailing" id="kcu-Wl-Qkt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Vae-X4-4x4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9f4-GB-pD7"/>
+                                <exclude reference="QOh-5N-v1M"/>
+                                <exclude reference="gqH-qK-jQl"/>
+                                <exclude reference="kcu-Wl-Qkt"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Vae-X4-4x4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="9f4-GB-pD7"/>
+                                <include reference="QOh-5N-v1M"/>
+                                <include reference="gqH-qK-jQl"/>
+                                <include reference="kcu-Wl-Qkt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Terms &amp; Conditions" id="k2c-Os-NP8">
                         <barButtonItem key="backBarButtonItem" title=" " id="Hve-Mc-njD"/>
@@ -1672,6 +1740,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="Vae-X4-4x4" id="QgS-KD-kLk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leK-gN-wqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1690,6 +1761,6 @@
         <image name="Unliked" width="51" height="43"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uhP-Up-OxR"/>
+        <segue reference="99u-If-dwP"/>
     </inferredMetricsTieBreakers>
 </document>

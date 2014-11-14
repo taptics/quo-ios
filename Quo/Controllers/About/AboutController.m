@@ -7,6 +7,7 @@
 //
 
 #import "AboutController.h"
+#import "InfoCell.h"
 
 @interface AboutController ()
 

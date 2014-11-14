@@ -7,8 +7,11 @@
 //
 
 #import "TermsController.h"
+#import "InfoCell.h"
 
 @interface TermsController ()
+
+@property (nonatomic, strong) IBOutlet UIWebView *webView;
 
 - (IBAction)back:(id)sender;
 
@@ -26,7 +29,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSURL *url = [NSURL URLWithString:@"http://quoapp.co/terms"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [_webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {

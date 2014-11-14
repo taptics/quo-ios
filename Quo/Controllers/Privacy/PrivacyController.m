@@ -10,6 +10,8 @@
 
 @interface PrivacyController ()
 
+@property (nonatomic, strong) IBOutlet UIWebView *webView;
+
 - (IBAction)back:(id)sender;
 
 @end
@@ -26,9 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSURL *url = [NSURL URLWithString:@"http://quoapp.co/privacy"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [_webView loadRequest:request];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
