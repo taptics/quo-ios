@@ -118,7 +118,7 @@
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.postUserTextField.userInteractionEnabled = NO;
-        cell.postUserTextField.text = @"Unknown";
+        cell.postUserTextField.text = @"Anonymous";
         
         return cell;
         
