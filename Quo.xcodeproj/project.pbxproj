@@ -14,6 +14,7 @@
 		9430DD5B19DDFAA60079C4B9 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */; };
 		9430DD5C19DDFAA60079C4B9 /* Skolar.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5A19DDFAA60079C4B9 /* Skolar.otf */; };
 		9430DD6019DE08730079C4B9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9430DD5D19DE085F0079C4B9 /* Social.framework */; };
+		943A318D1A16606C009A758A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943A318C1A16606C009A758A /* MessageUI.framework */; };
 		944ACD7D1A040A2600E89C9C /* HomePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 944ACD7C1A040A2600E89C9C /* HomePostCell.m */; };
 		944ACD801A040A3B00E89C9C /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 944ACD7F1A040A3B00E89C9C /* FormCell.m */; };
 		944AE90B19DA020F000EB362 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE90A19DA020F000EB362 /* main.m */; };
@@ -80,6 +81,7 @@
 		9430DD5919DDFAA60079C4B9 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		9430DD5A19DDFAA60079C4B9 /* Skolar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skolar.otf; sourceTree = "<group>"; };
 		9430DD5D19DE085F0079C4B9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		943A318C1A16606C009A758A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		944ACD7B1A040A2600E89C9C /* HomePostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePostCell.h; path = "Helpers/Home Post Cell/HomePostCell.h"; sourceTree = "<group>"; };
 		944ACD7C1A040A2600E89C9C /* HomePostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePostCell.m; path = "Helpers/Home Post Cell/HomePostCell.m"; sourceTree = "<group>"; };
 		944ACD7E1A040A3B00E89C9C /* FormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormCell.h; path = "Helpers/Form Cell/FormCell.h"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943A318D1A16606C009A758A /* MessageUI.framework in Frameworks */,
 				9430DD6019DE08730079C4B9 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +237,7 @@
 		9430DD5F19DE08660079C4B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				943A318C1A16606C009A758A /* MessageUI.framework */,
 				9430DD5D19DE085F0079C4B9 /* Social.framework */,
 			);
 			name = Frameworks;

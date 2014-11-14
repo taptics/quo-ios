@@ -15,6 +15,7 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 - (IBAction)back:(id)sender;
+- (void)openMailWithSubject:(NSString *)subject;
 
 @end
 
@@ -24,6 +25,37 @@
 
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)openMailWithSubject:(NSString *)subject {
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailController = [MFMailComposeViewController new];
+        mailController.mailComposeDelegate = self;
+        mailController.navigationBar.tintColor = QUO_ORANGE_COLOR;
+        
+        [mailController setToRecipients:@[@"support@taptics.co"]];
+        [mailController setSubject:subject];
+        
+        [mailController setMessageBody:@"" isHTML:NO];
+        
+        [self presentViewController:mailController animated:true completion:nil];
+        
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Quo"
+                                                                       message:@"Hey, please configure a mail account to send feedback!"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                          style:UIAlertActionStyleCancel
+                                                        handler:^(UIAlertAction *action) {
+                                                            
+                                                            [alert dismissViewControllerAnimated:YES completion:nil];
+                                                        }];
+        
+        
+        [alert addAction:dismiss];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 #pragma mark - Table
@@ -112,12 +144,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            // Problem
+            NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+            NSString *subject = [NSString stringWithFormat:@"Problem with Quo v%@", version];
+            [self openMailWithSubject:subject];
             
         } else {
-            // Feedback
+            NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+            NSString *subject = [NSString stringWithFormat:@"Feedback for Quo v%@", version];
+            [self openMailWithSubject:subject];
         }
     }
+}
+
+#pragma mark - Mail
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - View
