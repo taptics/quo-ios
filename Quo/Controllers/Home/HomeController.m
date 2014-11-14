@@ -79,6 +79,7 @@
 }
 
 - (void)signOut {
+    [[QUOBufferView sharedInstance] endBuffer];
     [[QUOUser currentUser] logOut];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

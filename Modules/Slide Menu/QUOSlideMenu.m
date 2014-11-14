@@ -121,6 +121,13 @@
     
     [_activeView addSubview:dimView];
     
+    if (![QUOUser currentUser].loggedIn) {
+        [_signOutButton setTitle:@"Sign in" forState:UIControlStateNormal];
+        
+    } else {
+        NSLog(@"Logged in");
+    }
+    
     [UIView animateWithDuration:0.3 animations:^{
         dimView.alpha = 0.5f;
         
@@ -184,6 +191,10 @@
     
     else if ([sender.titleLabel.text isEqualToString:@"Sign out"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOSignOutNotification" object:nil];
+    }
+    
+    else if ([sender.titleLabel.text isEqualToString:@"Sign in"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"QUOSignInNotification" object:nil];
     }
 }
 
