@@ -1119,11 +1119,39 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="UnT-JU-w6F" id="QQE-eP-jN3"/>
+                        <segue destination="wWG-M6-DRw" kind="show" identifier="ToTerms" id="v12-Mz-olI"/>
+                        <segue destination="b8j-ss-0lX" kind="show" identifier="ToPrivacy" id="SP0-2k-Lgk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOs-NB-BWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2755.5" y="567"/>
+        </scene>
+        <!--Privacy Policy-->
+        <scene sceneID="sYM-kk-saz">
+            <objects>
+                <viewController id="b8j-ss-0lX" customClass="PrivacyController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Jv-29-SoY"/>
+                        <viewControllerLayoutGuide type="bottom" id="vKn-2G-aKo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hlz-Dq-9z8">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Privacy Policy" id="bgn-9W-58P">
+                        <barButtonItem key="backBarButtonItem" title=" " id="b2V-5b-23i"/>
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="ZHB-K8-6f4">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="b8j-ss-0lX" id="CSv-Ao-ECp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h63-3b-pCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3463.5" y="-97.5"/>
         </scene>
         <!--Help-->
         <scene sceneID="kRL-NC-M9s">
@@ -1622,6 +1650,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4py-ST-jwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2037" y="-97.5"/>
+        </scene>
+        <!--Terms & Conditions-->
+        <scene sceneID="i49-In-b0B">
+            <objects>
+                <viewController id="wWG-M6-DRw" customClass="TermsController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1HP-8v-fOB"/>
+                        <viewControllerLayoutGuide type="bottom" id="fBh-Lc-Mka"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wHK-bj-hS7">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Terms &amp; Conditions" id="k2c-Os-NP8">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Hve-Mc-njD"/>
+                        <barButtonItem key="leftBarButtonItem" image="Back" id="nPM-p7-GI6">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="wWG-M6-DRw" id="G3Z-Ok-0OG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="leK-gN-wqL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2755.5" y="-97.5"/>
         </scene>
     </scenes>
     <resources>

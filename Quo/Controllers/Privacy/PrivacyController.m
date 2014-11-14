@@ -10,9 +10,19 @@
 
 @interface PrivacyController ()
 
+- (IBAction)back:(id)sender;
+
 @end
 
 @implementation PrivacyController
+
+#pragma mark - Actions
+
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - View
 
 - (void)viewDidLoad {
     [super viewDidLoad];

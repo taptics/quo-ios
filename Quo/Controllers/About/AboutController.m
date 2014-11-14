@@ -142,10 +142,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            // To Terms & Conditions
+            [self performSegueWithIdentifier:@"ToTerms" sender:self];
             
         } else {
-            // To Privacy Policy
+            [self performSegueWithIdentifier:@"ToPrivacy" sender:self];
         }
     }
     
