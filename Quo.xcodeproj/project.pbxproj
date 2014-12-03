@@ -15,6 +15,7 @@
 		9430DD5C19DDFAA60079C4B9 /* Skolar.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9430DD5A19DDFAA60079C4B9 /* Skolar.otf */; };
 		9430DD6019DE08730079C4B9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9430DD5D19DE085F0079C4B9 /* Social.framework */; };
 		943A318D1A16606C009A758A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943A318C1A16606C009A758A /* MessageUI.framework */; };
+		9445B0DF1A1BDAA00078C1C7 /* DraftsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9445B0DE1A1BDAA00078C1C7 /* DraftsController.m */; };
 		944ACD7D1A040A2600E89C9C /* HomePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 944ACD7C1A040A2600E89C9C /* HomePostCell.m */; };
 		944ACD801A040A3B00E89C9C /* FormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 944ACD7F1A040A3B00E89C9C /* FormCell.m */; };
 		944AE90B19DA020F000EB362 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 944AE90A19DA020F000EB362 /* main.m */; };
@@ -57,6 +58,7 @@
 		949E407819F06C96004F67A6 /* Quo.m in Sources */ = {isa = PBXBuildFile; fileRef = 949E407319F06C96004F67A6 /* Quo.m */; };
 		949E407919F06C96004F67A6 /* QUOUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 949E407619F06C96004F67A6 /* QUOUser.m */; };
 		949E407B19F06DB6004F67A6 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 949E407A19F06DB6004F67A6 /* Keys.plist */; };
+		94F4A0E71A2F9D4200238B7B /* DraftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 94F4A0E61A2F9D4200238B7B /* DraftCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		9430DD5A19DDFAA60079C4B9 /* Skolar.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skolar.otf; sourceTree = "<group>"; };
 		9430DD5D19DE085F0079C4B9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		943A318C1A16606C009A758A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9445B0DD1A1BDAA00078C1C7 /* DraftsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DraftsController.h; path = Controllers/Drafts/DraftsController.h; sourceTree = "<group>"; };
+		9445B0DE1A1BDAA00078C1C7 /* DraftsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DraftsController.m; path = Controllers/Drafts/DraftsController.m; sourceTree = "<group>"; };
 		944ACD7B1A040A2600E89C9C /* HomePostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomePostCell.h; path = "Helpers/Home Post Cell/HomePostCell.h"; sourceTree = "<group>"; };
 		944ACD7C1A040A2600E89C9C /* HomePostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomePostCell.m; path = "Helpers/Home Post Cell/HomePostCell.m"; sourceTree = "<group>"; };
 		944ACD7E1A040A3B00E89C9C /* FormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormCell.h; path = "Helpers/Form Cell/FormCell.h"; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 		949E407519F06C96004F67A6 /* QUOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QUOUser.h; sourceTree = "<group>"; };
 		949E407619F06C96004F67A6 /* QUOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QUOUser.m; sourceTree = "<group>"; };
 		949E407A19F06DB6004F67A6 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		94F4A0E51A2F9D4200238B7B /* DraftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DraftCell.h; path = "Helpers/Draft Cell/DraftCell.h"; sourceTree = "<group>"; };
+		94F4A0E61A2F9D4200238B7B /* DraftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DraftCell.m; path = "Helpers/Draft Cell/DraftCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 		9413091D19EF47CA00C12790 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				94F4A0E41A2F9D3000238B7B /* DraftCell */,
 				9463F5981A163EE300F34246 /* InfoCell */,
 				9463F5561A129BC700F34246 /* Segue */,
 				9463F55E1A13A21500F34246 /* Compose Cell */,
@@ -241,6 +248,15 @@
 				9430DD5D19DE085F0079C4B9 /* Social.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9445B0DC1A1BDA910078C1C7 /* Drafts */ = {
+			isa = PBXGroup;
+			children = (
+				9445B0DD1A1BDAA00078C1C7 /* DraftsController.h */,
+				9445B0DE1A1BDAA00078C1C7 /* DraftsController.m */,
+			);
+			name = Drafts;
 			sourceTree = "<group>";
 		};
 		944ACD771A04066800E89C9C /* Form Cells */ = {
@@ -328,6 +344,7 @@
 		944AE92F19DA0219000EB362 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9445B0DC1A1BDA910078C1C7 /* Drafts */,
 				9463F59D1A164D9F00F34246 /* Privacy */,
 				9463F59C1A164D9A00F34246 /* Terms */,
 				9463F5941A15623000F34246 /* Help */,
@@ -596,6 +613,15 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		94F4A0E41A2F9D3000238B7B /* DraftCell */ = {
+			isa = PBXGroup;
+			children = (
+				94F4A0E51A2F9D4200238B7B /* DraftCell.h */,
+				94F4A0E61A2F9D4200238B7B /* DraftCell.m */,
+			);
+			name = DraftCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -702,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F4A0E71A2F9D4200238B7B /* DraftCell.m in Sources */,
 				9463F55D1A12A60F00F34246 /* ComposeController.m in Sources */,
 				9463F56D1A13CDDB00F34246 /* SZTextView.m in Sources */,
 				949E406C19F06C73004F67A6 /* AFURLSessionManager.m in Sources */,
@@ -723,6 +750,7 @@
 				949E407919F06C96004F67A6 /* QUOUser.m in Sources */,
 				944AE90B19DA020F000EB362 /* main.m in Sources */,
 				949E406619F06C73004F67A6 /* AFHTTPSessionManager.m in Sources */,
+				9445B0DF1A1BDAA00078C1C7 /* DraftsController.m in Sources */,
 				9463F5861A14300200F34246 /* TPKeyboardAvoidingTableView.m in Sources */,
 				949375AF19E5AE52006C6FB7 /* HomeController.m in Sources */,
 				949E406819F06C73004F67A6 /* AFSecurityPolicy.m in Sources */,

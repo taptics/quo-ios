@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QUOPost : NSObject
+@interface QUOPost : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *location;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSString *lines;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *likes;
@@ -20,6 +21,7 @@
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
                           location:(NSString *)location
+                             lines:(NSString *)lines
                               text:(NSString *)text
                              title:(NSString *)title
                             userId:(NSString *)userId

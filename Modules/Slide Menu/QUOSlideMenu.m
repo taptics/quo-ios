@@ -123,9 +123,6 @@
     
     if (![QUOUser currentUser].loggedIn) {
         [_signOutButton setTitle:@"Sign in" forState:UIControlStateNormal];
-        
-    } else {
-        NSLog(@"Logged in");
     }
     
     [UIView animateWithDuration:0.3 animations:^{

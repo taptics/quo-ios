@@ -14,12 +14,14 @@
 @interface HomeController ()
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UILongPressGestureRecognizer *gestureRecognizer;
 @property (nonatomic, strong) NSArray *posts;
 
 - (IBAction)compose:(id)sender;
 - (IBAction)settings:(id)sender;
 
 - (void)storePosts:(NSArray *)posts;
+- (void)drafts;
 - (void)signIn;
 - (void)about;
 - (void)help;
@@ -64,6 +66,10 @@
     
     [self.tableView reloadData];
     // [[QUOBufferView sharedInstance] endBuffer];
+}
+
+- (void)drafts {
+    [self performSegueWithIdentifier:@"ToDrafts" sender:self];
 }
 
 - (void)signIn {
@@ -150,6 +156,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(about) name:@"QUOAboutNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(help) name:@"QUOHelpNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signOut) name:@"QUOSignOutNotification" object:nil];
+    
+    _gestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(drafts)];
+    _gestureRecognizer.minimumPressDuration = 0.8f;
+    _gestureRecognizer.allowableMovement = 100.f;
+    
+    [self.navigationController.navigationBar addGestureRecognizer:_gestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -162,6 +174,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ToCompose"] ||
         [segue.identifier isEqualToString:@"ToAbout"]   ||
+        [segue.identifier isEqualToString:@"ToDrafts"]  ||
         [segue.identifier isEqualToString:@"ToHelp"]) {
         
         return;

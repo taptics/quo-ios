@@ -40,7 +40,7 @@
         UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete"
                                                          style:UIAlertActionStyleDestructive
                                                        handler:^(UIAlertAction *action) {
-                                                           [alert dismissViewControllerAnimated:YES completion:nil];
+                                                           
                                                            [self dismissViewControllerAnimated:YES completion:nil];
                                                        }];
         
@@ -48,13 +48,20 @@
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction *action) {
                                                           
-                                                          // TODO: Save draft
-                                                          [alert dismissViewControllerAnimated:YES completion:nil];
+                                                          NSMutableArray *drafts = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"DraftsKey"]];
+                                                          
+                                                          NSDictionary *draft = @{ @"title" : _postTitle, @"text" : _postBody };
+                                                          
+                                                          [drafts addObject:draft];
+                                                          [[NSUserDefaults standardUserDefaults] setObject:drafts forKey:@"DraftsKey"];
+                                                          
+                                                          [self dismissViewControllerAnimated:YES completion:nil];
                                                       }];
         
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
                                                          style:UIAlertActionStyleCancel
                                                        handler:^(UIAlertAction *action) {
+                                                           
                                                            [alert dismissViewControllerAnimated:YES completion:nil];
                                                        }];
         

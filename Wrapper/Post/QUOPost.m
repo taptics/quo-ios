@@ -10,8 +10,11 @@
 
 @implementation QUOPost
 
+#pragma mark - Init
+
 - (instancetype)initWithIdentifier:(NSString *)identifier
                           location:(NSString *)location
+                             lines:(NSString *)lines
                               text:(NSString *)text
                              title:(NSString *)title
                             userId:(NSString *)userId
@@ -20,15 +23,34 @@
     
     self = [super init];
     if (self) {
-        self.identifier = identifier;
-        self.location = location;
-        self.text = text;
-        self.title = title;
-        self.userId = userId;
-        self.likes = likes;
-        self.createdAt = createdAt;
+        _identifier = identifier;
+        _location = location;
+        _text = text;
+        _title = title;
+        _lines = lines;
+        _userId = userId;
+        _likes = likes;
+        _createdAt = createdAt;
     }
+    
     return self;
+}
+
+#pragma mark - NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)decoder {
+    self = [super init];
+    if (self) {
+        _title = [decoder decodeObjectForKey:@"title"];
+        _text = [decoder decodeObjectForKey:@"text"];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeObject:_title forKey:@"title"];
+    [coder encodeObject:_text forKey:@"text"];
 }
 
 @end

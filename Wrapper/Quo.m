@@ -180,6 +180,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         for (id object in responseObject[@"posts"]) {
             QUOPost *post = [[QUOPost alloc] initWithIdentifier:object[@"id"]
                                               location:object[@"location"]
+                                                 lines:object[@"lines"]
                                                   text:object[@"text"]
                                                  title:object[@"title"]
                                                 userId:object[@"userId"]
@@ -208,6 +209,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
             [self getUserWithIdentifier:object[@"userId"] block:^(QUOUser *user) {
                 QUOPost *post = [[QUOPost alloc] initWithIdentifier:object[@"id"]
                                                            location:object[@"location"]
+                                                              lines:object[@"lines"]
                                                                text:object[@"text"]
                                                               title:object[@"title"]
                                                              userId:object[@"userId"]
@@ -233,6 +235,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         QUOPost *post = [[QUOPost alloc] initWithIdentifier:responseObject[@"post"][@"id"]
                                                    location:responseObject[@"post"][@"location"]
+                                                      lines:responseObject[@"post"][@"lines"]
                                                        text:responseObject[@"post"][@"text"]
                                                       title:responseObject[@"post"][@"title"]
                                                      userId:responseObject[@"post"][@"userId"]
