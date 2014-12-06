@@ -105,6 +105,8 @@
         [QUOBufferView sharedInstance].activeView = self.navigationController.view;
         [[QUOBufferView sharedInstance] beginBuffer];
         
+        [self.view endEditing:YES];
+        
     } else {
         [QUOBufferView sharedInstance].activeView = self.navigationController.view;
         [[QUOBufferView sharedInstance] endBuffer];

@@ -14,9 +14,6 @@
 @property (nonatomic, strong) IBOutlet UIView *bottomBarView;
 @property (nonatomic, strong) IBOutlet UILabel *dateLabel;
 
-@property (nonatomic, copy) NSString *postTitle;
-@property (nonatomic, copy) NSString *postBody;
-
 - (IBAction)cancel:(id)sender;
 - (IBAction)post:(id)sender;
 
@@ -50,7 +47,7 @@
                                                           
                                                           NSMutableArray *drafts = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"DraftsKey"]];
                                                           
-                                                          NSDictionary *draft = @{ @"title" : _postTitle, @"text" : _postBody };
+                                                          NSDictionary *draft = @{ @"title" : _postTitle, @"body" : _postBody };
                                                           
                                                           [drafts addObject:draft];
                                                           [[NSUserDefaults standardUserDefaults] setObject:drafts forKey:@"DraftsKey"];
@@ -194,6 +191,16 @@
     _dateLabel.text = [formatter stringFromDate:[NSDate date]];
     _bottomBarView.layer.borderColor = [UIColor colorWithRed:225/255.f green:225/255.f blue:225/255.f alpha:1.f].CGColor;
     _bottomBarView.layer.borderWidth = 1.f;
+    
+    if (_fromDraft) {
+        PostCell *headerCell = (PostCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        headerCell.postTitleTextField.text = _postTitle;
+        
+        PostCell *bodyCell = (PostCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+        bodyCell.postBodyTextView.text = _postBody;
+        
+        [bodyCell.postBodyTextView becomeFirstResponder];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

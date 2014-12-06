@@ -11,7 +11,7 @@
 @implementation DraftCell
 
 - (void)awakeFromNib {
-    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.frame.size.height + 23, CGRectGetWidth([UIScreen mainScreen].bounds), 1)];
+    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.frame.size.height + 13, CGRectGetWidth([UIScreen mainScreen].bounds), 1)];
     separator.backgroundColor = [UIColor colorWithRed:225/255.f green:225/255.f blue:225/255.f alpha:1.f];
     [self.contentView addSubview:separator];
 }

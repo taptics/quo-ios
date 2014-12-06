@@ -13,6 +13,7 @@
 
 @interface HomeController ()
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UILongPressGestureRecognizer *gestureRecognizer;
 @property (nonatomic, strong) NSArray *posts;
@@ -20,6 +21,7 @@
 - (IBAction)compose:(id)sender;
 - (IBAction)settings:(id)sender;
 
+- (void)refresh;
 - (void)storePosts:(NSArray *)posts;
 - (void)drafts;
 - (void)signIn;
@@ -61,11 +63,16 @@
     }
 }
 
+- (void)refresh {
+    [[Quo sharedClient] getAllPostsWithBlock:^(NSArray *posts) {
+        [self storePosts:posts];
+        [_refreshControl endRefreshing];
+    }];
+}
+
 - (void)storePosts:(NSArray *)posts {
     self.posts = [NSArray arrayWithArray:posts];
-    
     [self.tableView reloadData];
-    // [[QUOBufferView sharedInstance] endBuffer];
 }
 
 - (void)drafts {
@@ -139,13 +146,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // [QUOBufferView sharedInstance].activeView = self.navigationController.view;
-    // [[QUOBufferView sharedInstance] beginBuffer];
-    
-    [[Quo sharedClient] getAllPostsWithBlock:^(NSArray *posts) {
-        [self storePosts:posts];
-    }];
-    
     _tableView.backgroundView = nil;
     _tableView.backgroundColor = [UIColor colorWithRed:244/255.f green:241/255.f blue:237/255.f alpha:1.f];
     
@@ -160,6 +160,14 @@
     _gestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(drafts)];
     _gestureRecognizer.minimumPressDuration = 0.8f;
     _gestureRecognizer.allowableMovement = 100.f;
+    
+    _refreshControl = [UIRefreshControl new];
+    _refreshControl.tintColor = DARK_TEXT_COLOR;
+    [_refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [_tableView addSubview:_refreshControl];
+    
+    [_refreshControl beginRefreshing];
+    [self refresh];
     
     [self.navigationController.navigationBar addGestureRecognizer:_gestureRecognizer];
 }

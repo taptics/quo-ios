@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LuJ-Ve-6o3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C68m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LuJ-Ve-6o3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -167,7 +167,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="129.5" y="579" width="143" height="31"/>
+                                    <rect key="frame" x="129" y="579" width="143" height="31"/>
                                 </variation>
                                 <connections>
                                     <segue destination="utY-hi-0PR" kind="show" identifier="ToHome" id="99u-If-dwP"/>
@@ -546,7 +546,8 @@
                                                             <exclude reference="hZQ-g0-0zO"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="20" y="8" width="280" height="46"/>
                                                         <mask key="constraints">
                                                             <exclude reference="2GS-LN-XMn"/>
                                                             <exclude reference="hZQ-g0-0zO"/>
@@ -1444,11 +1445,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="67" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="TNs-IS-FL6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="58" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="TNs-IS-FL6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" rowHeight="67" id="Oll-sO-Cme" customClass="DraftCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" rowHeight="58" id="Oll-sO-Cme" customClass="DraftCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oll-sO-Cme" id="5Ma-QY-o7i">
@@ -1459,24 +1460,40 @@
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                     <color key="textColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="17" width="384" height="32"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fpl-Cx-8Mt" firstAttribute="top" secondItem="5Ma-QY-o7i" secondAttribute="topMargin" constant="5" id="Kui-VO-eYn"/>
+                                                <constraint firstItem="Fpl-Cx-8Mt" firstAttribute="leading" secondItem="5Ma-QY-o7i" secondAttribute="leadingMargin" id="bnz-W4-hZw"/>
+                                                <constraint firstItem="Fpl-Cx-8Mt" firstAttribute="trailing" secondItem="5Ma-QY-o7i" secondAttribute="trailingMargin" id="gQl-Sp-UKg"/>
+                                                <constraint firstItem="Fpl-Cx-8Mt" firstAttribute="centerY" secondItem="5Ma-QY-o7i" secondAttribute="centerY" id="rbY-Nq-XPD"/>
+                                            </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Fpl-Cx-8Mt"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="Kui-VO-eYn"/>
+                                                    <exclude reference="bnz-W4-hZw"/>
+                                                    <exclude reference="gQl-Sp-UKg"/>
+                                                    <exclude reference="rbY-Nq-XPD"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="Fpl-Cx-8Mt"/>
                                                 </mask>
+                                                <mask key="constraints">
+                                                    <include reference="Kui-VO-eYn"/>
+                                                    <include reference="bnz-W4-hZw"/>
+                                                    <include reference="gQl-Sp-UKg"/>
+                                                    <include reference="rbY-Nq-XPD"/>
+                                                </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="titleLabel" destination="Fpl-Cx-8Mt" id="xur-Jq-JJn"/>
+                                            <segue destination="mBw-wJ-CWO" kind="show" id="uiH-Lu-0BY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2088,5 +2105,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="99u-If-dwP"/>
+        <segue reference="uiH-Lu-0BY"/>
     </inferredMetricsTieBreakers>
 </document>

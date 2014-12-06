@@ -12,4 +12,8 @@
 
 @interface ComposeController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UITextViewDelegate>
 
+@property (nonatomic, assign) BOOL fromDraft;
+@property (nonatomic, copy) NSString *postTitle;
+@property (nonatomic, copy) NSString *postBody;
+
 @end

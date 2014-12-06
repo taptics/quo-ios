@@ -7,6 +7,7 @@
 //
 
 #import "DraftsController.h"
+#import "ComposeController.h"
 #import "DraftCell.h"
 #import "Quo.h"
 
@@ -40,15 +41,22 @@
         cell = [[DraftCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
     }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleLabel.text = [[_drafts objectAtIndex:indexPath.row] objectForKey:@"title"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - View
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 1.f)];
     
     NSArray *drafts = [[NSUserDefaults standardUserDefaults] arrayForKey:@"DraftsKey"];
     _drafts = [NSArray arrayWithArray:drafts];
@@ -62,14 +70,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    ComposeController *compose = (ComposeController *)[segue destinationViewController];
+    compose.fromDraft = YES;
+    compose.postTitle = [[_drafts objectAtIndex:[_tableView indexPathForSelectedRow].row] objectForKey:@"title"];
+    compose.postBody = [[_drafts objectAtIndex:[_tableView indexPathForSelectedRow].row] objectForKey:@"body"];
 }
-*/
 
 @end
