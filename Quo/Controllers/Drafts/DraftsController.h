@@ -10,6 +10,6 @@
 
 @interface DraftsController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSArray *drafts;
+@property (nonatomic, strong) NSMutableArray *drafts;
 
 @end

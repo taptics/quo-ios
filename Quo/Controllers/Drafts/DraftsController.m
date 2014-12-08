@@ -33,6 +33,26 @@
     return _drafts.count;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *draft = @{ @"title" : [[_drafts objectAtIndex:indexPath.row] objectForKey:@"title"],
+                             @"body"  : [[_drafts objectAtIndex:indexPath.row] objectForKey:@"body"] };
+    
+    [_drafts removeObject:draft];
+    [[NSUserDefaults standardUserDefaults] setObject:_drafts forKey:@"DraftsKey"];
+    
+    [tableView beginUpdates];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView endUpdates];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"CellId";
     DraftCell *cell = (DraftCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
@@ -47,10 +67,6 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - View
 
 - (void)viewDidLoad {
@@ -59,7 +75,7 @@
     _tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _tableView.bounds.size.width, 1.f)];
     
     NSArray *drafts = [[NSUserDefaults standardUserDefaults] arrayForKey:@"DraftsKey"];
-    _drafts = [NSArray arrayWithArray:drafts];
+    _drafts = [NSMutableArray arrayWithArray:drafts];
     
     _tableView.backgroundView = nil;
     _tableView.backgroundColor = [UIColor colorWithRed:244/255.f green:241/255.f blue:237/255.f alpha:1.f];
