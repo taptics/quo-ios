@@ -27,7 +27,7 @@
         _location = location;
         _text = text;
         _title = title;
-        _lines = lines;
+        _lines = [NSString stringWithFormat:@"%@", lines];
         _userId = userId;
         _likes = likes;
         _createdAt = createdAt;
@@ -36,21 +36,5 @@
     return self;
 }
 
-#pragma mark - NSCoding
-
-- (instancetype)initWithCoder:(NSCoder *)decoder {
-    self = [super init];
-    if (self) {
-        _title = [decoder decodeObjectForKey:@"title"];
-        _text = [decoder decodeObjectForKey:@"text"];
-    }
-    
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:_title forKey:@"title"];
-    [coder encodeObject:_text forKey:@"text"];
-}
 
 @end

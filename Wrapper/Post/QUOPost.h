@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QUOPost : NSObject <NSCoding>
+@interface QUOPost : NSObject
 
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *location;

@@ -14,6 +14,9 @@
 @property (nonatomic, strong) IBOutlet UIView *bottomBarView;
 @property (nonatomic, strong) IBOutlet UILabel *dateLabel;
 
+@property (nonatomic, copy) NSString *postBody;
+@property (nonatomic, copy) NSString *postTitle;
+
 - (IBAction)cancel:(id)sender;
 - (IBAction)post:(id)sender;
 
@@ -91,17 +94,41 @@
     } else {
         [self.view endEditing:YES];
         
-        [QUOBufferView sharedInstance].activeView = self.view;
-        [[QUOBufferView sharedInstance] beginBuffer];
-        
-        [[Quo sharedClient] createPostWithTitle:_postTitle text:_postBody userId:[QUOUser currentUser].identifier location:@"" block:^(BOOL success) {
-            if (success) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-                
-            } else {
-                NSLog(@"Error posting: ask Phil");
+        if (_fromDraft) {
+            NSMutableArray *drafts = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"DraftsKey"]];
+            for (NSDictionary *draft in drafts) {
+                if ([draft[@"title"] isEqualToString:_postTitle] && [draft[@"body"] isEqualToString:_postBody]) {
+                    [drafts removeObject:draft];
+                    [[NSUserDefaults standardUserDefaults] setObject:drafts forKey:@"DraftsKey"];
+                }
             }
-        }];
+            
+            [QUOBufferView sharedInstance].activeView = self.view;
+            [[QUOBufferView sharedInstance] beginBuffer];
+            
+            [[Quo sharedClient] createPostWithTitle:_postTitle text:_postBody userId:[QUOUser currentUser].identifier location:@"" block:^(BOOL success) {
+                if (success) {
+                    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                    
+                } else {
+                    NSLog(@"Error posting: ask Phil");
+                }
+            }];
+            
+        } else {
+            [QUOBufferView sharedInstance].activeView = self.view;
+            [[QUOBufferView sharedInstance] beginBuffer];
+            
+            [[Quo sharedClient] createPostWithTitle:_postTitle text:_postBody userId:[QUOUser currentUser].identifier location:@"" block:^(BOOL success) {
+                if (success) {
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                    
+                } else {
+                    NSLog(@"Error posting: ask Phil");
+                }
+            }];
+        }
     }
 }
 
@@ -193,6 +220,9 @@
     _bottomBarView.layer.borderWidth = 1.f;
     
     if (_fromDraft) {
+        _postTitle = _draft[@"title"];
+        _postBody = _draft[@"body"];
+        
         PostCell *headerCell = (PostCell *)[_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         headerCell.postTitleTextField.text = _postTitle;
         

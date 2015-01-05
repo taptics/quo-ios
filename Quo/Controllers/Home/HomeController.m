@@ -137,6 +137,7 @@
     cell.postTitleLabel.text = post.title;
     cell.postAuthorLabel.text = @"Anonymous";
     cell.postPreviewLabel.text = post.text;
+    cell.postLinesLabel.text = post.lines;
     
     return cell;
 }

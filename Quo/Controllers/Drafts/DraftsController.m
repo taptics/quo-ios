@@ -91,8 +91,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ComposeController *compose = (ComposeController *)[segue destinationViewController];
     compose.fromDraft = YES;
-    compose.postTitle = [[_drafts objectAtIndex:[_tableView indexPathForSelectedRow].row] objectForKey:@"title"];
-    compose.postBody = [[_drafts objectAtIndex:[_tableView indexPathForSelectedRow].row] objectForKey:@"body"];
+    compose.draft = @{ @"title" : [[_drafts objectAtIndex:[_tableView indexPathForSelectedRow].row] objectForKey:@"title"],
+                       @"body"  : [[_drafts objectAtIndex:[_tableView indexPathForSelectedRow].row] objectForKey:@"body"]
+                     };
 }
 
 @end
