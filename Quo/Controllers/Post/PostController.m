@@ -56,6 +56,13 @@
 
 - (IBAction)heart:(id)sender {
     // TODO: Check current user
+
+    if (![QUOUser currentUser].loggedIn) {
+        QUOActionSheet *sheet = [[QUOActionSheet alloc] initWithType:QUOActionSheetTypeSignIn forView:self.navigationController.view];
+        [sheet show];
+        
+        return;
+    }
     
     if ([_heartButton.imageView.image isEqual:[UIImage imageNamed:@"Liked"]]) {
         [_heartButton setImage:[UIImage imageNamed:@"Unliked"] forState:UIControlStateNormal];

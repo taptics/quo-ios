@@ -48,7 +48,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
         
         for (id object in responseObject[@"users"]) {
             QUOUser *user = [[QUOUser alloc] initWithIdentifier:object[@"id"]
-                                                       email:object[@"username"]
+                                                          email:object[@"username"]
                                                            name:object[@"name"]
                                                        location:object[@"location"]
                                                       createdAt:object[@"createdAt"]
@@ -71,7 +71,7 @@ static NSString *QUO_FLAG_POST          = @"http://quoapp.herokuapp.com/api/post
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         QUOUser *user = [[QUOUser alloc] initWithIdentifier:responseObject[@"user"][@"id"]
-                                                   email:responseObject[@"user"][@"username"]
+                                                      email:responseObject[@"user"][@"username"]
                                                        name:responseObject[@"user"][@"name"]
                                                    location:responseObject[@"user"][@"location"]
                                                   createdAt:responseObject[@"user"][@"createdAt"]
